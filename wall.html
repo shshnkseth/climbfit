@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/brand/logo-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── Page Hero ──────────────────────────────────────── */
@@ -28,8 +28,15 @@
     }
     .page-hero-text { position: relative; z-index: 1; }
     .page-hero-text h1 {
-      font-family: 'Bitcount Grid Single', monospace;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
       font-size: clamp(2.5rem, 5.5vw, 5rem);
       line-height: 1.0;
       letter-spacing: 0.04em;
@@ -75,8 +82,17 @@
       font-family: 'DM Sans', sans-serif;
     }
     .spec-value {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: 1.2rem; font-weight: 700; color: var(--text);
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 1.2rem;
+      color: var(--text);
     }
     .spec-unit { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
 
@@ -96,13 +112,29 @@
       border: 1.5px solid var(--border-active);
       background: var(--surface);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Bitcount Grid Single', monospace;
-      font-weight: 700; font-size: 1rem; color: var(--accent-cyan);
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 1rem; color: var(--accent-cyan);
       flex-shrink: 0; position: relative; z-index: 1;
     }
     .step-body h3 {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: 1.05rem; font-weight: 700;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 1.05rem;
       letter-spacing: 0.03em; margin-bottom: 0.5rem;
     }
     .step-body p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; }
@@ -159,7 +191,18 @@
     }
     .metric-badge dl { display: flex; gap: var(--space-l); }
     .metric-item dt { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-    .metric-item dd { font-family: 'Bitcount Grid Single', monospace; font-size: 1.4rem; font-weight: 700; }
+    .metric-item dd {
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 1.4rem;
+    }
 
     @media (max-width: 860px) {
       .page-hero-inner { grid-template-columns: 1fr; }

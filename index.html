@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/brand/logo-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── Hero ─────────────────────────────────────────────── */
@@ -67,8 +67,15 @@
     }
 
     .hero-title {
-      font-family: 'Bitcount Grid Single', monospace;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
       font-size: clamp(3.2rem, 7vw, 7rem);
       line-height: 1.0;
       letter-spacing: 0.04em;
@@ -102,9 +109,16 @@
     }
 
     .hero-stat-num {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: 2rem;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 2rem;
       line-height: 1;
       color: var(--text);
     }
@@ -167,9 +181,16 @@
     }
 
     .feature-card h3 {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: 1.05rem;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 1.05rem;
       margin-bottom: 0.6rem;
       letter-spacing: 0.03em;
     }
@@ -189,9 +210,16 @@
     }
     .in-action-text { max-width: 480px; }
     .in-action-text h2 {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: 0.03em;
       line-height: 1.1;
       margin-bottom: var(--space-s);
@@ -214,9 +242,16 @@
     .audience-card:hover .audience-card-img img { transform: scale(1.05); }
     .audience-card-body { padding: var(--space-m); }
     .audience-card-body h3 {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: 1rem;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: 1rem;
       letter-spacing: 0.03em;
       margin: 0.5rem 0;
     }
@@ -237,9 +272,16 @@
       background: radial-gradient(ellipse at 50% -10%, rgba(0,229,255,0.1), transparent 65%);
     }
     .cta-strip h2 {
-      font-family: 'Bitcount Grid Single', monospace;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-style: normal;
       font-weight: 700;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
       letter-spacing: 0.03em;
       line-height: 1.15;
       margin-bottom: var(--space-s);
