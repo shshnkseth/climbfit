@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wall — ClimbFit Product</title>
+  <meta name="description" content="Explore the ClimbFit smart climbing wall — specs, how it works, app integration, and gallery. A premium training tool for gyms and coaching centers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Page Hero ──────────────────────────────────────────── */
+    .page-hero {
+      padding-top: calc(var(--nav-h) + 5rem);
+      padding-bottom: var(--space-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .page-hero-orb {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,229,255,0.1) 0%, transparent 70%);
+      top: 0; right: -100px;
+    }
+
+    .page-hero-text { position: relative; z-index: 1; }
+
+    .page-hero-text h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 5.5vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      margin-bottom: var(--space-m);
+    }
+
+    .page-hero-text p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: var(--space-l);
+    }
+
+    .page-hero-image {
+      position: relative;
+      border-radius: var(--r-l);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .page-hero-image img {
+      width: 100%; height: 520px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .page-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--r-l);
+      border: 1px solid var(--border-active);
+    }
+
+    /* ── Specs ──────────────────────────────────────────────── */
+    .specs-section {
+      background: var(--surface);
+      border-radius: var(--r-l);
+      border: 1px solid var(--border);
+      padding: var(--space-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .specs-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--grad-accent);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: var(--r-m);
+      overflow: hidden;
+    }
+
+    .spec-item {
+      background: var(--surface-raised);
+      padding: var(--space-m);
+      transition: background 0.2s;
+    }
+
+    .spec-item:hover { background: var(--surface); }
+
+    .spec-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 0.5rem;
+    }
+
+    .spec-value {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .spec-unit {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── How It Works ───────────────────────────────────────── */
+    .steps-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-l);
+      position: relative;
+    }
+
+    .steps-wrap::before {
+      content: '';
+      position: absolute;
+      left: 26px; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple), transparent);
+    }
+
+    .step-item {
+      display: flex;
+      gap: var(--space-m);
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border-active);
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ── App Showcase ───────────────────────────────────────── */
+    .app-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .app-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-s);
+    }
+
+    .app-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-s);
+      padding: var(--space-m);
+      border-radius: var(--r-m);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .app-feature-item:hover {
+      border-color: var(--accent-purple);
+      transform: translateX(4px);
+    }
+
+    .app-feature-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--r-s);
+      background: var(--bg-purple, rgba(177,79,255,0.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .app-feature-text h4 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .app-feature-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .app-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .phone-mockup {
+      width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border-active);
+      border-radius: 36px;
+      padding: 1.5rem 1rem;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4), 0 0 0 1px var(--border);
+    }
+
+    .phone-mockup::before {
+      content: '';
+      display: block;
+      width: 80px; height: 6px;
+      background: var(--surface-raised);
+      border-radius: 3px;
+      margin: 0 auto var(--space-m);
+    }
+
+    .phone-screen {
+      background: var(--bg);
+      border-radius: 24px;
+      padding: var(--space-m);
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-screen-header {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: var(--space-s);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .phone-metric {
+      background: var(--surface);
+      border-radius: var(--r-m);
+      padding: var(--space-s);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .phone-metric-label { font-size: 0.7rem; color: var(--text-muted); }
+    .phone-metric-value { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
+    .phone-metric-value.cyan { color: var(--accent-cyan); }
+    .phone-metric-value.pink { color: var(--accent-pink); }
+    .phone-metric-value.yellow { color: var(--accent-yellow); }
+
+    .phone-bar-wrap { margin-top: var(--space-s); }
+    .phone-bar-label { font-size: 0.65rem; color: var(--text-muted); margin-bottom: 4px; }
+    .phone-bar {
+      height: 6px;
+      background: var(--surface-raised);
+      border-radius: 3px;
+      margin-bottom: 6px;
+      overflow: hidden;
+    }
+    .phone-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--grad-accent);
+      animation: bar-grow 1.8s var(--ease-out) forwards;
+      transform-origin: left;
+    }
+    @keyframes bar-grow {
+      from { width: 0; }
+    }
+
+    .phone-orb {
+      position: absolute;
+      width: 120px; height: 120px;
+      bottom: -30px; right: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(177,79,255,0.2), transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── Gallery ────────────────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: var(--space-s);
+      height: 520px;
+    }
+
+    .gallery-item {
+      border-radius: var(--r-m);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease-out);
+    }
+
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .gallery-item-1 { grid-row: 1 / 3; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .page-hero-inner { grid-template-columns: 1fr; }
+      .page-hero-text h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
+      .page-hero-image img { height: 300px; }
+      .specs-grid { grid-template-columns: repeat(2,1fr); }
+      .app-showcase { grid-template-columns: 1fr; }
+      .app-visual { order: -1; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+      .gallery-item { height: 240px; }
+      .gallery-item-1 { grid-row: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" id="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-dot" aria-hidden="true"></span>
+        ClimbFit
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="wall.html">The Wall</a>
+        <a href="schools.html">Schools</a>
+        <a href="about.html">About</a>
+        <a href="about.html#contact" class="nav-cta">Get in Touch</a>
+      </div>
+      <div class="nav-controls">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <span class="icon-moon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+        <button class="nav-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────────────────── -->
+  <section class="page-hero" aria-labelledby="wall-heading">
+    <div class="glow-orb page-hero-orb"></div>
+    <div class="container page-hero-inner">
+      <div class="page-hero-text reveal">
+        <div style="margin-bottom:var(--space-m)">
+          <span class="tag tag-cyan">The Product</span>
+        </div>
+        <h1 id="wall-heading">
+          The <span class="gradient-text">Wall.</span><br>
+          Redesigned.
+        </h1>
+        <p>An immersive, data-driven training system built into every hold. ClimbFit walls connect movement science with physical performance — for athletes at every level.</p>
+        <div style="display:flex;gap:var(--space-s);flex-wrap:wrap;">
+          <a href="about.html#contact" class="btn btn-primary">Request a Demo →</a>
+          <a href="#specs" class="btn btn-outline">View Specs</a>
+        </div>
+      </div>
+      <div class="page-hero-image reveal reveal-delay-2">
+        <img
+          src="assets/images/media_1788251221317.jpg"
+          alt="Coach monitoring climber on ClimbFit wall using a tablet"
+          loading="eager"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Specs ──────────────────────────────────────────────── -->
+  <section class="section" id="specs" aria-labelledby="specs-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="label">Technical Specifications</span>
+        <h2 class="heading-1" id="specs-heading">Built to Precision</h2>
+        <p>Every component of the ClimbFit wall is engineered for reliability, safety, and performance in professional training environments.</p>
+      </header>
+
+      <div class="specs-section reveal">
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-label">Dimensions</div>
+            <div class="spec-value">4.2 × 2.4 m</div>
+            <div class="spec-unit">Standard (custom sizes available)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Smart Holds</div>
+            <div class="spec-value">200+</div>
+            <div class="spec-unit">LED + pressure sensor per hold</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Connectivity</div>
+            <div class="spec-value">Wi-Fi + BLE</div>
+            <div class="spec-unit">Dual-band 2.4 / 5 GHz</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Response Time</div>
+            <div class="spec-value">&lt; 50 ms</div>
+            <div class="spec-unit">Hold activation latency</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">LED Colors</div>
+            <div class="spec-value">16M+</div>
+            <div class="spec-unit">Full RGB per hold</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Wall Material</div>
+            <div class="spec-value">18 mm MDF</div>
+            <div class="spec-unit">T-nut embedded, paintable</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Power</div>
+            <div class="spec-value">220V / 15A</div>
+            <div class="spec-unit">Single standard connection</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">App Platforms</div>
+            <div class="spec-value">iOS + Android</div>
+            <div class="spec-unit">Coach &amp; Athlete modes</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Safety Rating</div>
+            <div class="spec-value">IP54</div>
+            <div class="spec-unit">Dust &amp; splash resistant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How It Works ───────────────────────────────────────── -->
+  <section class="section" aria-labelledby="how-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:center;">
+        <div>
+          <header style="margin-bottom:var(--space-l);" class="reveal">
+            <span class="label" style="color:var(--accent-cyan);display:block;margin-bottom:var(--space-s);">How It Works</span>
+            <h2 class="heading-1" id="how-heading">Three Steps to<br><span class="gradient-text">Smarter Training</span></h2>
+          </header>
+          <div class="steps-wrap">
+            <div class="step-item reveal reveal-delay-1">
+              <div class="step-num">01</div>
+              <div class="step-body">
+                <h3>Load a Session</h3>
+                <p>Choose from a library of pre-built routes or create a custom sequence in the ClimbFit app. Set difficulty, target holds, and timing goals.</p>
+              </div>
+            </div>
+            <div class="step-item reveal reveal-delay-2">
+              <div class="step-num">02</div>
+              <div class="step-body">
+                <h3>Climb &amp; React</h3>
+                <p>Holds illuminate in sequence as the climber ascends. Sensors detect each touch and register response time, force, and path accuracy instantly.</p>
+              </div>
+            </div>
+            <div class="step-item reveal reveal-delay-3">
+              <div class="step-num">03</div>
+              <div class="step-body">
+                <h3>Review &amp; Improve</h3>
+                <p>Post-session analytics show movement heatmaps, reaction times, completion rates, and strength asymmetries — all exportable for coaching review.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1" style="border-radius:var(--r-l);overflow:hidden;position:relative;">
+          <img
+            src="assets/images/media_1788251221295.jpg"
+            alt="Woman on ClimbFit wall reacting to illuminated holds"
+            loading="lazy"
+            style="width:100%;height:520px;object-fit:cover;object-position:center top;"
+          >
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,16,0.6) 0%,transparent 50%);"></div>
+          <!-- Floating metric badge -->
+          <div style="position:absolute;bottom:var(--space-m);left:var(--space-m);right:var(--space-m);
+                      background:rgba(16,16,28,0.85);backdrop-filter:blur(16px);border:1px solid var(--border-active);
+                      border-radius:var(--r-m);padding:var(--space-m);display:flex;gap:var(--space-l);">
+            <div>
+              <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Response</div>
+              <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--accent-cyan);">42ms</div>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Accuracy</div>
+              <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--accent-pink);">94%</div>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Holds Hit</div>
+              <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--accent-yellow);">18/20</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── App Showcase ───────────────────────────────────────── -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" aria-labelledby="app-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="label">The App</span>
+        <h2 class="heading-1" id="app-heading">Your Training Command Centre</h2>
+        <p>Seamlessly connected to the wall, the ClimbFit app gives coaches and athletes complete control and visibility.</p>
+      </header>
+
+      <div class="app-showcase">
+        <div class="app-features-list">
+          <div class="app-feature-item reveal reveal-delay-1">
+            <div class="app-feature-icon">🗺️</div>
+            <div class="app-feature-text">
+              <h4>Route Builder</h4>
+              <p>Design custom routes by selecting holds on an interactive wall map. Set colors, sequences, and timing.</p>
+            </div>
+          </div>
+          <div class="app-feature-item reveal reveal-delay-2">
+            <div class="app-feature-icon">📈</div>
+            <div class="app-feature-text">
+              <h4>Live Metrics Dashboard</h4>
+              <p>Watch response times, force readings, and accuracy scores update in real time as climbers ascend.</p>
+            </div>
+          </div>
+          <div class="app-feature-item reveal reveal-delay-3">
+            <div class="app-feature-icon">🏆</div>
+            <div class="app-feature-text">
+              <h4>Leaderboard &amp; Challenges</h4>
+              <p>Motivate athletes with time-attack modes, personal bests, and a facility-wide competitive leaderboard.</p>
+            </div>
+          </div>
+          <div class="app-feature-item reveal reveal-delay-4">
+            <div class="app-feature-icon">📦</div>
+            <div class="app-feature-text">
+              <h4>Session History &amp; Export</h4>
+              <p>All session data is stored securely. Export CSV or PDF reports for athlete progress reviews.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-visual reveal reveal-delay-2">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-orb"></div>
+              <div class="phone-screen-header">Live Session</div>
+
+              <div class="phone-metric">
+                <span class="phone-metric-label">Response Time</span>
+                <span class="phone-metric-value cyan">42 ms</span>
+              </div>
+              <div class="phone-metric">
+                <span class="phone-metric-label">Accuracy</span>
+                <span class="phone-metric-value pink">94%</span>
+              </div>
+              <div class="phone-metric">
+                <span class="phone-metric-label">Score</span>
+                <span class="phone-metric-value yellow">2,840</span>
+              </div>
+
+              <div class="phone-bar-wrap" style="margin-top:var(--space-m);">
+                <div class="phone-bar-label">Grip Strength (L)</div>
+                <div class="phone-bar"><div class="phone-bar-fill" style="width:78%;"></div></div>
+                <div class="phone-bar-label">Grip Strength (R)</div>
+                <div class="phone-bar"><div class="phone-bar-fill" style="width:85%;background:var(--grad-pink);"></div></div>
+                <div class="phone-bar-label">Core Engagement</div>
+                <div class="phone-bar"><div class="phone-bar-fill" style="width:91%;background:var(--grad-warm);"></div></div>
+              </div>
+
+              <div style="margin-top:var(--space-m);padding:var(--space-s);background:rgba(0,229,255,0.08);border-radius:var(--r-s);border:1px solid rgba(0,229,255,0.2);">
+                <div style="font-size:0.65rem;color:var(--accent-cyan);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Coach Note</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">Push right arm further on hold #14</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gallery ────────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="gallery-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="label">Gallery</span>
+        <h2 class="heading-1" id="gallery-heading">See It in Action</h2>
+      </header>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gallery-item-1">
+          <img src="assets/images/media_1788251221317.jpg" alt="Coach and athlete working with ClimbFit" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/media_1788251221295.jpg" alt="Woman climbing the smart wall" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/media_1788251221312.jpg" alt="Students on the school ClimbFit wall" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────────── -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-strip reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:var(--space-xl) var(--space-l);text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(177,79,255,0.12),transparent 65%);"></div>
+        <h2 class="heading-1" style="margin-bottom:var(--space-s);position:relative;">Bring ClimbFit to<br><span class="gradient-text-warm">Your Facility</span></h2>
+        <p style="color:var(--text-muted);margin-bottom:var(--space-l);position:relative;">Schedule a live demo and see what ClimbFit can do for your athletes.</p>
+        <div style="display:flex;justify-content:center;gap:var(--space-s);flex-wrap:wrap;position:relative;">
+          <a href="about.html#contact" class="btn btn-primary">Request a Demo →</a>
+          <a href="schools.html" class="btn btn-outline">Schools Programme</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="nav-logo">
+        <span class="nav-logo-dot" aria-hidden="true"></span>
+        ClimbFit
+      </div>
+      <div class="footer-links">
+        <a href="wall.html">The Wall</a>
+        <a href="schools.html">Schools</a>
+        <a href="about.html">About</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+      <p class="body-s text-muted">© 2025 ClimbFit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
