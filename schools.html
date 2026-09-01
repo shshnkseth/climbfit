@@ -5,280 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClimbFit for Schools — Physical Education, Reinvented</title>
   <meta name="description" content="ClimbFit brings smart interactive climbing walls to schools and institutions — building physical coordination, cognitive skills, and teamwork in students safely.">
+  <link rel="icon" href="assets/brand/logo-design.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ── School Hero ────────────────────────────────────────── */
+    /* ── School Hero ──────────────────────────────────── */
     .school-hero {
-      min-height: 90svh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: var(--nav-h);
+      min-height: 90svh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: var(--nav-h);
     }
-
-    .school-hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .school-hero-bg img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
-    }
-
+    .school-hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .school-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
     .school-hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background:
         linear-gradient(to right, rgba(8,8,16,0.92) 0%, rgba(8,8,16,0.6) 60%, rgba(8,8,16,0.2) 100%),
         linear-gradient(to top,   rgba(8,8,16,0.85) 0%, transparent 50%);
     }
-
     .school-hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      padding: var(--space-xl) 0;
+      position: relative; z-index: 1;
+      max-width: 680px; padding: var(--space-xl) 0;
     }
-
     .school-hero-content h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
+      font-family: 'Bitcount Grid Single', monospace;
+      font-weight: 700;
       font-size: clamp(2.8rem, 6vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.035em;
+      line-height: 1.0;
+      letter-spacing: 0.04em;
       margin-bottom: var(--space-m);
     }
-
     .school-hero-content p {
-      font-size: 1.15rem;
-      color: rgba(228,228,240,0.8);
-      line-height: 1.75;
-      max-width: 520px;
-      margin-bottom: var(--space-l);
+      font-size: 1.15rem; color: rgba(228,228,240,0.82);
+      line-height: 1.8; max-width: 520px; margin-bottom: var(--space-l);
     }
+    .school-hero-content .hero-actions { display: flex; gap: var(--space-s); flex-wrap: wrap; }
 
-    .school-hero-content .hero-actions {
-      display: flex;
-      gap: var(--space-s);
-      flex-wrap: wrap;
-    }
-
-    /* ── Stats strip ────────────────────────────────────────── */
+    /* ── Stats strip ──────────────────────────────────── */
     .stats-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--r-l);
-      overflow: hidden;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--r-l); overflow: hidden;
     }
-
     .stat-cell {
-      background: var(--surface);
-      padding: var(--space-l);
-      text-align: center;
-      transition: background 0.2s;
+      background: var(--surface); padding: var(--space-l);
+      text-align: center; transition: background 0.2s;
     }
-
     .stat-cell:hover { background: var(--surface-raised); }
-
     .stat-cell .stat-number {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 0.4rem;
+      font-family: 'Bitcount Grid Single', monospace;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700; line-height: 1; margin-bottom: 0.4rem;
     }
+    .stat-cell .stat-label { font-size: 0.85rem; color: var(--text-muted); }
 
-    .stat-cell .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* ── Benefit cards ──────────────────────────────────────── */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-s);
-    }
+    /* ── Benefit cards ────────────────────────────────── */
+    .benefits-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--space-s); }
 
     .benefit-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-l);
-      padding: var(--space-l);
-      display: flex;
-      gap: var(--space-m);
-      align-items: flex-start;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-l); padding: var(--space-l);
+      display: flex; gap: var(--space-m); align-items: flex-start;
       transition: border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
     }
-
     .benefit-card:hover {
       border-color: var(--border-active);
       transform: translateY(-3px);
       box-shadow: 0 12px 40px rgba(0,0,0,0.25);
     }
-
     .benefit-icon {
-      width: 56px; height: 56px;
-      border-radius: var(--r-m);
+      width: 56px; height: 56px; border-radius: var(--r-m);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
+      font-size: 1.5rem; flex-shrink: 0;
     }
-
     .benefit-body h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-family: 'Bitcount Grid Single', monospace;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.03em; margin-bottom: 0.5rem;
     }
+    .benefit-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; }
 
-    .benefit-body p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ── Pilot Programme ────────────────────────────────────── */
+    /* ── Pilot Programme ──────────────────────────────── */
     .pilot-strip {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-l);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-l); overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
     }
-
-    .pilot-strip-text {
-      padding: var(--space-xl);
-      position: relative;
-    }
-
+    .pilot-strip-text { padding: var(--space-xl); position: relative; }
     .pilot-strip-text::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 100%;
-      background: var(--grad-warm);
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%; background: var(--grad-warm);
     }
-
     .pilot-strip-text h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: var(--space-s);
-    }
-
-    .pilot-strip-text p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.75;
-      margin-bottom: var(--space-m);
-    }
-
-    .pilot-perks {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: var(--space-m);
-    }
-
-    .pilot-perks li {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .pilot-perks li::before {
-      content: '✓';
-      color: var(--accent-yellow);
-      font-weight: 700;
-    }
-
-    .pilot-strip-image {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pilot-strip-image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-    }
-
-    .pilot-strip-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, var(--surface) 0%, transparent 30%);
-      z-index: 1;
-    }
-
-    /* ── Testimonial ────────────────────────────────────────── */
-    .testimonial-area {
-      text-align: center;
-    }
-
-    .testimonial-quote {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Bitcount Grid Single', monospace;
       font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--text);
-      max-width: 720px;
-      margin: 0 auto var(--space-m);
-      position: relative;
+      font-weight: 700; letter-spacing: 0.03em;
+      line-height: 1.15; margin-bottom: var(--space-s);
+    }
+    .pilot-strip-text p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: var(--space-m); }
+    .pilot-perks { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--space-m); }
+    .pilot-perks li { font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+    .pilot-perks li::before { content: '✓'; color: var(--accent-yellow); font-weight: 700; }
+    .pilot-strip-image { position: relative; overflow: hidden; }
+    .pilot-strip-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+    .pilot-strip-image::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--surface) 0%, transparent 30%); z-index: 1;
     }
 
+    /* ── Testimonial ──────────────────────────────────── */
+    .testimonial-area { text-align: center; }
+    .testimonial-quote {
+      font-family: 'Bitcount Grid Single', monospace;
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 600; letter-spacing: 0.02em;
+      line-height: 1.45; color: var(--text);
+      max-width: 720px; margin: 0 auto var(--space-m); position: relative;
+    }
     .testimonial-quote::before {
       content: '"';
-      font-size: 6rem;
-      line-height: 1;
-      color: var(--accent-cyan);
-      opacity: 0.25;
-      position: absolute;
-      top: -1.5rem;
-      left: -2rem;
-      font-family: 'Syne', sans-serif;
+      font-size: 6rem; line-height: 1;
+      color: var(--accent-cyan); opacity: 0.2;
+      position: absolute; top: -1.5rem; left: -2rem;
+      font-family: 'Bitcount Grid Single', monospace;
     }
-
     .testimonial-author {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-s);
+      display: flex; align-items: center;
+      justify-content: center; gap: var(--space-s);
     }
-
     .testimonial-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
+      width: 44px; height: 44px; border-radius: 50%;
       background: var(--grad-accent);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
     }
-
     .testimonial-name { font-weight: 600; font-size: 0.95rem; }
     .testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
 
-    /* Responsive */
     @media (max-width: 860px) {
-      .stats-strip { grid-template-columns: repeat(2,1fr); }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .pilot-strip { grid-template-columns: 1fr; }
+      .stats-strip    { grid-template-columns: repeat(2,1fr); }
+      .benefits-grid  { grid-template-columns: 1fr; }
+      .pilot-strip    { grid-template-columns: 1fr; }
       .pilot-strip-image { height: 260px; }
       .pilot-strip-image::before { background: linear-gradient(to bottom, var(--surface) 0%, transparent 30%); }
     }
@@ -288,202 +155,211 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ── Navigation ─────────────────────────────────────────── -->
-  <nav class="site-nav" id="site-nav">
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-logo">
-        <span class="nav-logo-dot" aria-hidden="true"></span>
-        ClimbFit
+      <a href="index.html" class="nav-logo" aria-label="ClimbFit — go to homepage">
+        <img src="assets/brand/logo-design.png" alt="ClimbFit" class="nav-logo-img" width="120" height="36"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <span class="nav-logo-text" style="display:none;"><span class="nav-logo-dot" aria-hidden="true"></span>ClimbFit</span>
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="wall.html">The Wall</a>
-        <a href="schools.html">Schools</a>
-        <a href="about.html">About</a>
-        <a href="about.html#contact" class="nav-cta">Get in Touch</a>
+      <div class="nav-links" role="menubar" aria-label="Site navigation">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="wall.html" role="menuitem">The Wall</a>
+        <a href="schools.html" role="menuitem" aria-current="page">Schools</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="about.html#contact" class="nav-cta" role="menuitem">Get in Touch</a>
       </div>
       <div class="nav-controls">
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <span class="icon-moon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
+        <button class="theme-toggle" aria-label="Switch to light mode">
+          <span class="icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <button class="nav-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <button class="nav-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ── Hero ───────────────────────────────────────────────── -->
-  <section class="school-hero" aria-labelledby="school-heading">
-    <div class="school-hero-bg">
-      <img src="assets/images/media_1788251221312.jpg" alt="Students climbing the ClimbFit wall at school" loading="eager">
-    </div>
-    <div class="container">
-      <div class="school-hero-content">
-        <div style="margin-bottom:var(--space-m)">
-          <span class="tag tag-yellow">Schools &amp; Institutions</span>
-        </div>
-        <h1 id="school-heading">
-          Physical Ed,<br>
-          <span class="gradient-text-warm">Reimagined.</span>
-        </h1>
-        <p>ClimbFit transforms the school gymnasium into an engaging, data-driven training environment. Students develop strength, coordination, and focus — while teachers get tools to track every child's progress.</p>
-        <div class="hero-actions">
-          <a href="about.html#contact" class="btn btn-primary">Apply for Pilot →</a>
-          <a href="#benefits" class="btn btn-outline">See Benefits</a>
-        </div>
+  <main id="main-content">
+
+    <!-- ── Hero ───────────────────────────────────────────── -->
+    <section class="school-hero" aria-labelledby="school-heading">
+      <div class="school-hero-bg" aria-hidden="true">
+        <img src="assets/images/media_1788251221312.jpg" alt="" loading="eager" fetchpriority="high">
       </div>
-    </div>
-  </section>
-
-  <!-- ── Stats strip ────────────────────────────────────────── -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="stats-strip reveal">
-        <div class="stat-cell">
-          <div class="stat-number gradient-text"><span data-count="40" data-suffix="+">0+</span></div>
-          <div class="stat-label">Schools Interested</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-number gradient-text-warm"><span data-count="3" data-suffix=" sizes">0 sizes</span></div>
-          <div class="stat-label">Wall Configurations</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-number" style="color:var(--accent-cyan);"><span data-count="100" data-suffix="%">0%</span></div>
-          <div class="stat-label">Zero Harness Needed</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-number" style="color:var(--accent-yellow);"><span data-count="8">0</span></div>
-          <div class="stat-label">Years+ Age Range</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Benefits ───────────────────────────────────────────── -->
-  <section class="section" id="benefits" aria-labelledby="benefits-heading">
-    <div class="container">
-      <header class="section-header reveal">
-        <span class="label">Why ClimbFit for Schools</span>
-        <h2 class="heading-1" id="benefits-heading">More Than Exercise</h2>
-        <p>Research-backed benefits that extend beyond the gym and into the classroom — developing the whole child.</p>
-      </header>
-
-      <div class="benefits-grid">
-        <div class="benefit-card reveal reveal-delay-1">
-          <div class="benefit-icon bg-cyan">🏃</div>
-          <div class="benefit-body">
-            <h3>Full-Body Physical Education</h3>
-            <p>ClimbFit engages the entire body — upper body strength, core stability, leg coordination, and cardiovascular endurance — all in one engaging activity that students actually enjoy.</p>
+      <div class="container">
+        <div class="school-hero-content">
+          <div style="margin-bottom:var(--space-m)">
+            <span class="tag tag-yellow">Schools &amp; Institutions</span>
           </div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-2">
-          <div class="benefit-icon bg-purple">🧠</div>
-          <div class="benefit-body">
-            <h3>Cognitive &amp; Reaction Training</h3>
-            <p>Illuminated holds demand rapid problem-solving and spatial reasoning. Research shows that this type of reactive climbing significantly improves attention span and decision-making speed.</p>
-          </div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-3">
-          <div class="benefit-icon bg-yellow">🛡️</div>
-          <div class="benefit-body">
-            <h3>Zero Safety Risk</h3>
-            <p>The ClimbFit wall is a traversing wall — students never climb higher than 1.5m above the padded floor. No harnesses, no ropes, no risk. Just high-engagement, school-safe movement.</p>
-          </div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-4">
-          <div class="benefit-icon bg-pink">📚</div>
-          <div class="benefit-body">
-            <h3>Curriculum-Aligned Programmes</h3>
-            <p>ClimbFit comes with structured lesson plans aligned to physical education curricula. Teachers can track participation, individual improvement, and create inclusive sessions for all ability levels.</p>
+          <h1 id="school-heading">
+            Physical Ed,<br>
+            <span class="gradient-text-warm">Reimagined.</span>
+          </h1>
+          <p>ClimbFit transforms the school gymnasium into an engaging, data-driven training environment. Students develop strength, coordination, and focus — while teachers get tools to track every child's progress.</p>
+          <div class="hero-actions">
+            <a href="about.html#contact" class="btn btn-primary">Apply for Pilot <span aria-hidden="true">→</span></a>
+            <a href="#benefits" class="btn btn-outline">See Benefits</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Pilot Programme ────────────────────────────────────── -->
-  <section class="section" aria-labelledby="pilot-heading">
-    <div class="container">
-      <div class="pilot-strip reveal">
-        <div class="pilot-strip-text">
-          <span class="tag tag-yellow" style="margin-bottom:var(--space-m);">Pilot Programme</span>
-          <h2 id="pilot-heading">
-            Try ClimbFit in<br><span class="gradient-text-warm">Your School — Free.</span>
-          </h2>
-          <p>We're running a limited pilot programme for schools across India. Selected schools get a full ClimbFit installation for one term — completely free — in exchange for student data and feedback.</p>
-          <ul class="pilot-perks">
-            <li>Full wall installation (no cost for pilot)</li>
-            <li>Teacher training workshop included</li>
-            <li>Dedicated support for the term</li>
-            <li>Structured lesson plan library access</li>
-            <li>End-of-term student performance report</li>
-          </ul>
-          <a href="about.html#contact" class="btn btn-pink">Apply for the Pilot →</a>
-        </div>
-        <div class="pilot-strip-image">
-          <img
-            src="assets/images/media_1788251221312.jpg"
-            alt="School students using ClimbFit wall with a PE teacher"
-            loading="lazy"
-          >
+    <!-- ── Stats ──────────────────────────────────────────── -->
+    <section class="section-sm" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="sr-only">ClimbFit in numbers</h2>
+        <dl class="stats-strip reveal" aria-label="ClimbFit schools programme statistics">
+          <div class="stat-cell">
+            <dt class="stat-label">Schools Interested</dt>
+            <dd class="stat-number gradient-text"><span data-count="40" data-suffix="+">40+</span></dd>
+          </div>
+          <div class="stat-cell">
+            <dt class="stat-label">Wall Configurations</dt>
+            <dd class="stat-number gradient-text-warm"><span data-count="3" data-suffix=" sizes">3 sizes</span></dd>
+          </div>
+          <div class="stat-cell">
+            <dt class="stat-label">Zero Harness Needed</dt>
+            <dd class="stat-number" style="color:var(--accent-cyan);"><span data-count="100" data-suffix="%">100%</span></dd>
+          </div>
+          <div class="stat-cell">
+            <dt class="stat-label">Min. Student Age</dt>
+            <dd class="stat-number" style="color:var(--accent-yellow);"><span data-count="8">8</span></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ── Benefits ───────────────────────────────────────── -->
+    <section class="section" id="benefits" aria-labelledby="benefits-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="label" aria-hidden="true">Why ClimbFit for Schools</span>
+          <h2 class="heading-1" id="benefits-heading">More Than Exercise</h2>
+          <p>Research-backed benefits that extend beyond the gym and into the classroom — developing the whole child.</p>
+        </header>
+
+        <div class="benefits-grid" role="list" aria-label="School benefits">
+          <article class="benefit-card reveal reveal-delay-1" role="listitem">
+            <div class="benefit-icon bg-cyan" aria-hidden="true">🏃</div>
+            <div class="benefit-body">
+              <h3>Full-Body Physical Education</h3>
+              <p>ClimbFit engages the entire body — upper body strength, core stability, leg coordination, and cardiovascular endurance — all in one engaging activity that students actually enjoy.</p>
+            </div>
+          </article>
+          <article class="benefit-card reveal reveal-delay-2" role="listitem">
+            <div class="benefit-icon bg-purple" aria-hidden="true">🧠</div>
+            <div class="benefit-body">
+              <h3>Cognitive &amp; Reaction Training</h3>
+              <p>Illuminated holds demand rapid problem-solving and spatial reasoning. Research shows reactive climbing significantly improves attention span and decision-making speed.</p>
+            </div>
+          </article>
+          <article class="benefit-card reveal reveal-delay-3" role="listitem">
+            <div class="benefit-icon bg-yellow" aria-hidden="true">🛡️</div>
+            <div class="benefit-body">
+              <h3>Zero Safety Risk</h3>
+              <p>The ClimbFit wall is a traversing wall — students never climb higher than 1.5m above the padded floor. No harnesses, no ropes, no risk. Just high-engagement, school-safe movement.</p>
+            </div>
+          </article>
+          <article class="benefit-card reveal reveal-delay-4" role="listitem">
+            <div class="benefit-icon bg-pink" aria-hidden="true">📚</div>
+            <div class="benefit-body">
+              <h3>Curriculum-Aligned Programmes</h3>
+              <p>ClimbFit comes with structured lesson plans aligned to physical education curricula. Teachers can track participation, individual improvement, and create inclusive sessions for all ability levels.</p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Testimonial ────────────────────────────────────────── -->
-  <section class="section" aria-label="Testimonial">
-    <div class="container">
-      <div class="testimonial-area reveal">
-        <div class="testimonial-quote">
-          Our students went from dreading PE to sprinting to the gym. ClimbFit changed the energy of our entire physical education programme.
-        </div>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👩</div>
-          <div>
-            <div class="testimonial-name">Priya Nair</div>
-            <div class="testimonial-role">Head of Physical Education, DPS Bangalore</div>
+    <!-- ── Pilot Programme ────────────────────────────────── -->
+    <section class="section" aria-labelledby="pilot-heading">
+      <div class="container">
+        <div class="pilot-strip reveal">
+          <div class="pilot-strip-text">
+            <span class="tag tag-yellow" style="margin-bottom:var(--space-m);">Pilot Programme</span>
+            <h2 id="pilot-heading">
+              Try ClimbFit in<br><span class="gradient-text-warm">Your School — Free.</span>
+            </h2>
+            <p>We're running a limited pilot programme for schools across India. Selected schools get a full ClimbFit installation for one term — completely free — in exchange for student data and feedback.</p>
+            <ul class="pilot-perks" aria-label="What's included in the pilot">
+              <li>Full wall installation (no cost for pilot)</li>
+              <li>Teacher training workshop included</li>
+              <li>Dedicated support for the term</li>
+              <li>Structured lesson plan library access</li>
+              <li>End-of-term student performance report</li>
+            </ul>
+            <a href="about.html#contact" class="btn btn-pink">Apply for the Pilot <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="pilot-strip-image" aria-hidden="true">
+            <img
+              src="assets/images/media_1788251221312.jpg"
+              alt=""
+              loading="lazy"
+            >
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Contact CTA ────────────────────────────────────────── -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="cta-strip reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:var(--space-xl) var(--space-l);text-align:center;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(245,208,0,0.08),transparent 65%);"></div>
-        <h2 class="heading-1" style="margin-bottom:var(--space-s);position:relative;">Bring ClimbFit to<br><span class="gradient-text-warm">Your School</span></h2>
-        <p style="color:var(--text-muted);margin-bottom:var(--space-l);position:relative;">Contact us to check pilot availability in your city and get a custom quote.</p>
-        <div style="display:flex;justify-content:center;gap:var(--space-s);flex-wrap:wrap;position:relative;">
-          <a href="about.html#contact" class="btn btn-pink">Apply for Pilot →</a>
-          <a href="wall.html" class="btn btn-outline">See The Wall</a>
+    <!-- ── Testimonial ────────────────────────────────────── -->
+    <section class="section" aria-labelledby="testimonial-heading">
+      <div class="container">
+        <div class="testimonial-area reveal">
+          <h2 id="testimonial-heading" class="sr-only">What educators say</h2>
+          <figure>
+            <blockquote class="testimonial-quote">
+              Our students went from dreading PE to sprinting to the gym. ClimbFit changed the energy of our entire physical education programme.
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">👩</div>
+              <div>
+                <p class="testimonial-name">Priya Nair</p>
+                <p class="testimonial-role">Head of Physical Education, DPS Bangalore</p>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ── Contact CTA ────────────────────────────────────── -->
+    <section class="section-sm" aria-labelledby="schools-cta-heading">
+      <div class="container">
+        <div class="reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:var(--space-xl) var(--space-l);text-align:center;position:relative;overflow:hidden;">
+          <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(245,208,0,0.07),transparent 65%);"></div>
+          <h2 id="schools-cta-heading" class="heading-1" style="margin-bottom:var(--space-s);position:relative;">Bring ClimbFit to<br><span class="gradient-text-warm">Your School</span></h2>
+          <p style="color:var(--text-muted);margin-bottom:var(--space-l);position:relative;">Contact us to check pilot availability in your city and get a custom quote.</p>
+          <div style="display:flex;justify-content:center;gap:var(--space-s);flex-wrap:wrap;position:relative;">
+            <a href="about.html#contact" class="btn btn-pink">Apply for Pilot <span aria-hidden="true">→</span></a>
+            <a href="wall.html" class="btn btn-outline">See The Wall</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
+  <footer class="site-footer" aria-label="Site footer">
     <div class="container footer-inner">
-      <div class="nav-logo">
-        <span class="nav-logo-dot" aria-hidden="true"></span>
-        ClimbFit
-      </div>
-      <div class="footer-links">
+      <a href="index.html" class="nav-logo" aria-label="ClimbFit homepage">
+        <img src="assets/brand/logo-design.png" alt="ClimbFit" class="nav-logo-img" height="28" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+        <span style="display:none;font-family:'Bitcount Grid Single',monospace;font-weight:700;font-size:1rem;letter-spacing:0.06em;">ClimbFit</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="wall.html">The Wall</a>
         <a href="schools.html">Schools</a>
         <a href="about.html">About</a>
         <a href="about.html#contact">Contact</a>
-      </div>
-      <p class="body-s text-muted">© 2025 ClimbFit. All rights reserved.</p>
+      </nav>
+      <p class="body-s text-muted"><small>© 2025 ClimbFit. All rights reserved.</small></p>
     </div>
   </footer>
 

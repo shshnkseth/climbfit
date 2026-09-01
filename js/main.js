@@ -1,7 +1,18 @@
 /* ===================================================================
-   ClimbFit — main.js
-   Theme toggle, scroll effects, scroll-reveal, counter animation
+   ClimbFit — main.js v2
+   Theme toggle · Scroll effects · Scroll-reveal · Counter animation
+   Accessible form validation · Skip link · Reduced motion
    =================================================================== */
+
+/* Inject sr-only utility if not already present via CSS */
+(function injectSrOnly() {
+  if (!document.getElementById('cf-sr-only-style')) {
+    const s = document.createElement('style');
+    s.id = 'cf-sr-only-style';
+    s.textContent = '.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}';
+    document.head.appendChild(s);
+  }
+})();
 
 (function () {
   'use strict';
@@ -18,14 +29,15 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_KEY, theme);
-    // Update toggle icon
     const toggles = document.querySelectorAll('.theme-toggle');
     toggles.forEach(btn => {
-      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      btn.setAttribute('aria-label', label);
       const icon = btn.querySelector('.icon-sun, .icon-moon');
       if (icon) {
         icon.className = theme === 'dark' ? 'icon-moon' : 'icon-sun';
         icon.innerHTML = theme === 'dark' ? moonSVG() : sunSVG();
+        icon.setAttribute('aria-hidden', 'true');
       }
     });
   }
@@ -185,22 +197,81 @@
       });
     });
 
-    /* ── Form submission ────────────────────────────────────────── */
+    /* ── Accessible form validation + submission ───────────────── */
     const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
+
+      function setError(inputId, errorId, message) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        if (!input || !error) return;
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('aria-describedby', errorId);
+        error.textContent = message;
+        error.style.display = 'block';
+      }
+
+      function clearError(inputId, errorId) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        if (!input || !error) return;
+        input.removeAttribute('aria-invalid');
+        error.textContent = '';
+        error.style.display = 'none';
+      }
+
+      // Live validation on blur
+      contactForm.querySelectorAll('[required]').forEach(field => {
+        field.addEventListener('blur', () => {
+          const errorId = field.id.replace('contact-', '') + '-error';
+          if (!field.value.trim()) {
+            setError(field.id, errorId, `${field.labels[0]?.textContent?.replace(' *', '') || 'This field'} is required.`);
+          } else if (field.type === 'email' && !/^[^@]+@[^@]+\.[^@]+$/.test(field.value)) {
+            setError(field.id, errorId, 'Please enter a valid email address.');
+          } else {
+            clearError(field.id, errorId);
+          }
+        });
+      });
+
       contactForm.addEventListener('submit', e => {
         e.preventDefault();
-        const btn = contactForm.querySelector('[type="submit"]');
-        const original = btn.textContent;
-        btn.textContent = 'Sent ✓';
+        let hasError = false;
+
+        // Validate required fields
+        [['contact-name','name-error'], ['contact-email','email-error'], ['contact-message','message-hint']].forEach(([id, errId]) => {
+          const input = document.getElementById(id);
+          if (!input) return;
+          clearError(id, errId);
+          if (!input.value.trim()) {
+            setError(id, errId, `${input.labels[0]?.textContent?.replace(' *','') || 'This field'} is required.`);
+            hasError = true;
+          } else if (input.type === 'email' && !/^[^@]+@[^@]+\.[^@]+$/.test(input.value)) {
+            setError(id, errId, 'Please enter a valid email address.');
+            hasError = true;
+          }
+        });
+
+        if (hasError) {
+          // Move focus to first error
+          const firstInvalid = contactForm.querySelector('[aria-invalid="true"]');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // Simulate send
+        const btn = document.getElementById('contact-submit');
+        const successPanel = document.getElementById('form-success');
         btn.disabled = true;
-        btn.style.background = '#1a6b3a';
+        btn.textContent = 'Sending…';
+
         setTimeout(() => {
-          btn.textContent = original;
-          btn.disabled = false;
-          btn.style.background = '';
-          contactForm.reset();
-        }, 3000);
+          contactForm.style.display = 'none';
+          if (successPanel) {
+            successPanel.style.display = 'block';
+            successPanel.focus();
+          }
+        }, 900);
       });
     }
 
