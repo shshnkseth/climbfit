@@ -228,32 +228,34 @@ ul, ol { list-style: none; }
   width: 100%;
 }
 
-/* Logo image version */
+/* Logo container */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.nav-logo-img {
-  height: 36px;
+/* Logo images */
+.nav-logo-icon {
+  height: 28px;
   width: auto;
   display: block;
-  /* Invert for light mode */
+  flex-shrink: 0;
 }
 
-[data-theme="light"] .nav-logo-img {
-  filter: invert(1) hue-rotate(180deg) brightness(0.15);
+.nav-logo-wordmark {
+  height: 22px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
-/* Fallback text logo (shown only when img missing) */
-.nav-logo-text {
-  font-family: 'Bitcount Grid Single', monospace;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.06em;
+/* Light mode: invert both logo images to dark */
+[data-theme="light"] .nav-logo-icon,
+[data-theme="light"] .nav-logo-wordmark {
+  filter: invert(1) brightness(0);
 }
 
 .nav-logo-dot {
