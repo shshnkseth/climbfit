@@ -235,30 +235,40 @@ ul, ol { list-style: none; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-/* Logo images */
-.nav-logo-icon {
-  height: 28px;
+/* Unified Logo Image */
+.nav-logo-img {
+  height: 30px;
   width: auto;
   display: block;
   flex-shrink: 0;
 }
 
+/* Light / Dark theme logo switching */
+.nav-logo-img.logo-light-theme {
+  display: none;
+}
+.nav-logo-img.logo-dark-theme {
+  display: block;
+}
+
+[data-theme="light"] .nav-logo-img.logo-dark-theme {
+  display: none;
+}
+[data-theme="light"] .nav-logo-img.logo-light-theme {
+  display: block;
+}
+
+/* Legacy fallback classes if used */
+.nav-logo-icon,
 .nav-logo-wordmark {
-  height: 22px;
+  height: 26px;
   width: auto;
   display: block;
   flex-shrink: 0;
-}
-
-/* Light mode: invert both logo images to dark */
-[data-theme="light"] .nav-logo-icon,
-[data-theme="light"] .nav-logo-wordmark {
-  filter: invert(1) brightness(0);
 }
 
 .nav-logo-dot {
