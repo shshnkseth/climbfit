@@ -273,6 +273,61 @@
     .cta-strip p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: var(--space-l); position: relative; max-width: 620px; margin-left: auto; margin-right: auto; }
     .cta-strip-actions { display: flex; justify-content: center; gap: var(--space-s); flex-wrap: wrap; position: relative; }
 
+    /* ── Tech Pills Bar ────────────────────────────────────── */
+    .tech-pills-bar {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-s);
+      margin-top: var(--space-m);
+    }
+    .tech-pill {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.6rem 1.25rem; border-radius: var(--r-xl);
+      background: var(--surface); border: 1px solid var(--border-active);
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--text);
+    }
+    .tech-pill span.dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent-cyan); box-shadow: var(--glow-cyan);
+    }
+    .tech-pill-purple span.dot { background: var(--accent-purple); box-shadow: var(--glow-purple); }
+    .tech-pill-pink span.dot   { background: var(--accent-pink); box-shadow: var(--glow-pink); }
+    .tech-pill-yellow span.dot { background: var(--accent-yellow); box-shadow: var(--glow-yellow); }
+
+    /* ── 7 Pillars Grid ────────────────────────────────────── */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-s);
+      margin-top: var(--space-l);
+    }
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-l);
+      padding: var(--space-m);
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .pillar-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,229,255,0.08);
+    }
+    .pillar-num {
+      font-family: var(--font-display);
+      font-weight: 800; font-size: 1.5rem;
+      color: var(--accent-cyan);
+      margin-bottom: var(--space-xs);
+    }
+    .pillar-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 1.05rem;
+      letter-spacing: -0.02em; margin-bottom: 0.4rem;
+    }
+    .pillar-card p {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.65;
+    }
+
     /* Responsive */
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -421,9 +476,71 @@
             <div class="comp-item-lbl">Precision Adjustable Tilt</div>
           </div>
           <div class="comp-item">
-            <div class="comp-item-val">3 Years</div>
-            <div class="comp-item-lbl">Commercial Hardware Warranty</div>
+            <div class="comp-item-val">&lt; 350W</div>
+            <div class="comp-item-lbl">Ultra-Low Power Peak</div>
           </div>
+        </div>
+
+        <div class="tech-pills-bar reveal">
+          <div class="tech-pill"><span class="dot"></span> Dynamic LED System</div>
+          <div class="tech-pill tech-pill-purple"><span class="dot"></span> Zero Downtime</div>
+          <div class="tech-pill tech-pill-pink"><span class="dot"></span> Performance Analytics</div>
+          <div class="tech-pill tech-pill-yellow"><span class="dot"></span> Global Certified Routes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7 Pillars: The Smart Infrastructure Solution ────── -->
+    <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" aria-labelledby="pillars-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="label" aria-hidden="true">The Smart Infrastructure Solution</span>
+          <h2 class="heading-1" id="pillars-heading">One Compact Wall. Infinite Routes.</h2>
+          <p>Traditional climbing walls demand high ceilings, expensive external route-setters, and frequent downtime. ClimbFit delivers thousands of self-guiding, illuminated routes on a single fixed footprint — slashing operating costs while maximizing daily athletic throughput.</p>
+        </header>
+
+        <div class="pillars-grid" role="list" aria-label="Seven core advantages of ClimbFit smart infrastructure">
+          <article class="pillar-card reveal reveal-delay-1" role="listitem">
+            <div class="pillar-num">01</div>
+            <h3>Fits Ordinary Rooms</h3>
+            <p>Mounts cleanly under standard 10–12 ft ceilings with zero heavy civil retrofits. Flat-wall or freestanding configurations.</p>
+          </article>
+
+          <article class="pillar-card reveal reveal-delay-2" role="listitem">
+            <div class="pillar-num">02</div>
+            <h3>Zero Route-Setting Costs</h3>
+            <p>Change hold layouts, sequences, and drills instantly via the app instead of spending days unbolting holds manually.</p>
+          </article>
+
+          <article class="pillar-card reveal reveal-delay-3" role="listitem">
+            <div class="pillar-num">03</div>
+            <h3>1-Tap Class Management</h3>
+            <p>Effortlessly run PE periods, team practices, or fitness batches using color-coded difficulty zones on any tablet.</p>
+          </article>
+
+          <article class="pillar-card reveal reveal-delay-1" role="listitem">
+            <div class="pillar-num">04</div>
+            <h3>Global Route Network</h3>
+            <p>Access certified benchmark circuits and world-class training routes created by elite route setters and athletes worldwide.</p>
+          </article>
+
+          <article class="pillar-card reveal reveal-delay-2" role="listitem">
+            <div class="pillar-num">05</div>
+            <h3>Measurable Progress</h3>
+            <p>Track athlete performance, completed routes, send velocity, and fitness progression milestones over time.</p>
+          </article>
+
+          <article class="pillar-card reveal reveal-delay-3" role="listitem">
+            <div class="pillar-num">06</div>
+            <h3>Low Maintenance, High Uptime</h3>
+            <p>Commercial-grade hardware with over-the-air cloud firmware updates, sweat-resistant holds, and zero operational downtime.</p>
+          </article>
+
+          <article class="pillar-card reveal reveal-delay-1" role="listitem">
+            <div class="pillar-num">07</div>
+            <h3>Gamified &amp; Interactive Formats</h3>
+            <p>Engage youth and beginners with interactive movement challenges, route memory games, and high-energy team relays.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -497,11 +614,15 @@
     <section class="section-sm" aria-labelledby="cta-heading">
       <div class="container">
         <div class="cta-strip reveal">
-          <h2 id="cta-heading">Elevate Your Facility With<br><span class="gradient-text">Next-Generation Climbing Tech</span></h2>
-          <p>Explore custom dimensions, adjustable hydraulic tilt systems, and turnkey installation options customized for your space.</p>
+          <h2 id="cta-heading">Future-Proof Your Sports<br><span class="gradient-text">&amp; Fitness Infrastructure</span></h2>
+          <p>Custom modular packages tailored for school sports curricula, residential clubs, performance centers, and commercial gyms. Includes complete site inspection, dual-layer safety matting, hardware, and coach onboarding.</p>
           <div class="cta-strip-actions">
-            <a href="wall.html" class="btn btn-primary">See The Wall <span aria-hidden="true">→</span></a>
+            <a href="wall.html" class="btn btn-primary">See Technical Specs <span aria-hidden="true">→</span></a>
             <a href="about.html#contact" class="btn btn-outline">Request Turnkey Quote</a>
+          </div>
+          <div style="margin-top:var(--space-m);display:flex;justify-content:center;gap:var(--space-m);flex-wrap:wrap;font-size:0.9rem;color:var(--text-muted);position:relative;">
+            <span>📞 <a href="tel:+918982789640" style="color:var(--text);">+91 8982 789 640</a></span>
+            <span>✉️ <a href="mailto:contact@climbfit.in" style="color:var(--text);">contact@climbfit.in</a></span>
           </div>
         </div>
       </div>
