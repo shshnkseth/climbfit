@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Offerings — ClimbFit Smart LED Climbing Systems &amp; Turnkey Walls</title>
-  <meta name="description" content="Explore ClimbFit's interactive LED climbing walls, modular training boards (sizes S, M, L), continuous traverse walls for schools and gyms, and 6-stage turnkey installation.">
-  <meta name="keywords" content="smart climbing wall, interactive LED climbing wall, ClimbFit training board, school climbing wall, continuous traverse wall, bouldering wall installation, turnkey climbing system, commercial gym climbing board">
+  <title>Our Offerings — ClimbFit Smart LED Climbing Systems</title>
+  <meta name="description" content="Discover ClimbFit's interactive LED climbing walls: easy-to-use Training Boards (sizes S, M, L), safe Traverse Walls for schools and gyms, and complete turnkey installation.">
+  <meta name="keywords" content="smart climbing wall, LED climbing wall, ClimbFit training board, school climbing wall, traverse wall, interactive bouldering board, climbing gym equipment">
   <link rel="icon" href="assets/brand/logo-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
     /* ── Hero Section ───────────────────────────────────── */
     .offerings-hero {
       position: relative;
-      padding-top: calc(var(--nav-h) + 3.5rem);
-      padding-bottom: var(--space-xl);
+      padding-top: calc(var(--nav-h) + 3rem);
+      padding-bottom: var(--space-l);
       overflow: hidden;
     }
     .offerings-hero-glow {
@@ -25,8 +25,8 @@
       top: 5%;
       left: 50%;
       transform: translateX(-50%);
-      width: 750px;
-      height: 450px;
+      width: 700px;
+      height: 400px;
       background: radial-gradient(ellipse at center, rgba(0,229,255,0.12) 0%, rgba(177,79,255,0.06) 45%, transparent 70%);
       filter: blur(50px);
       pointer-events: none;
@@ -36,23 +36,23 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      max-width: 820px;
-      margin: 0 auto var(--space-l);
+      max-width: 760px;
+      margin: 0 auto var(--space-m);
     }
     .offerings-hero h1 {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
-      line-height: 1.08;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.1;
       letter-spacing: -0.035em;
-      margin-bottom: var(--space-m);
+      margin-bottom: var(--space-s);
     }
     .offerings-hero p {
       font-size: clamp(1.05rem, 1.8vw, 1.2rem);
       color: rgba(228,228,240,0.85);
-      line-height: 1.7;
-      max-width: 640px;
-      margin: 0 auto var(--space-l);
+      line-height: 1.65;
+      max-width: 580px;
+      margin: 0 auto var(--space-m);
     }
     .hero-actions-row {
       display: flex;
@@ -60,13 +60,13 @@
       justify-content: center;
       gap: var(--space-s);
       flex-wrap: wrap;
-      margin-bottom: var(--space-m);
+      margin-bottom: var(--space-s);
     }
     .brochure-btn {
       background: linear-gradient(135deg, #f5d000 0%, #ff9e00 100%);
       color: #080810 !important;
       font-weight: 700;
-      box-shadow: 0 4px 20px rgba(245,208,0,0.25);
+      box-shadow: 0 4px 16px rgba(245,208,0,0.25);
     }
     .brochure-btn:hover {
       box-shadow: var(--glow-yellow);
@@ -79,11 +79,11 @@
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--border-active);
       border-radius: var(--r-xl);
-      padding: 0.35rem 1rem;
+      padding: 0.3rem 0.9rem;
       font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-muted);
-      margin-bottom: var(--space-m);
+      margin-bottom: var(--space-s);
       backdrop-filter: blur(10px);
     }
     .pill-badge span.pulse-dot {
@@ -102,8 +102,8 @@
       backdrop-filter: blur(20px);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 0.55rem 0;
-      margin-bottom: var(--space-xl);
+      padding: 0.5rem 0;
+      margin-bottom: var(--space-l);
     }
     .quick-anchor-list {
       display: flex;
@@ -135,8 +135,8 @@
 
     /* ── Section Dividers & Headers ────────────────────────── */
     .offering-section {
-      padding: var(--space-xl) 0;
-      scroll-margin-top: calc(var(--nav-h) + 4rem);
+      padding: var(--space-l) 0;
+      scroll-margin-top: calc(var(--nav-h) + 3.5rem);
       position: relative;
     }
     .offering-section::before {
@@ -166,7 +166,7 @@
     }
     .board-hero-image-wrap img {
       width: 100%;
-      height: 420px;
+      height: 380px;
       object-fit: cover;
       display: block;
     }
@@ -177,7 +177,7 @@
       background: rgba(8,8,16,0.85);
       backdrop-filter: blur(12px);
       border: 1px solid var(--border-active);
-      padding: 0.45rem 0.9rem;
+      padding: 0.4rem 0.85rem;
       border-radius: var(--r-m);
       font-size: 0.8rem;
       font-weight: 600;
@@ -187,49 +187,46 @@
       gap: 0.5rem;
     }
 
-    /* Feature pills list */
-    .value-bullets {
+    /* Clean feature bullets */
+    .simple-bullets {
       display: flex;
       flex-direction: column;
-      gap: var(--space-s);
+      gap: 0.75rem;
       margin-top: var(--space-m);
     }
-    .value-bullet-item {
+    .simple-bullet {
       display: flex;
-      gap: var(--space-s);
+      gap: 0.75rem;
       align-items: flex-start;
-      padding: 0.8rem 1rem;
+      padding: 0.75rem 1rem;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-m);
-      transition: border-color 0.2s;
     }
-    .value-bullet-item:hover { border-color: var(--border-active); }
-    .value-bullet-icon { font-size: 1.15rem; flex-shrink: 0; line-height: 1.3; }
-    .value-bullet-text h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.15rem; color: var(--text); }
-    .value-bullet-text p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.55; }
+    .simple-bullet-icon { font-size: 1.2rem; flex-shrink: 0; line-height: 1.2; }
+    .simple-bullet-body h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.15rem; }
+    .simple-bullet-body p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
     /* Size comparison cards */
     .sizes-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-m);
-      margin-top: var(--space-l);
+      margin-top: var(--space-m);
     }
     .size-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-l);
-      padding: var(--space-l) var(--space-m);
+      padding: var(--space-m);
       position: relative;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s var(--ease-out), border-color 0.3s, box-shadow 0.3s;
+      transition: transform 0.25s var(--ease-out), border-color 0.25s, box-shadow 0.25s;
     }
     .size-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35);
     }
     .size-card.featured {
       border-color: rgba(245,208,0,0.5);
@@ -238,23 +235,23 @@
     .size-card.featured::before {
       content: 'POPULAR';
       position: absolute;
-      top: 1rem; right: 1rem;
-      font-size: 0.68rem;
+      top: 0.9rem; right: 0.9rem;
+      font-size: 0.65rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: #080810;
       background: var(--accent-yellow);
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.55rem;
       border-radius: var(--r-xl);
     }
     .size-badge {
-      width: 42px; height: 42px;
+      width: 38px; height: 38px;
       border-radius: var(--r-m);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 1.2rem;
-      margin-bottom: var(--space-m);
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
     }
     .size-badge.s { background: rgba(0,229,255,0.15); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }
     .size-badge.m { background: rgba(245,208,0,0.15); color: var(--accent-yellow); border: 1px solid var(--accent-yellow); }
@@ -263,88 +260,45 @@
     .size-dimensions {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+      font-size: clamp(1.7rem, 2.5vw, 2.1rem);
       line-height: 1;
       letter-spacing: -0.03em;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
     .size-holds {
       font-weight: 700;
-      font-size: 0.98rem;
-      margin-bottom: var(--space-s);
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
     .size-desc {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: var(--space-m);
+      line-height: 1.55;
+      margin-bottom: var(--space-s);
       flex-grow: 1;
     }
     .size-specs-list {
       border-top: 1px solid var(--border);
       padding-top: var(--space-s);
-      margin-bottom: var(--space-m);
+      margin-bottom: var(--space-s);
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      font-size: 0.83rem;
+      gap: 0.35rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
     }
     .size-specs-list li {
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
     }
     .size-specs-list li::before {
       content: '✓';
       color: var(--accent-cyan);
       font-weight: 700;
-    }
-
-    /* ── Tech Specs Table Card ──────────────────────────── */
-    .tech-specs-container {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-l);
-      padding: var(--space-l);
-      margin-top: var(--space-l);
-    }
-    .tech-specs-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: var(--space-s);
-      margin-bottom: var(--space-m);
-      padding-bottom: var(--space-s);
-      border-bottom: 1px solid var(--border);
-    }
-    .tech-specs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-m);
-    }
-    .tech-spec-item {
-      padding: var(--space-s) var(--space-m);
-      background: var(--surface-raised);
-      border-radius: var(--r-m);
-      border: 1px solid var(--border);
-    }
-    .tech-spec-label {
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-cyan);
-      margin-bottom: 0.3rem;
-    }
-    .tech-spec-value {
-      font-size: 0.88rem;
-      color: var(--text);
-      line-height: 1.55;
     }
 
     /* ── Schools & Institutions ─────────────────────────── */
@@ -355,10 +309,10 @@
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin-bottom: var(--space-l);
+      margin-bottom: var(--space-m);
     }
     .schools-strip-content {
-      padding: var(--space-xl);
+      padding: var(--space-l);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -386,50 +340,51 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: var(--space-s);
-      margin-top: var(--space-l);
+      margin-top: var(--space-m);
     }
     .game-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--r-l);
+      border-radius: var(--r-m);
       padding: var(--space-m);
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, border-color 0.25s;
+      transition: transform 0.2s, border-color 0.2s;
     }
     .game-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       border-color: var(--border-active);
     }
     .game-icon-box {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: var(--r-m);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: var(--space-s);
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
     }
     .game-card h4 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 0.98rem;
-      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
     }
     .game-card p {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* ── Traverse Wall ──────────────────────────────────── */
     .traverse-highlight-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: var(--space-l);
       align-items: center;
-      margin-bottom: var(--space-l);
+      margin-bottom: var(--space-m);
     }
     .traverse-image-card {
       position: relative;
@@ -440,7 +395,7 @@
     }
     .traverse-image-card img {
       width: 100%;
-      height: 420px;
+      height: 380px;
       object-fit: cover;
       display: block;
     }
@@ -450,9 +405,9 @@
       left: var(--space-m);
       background: rgba(8,8,16,0.85);
       border: 1px solid var(--border-active);
-      padding: 0.35rem 0.85rem;
+      padding: 0.35rem 0.8rem;
       border-radius: var(--r-xl);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 700;
       color: var(--accent-cyan);
       backdrop-filter: blur(10px);
@@ -460,27 +415,23 @@
     .traverse-features-list {
       display: flex;
       flex-direction: column;
-      gap: var(--space-s);
+      gap: 0.6rem;
     }
     .traverse-feature-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-m);
-      padding: 1rem 1.25rem;
-      transition: border-color 0.2s;
-    }
-    .traverse-feature-card:hover {
-      border-color: var(--border-active);
+      padding: 0.9rem 1.15rem;
     }
     .traverse-feature-card h4 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       color: var(--text);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
     }
     .traverse-feature-card h4 span.bullet-dot {
       width: 7px; height: 7px; border-radius: 50%;
@@ -488,241 +439,89 @@
       display: inline-block;
     }
     .traverse-feature-card p {
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* ── Turnkey Solutions (6 Stages) ───────────────────── */
     .stages-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-m);
-      margin-top: var(--space-l);
+      gap: var(--space-s);
+      margin-top: var(--space-m);
     }
     .stage-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--r-l);
-      padding: var(--space-l) var(--space-m);
+      border-radius: var(--r-m);
+      padding: var(--space-m);
       position: relative;
-      overflow: hidden;
-      transition: all 0.3s var(--ease-out);
+      transition: all 0.25s var(--ease-out);
     }
     .stage-card:hover {
       border-color: var(--border-active);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
     }
     .stage-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: var(--space-s);
+      margin-bottom: 0.4rem;
     }
     .stage-num {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: -0.04em;
       line-height: 1;
     }
     .stage-icon {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       opacity: 0.85;
     }
     .stage-card h3 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.08rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
+      font-size: 1.02rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.3rem;
     }
     .stage-card p {
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .stage-card .stage-bar {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--border);
-      transition: background 0.3s;
-    }
-    .stage-card:hover .stage-bar {
-      background: var(--grad-accent);
+      line-height: 1.55;
+      margin: 0;
     }
 
-    /* ── Installation & Maintenance ─────────────────────── */
-    .maint-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-m);
-      margin-top: var(--space-l);
-    }
-    .maint-card {
+    /* ── Minimal Bottom CTA ────────────────────────────── */
+    .simple-cta-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-l);
       padding: var(--space-l);
-    }
-    .maint-card h3 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: var(--space-m);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .maint-item-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-m);
-    }
-    .maint-item {
-      display: flex;
-      gap: var(--space-s);
-      align-items: flex-start;
-    }
-    .maint-item-icon {
-      width: 36px; height: 36px;
-      border-radius: var(--r-m);
-      background: var(--surface-raised);
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .maint-item-text h4 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      margin-bottom: 0.15rem;
-    }
-    .maint-item-text p {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* ── Brochure CTA Banner ────────────────────────────── */
-    .brochure-banner {
-      background: linear-gradient(135deg, rgba(16,16,28,0.95) 0%, rgba(24,18,36,0.95) 100%);
-      border: 1.5px solid rgba(245,208,0,0.35);
-      border-radius: var(--r-xl);
-      padding: var(--space-xl) var(--space-l);
-      position: relative;
-      overflow: hidden;
-      margin: var(--space-xl) 0;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: var(--space-l);
-      align-items: center;
-    }
-    .brochure-banner::before {
-      content: '';
-      position: absolute;
-      top: -30%; right: -20%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(245,208,0,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .brochure-banner-text h2 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      margin-bottom: var(--space-s);
-    }
-    .brochure-banner-text p {
-      color: rgba(228,228,240,0.85);
-      font-size: 0.98rem;
-      line-height: 1.65;
-      margin-bottom: var(--space-m);
-    }
-    .brochure-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem var(--space-m);
-      margin-bottom: var(--space-l);
-    }
-    .brochure-feature-tag {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .brochure-feature-tag::before {
-      content: '✓';
-      color: var(--accent-yellow);
-      font-weight: 700;
-    }
-    .brochure-actions {
-      display: flex;
-      gap: var(--space-s);
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .brochure-banner-preview {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .brochure-book-card {
-      background: var(--surface-raised);
-      border: 1px solid var(--border-active);
-      border-radius: var(--r-l);
-      padding: var(--space-m);
-      width: 100%;
-      max-width: 300px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       text-align: center;
-    }
-    .brochure-book-cover {
-      width: 100%;
-      height: 170px;
-      border-radius: var(--r-m);
-      background: #080810;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-s);
-      margin-bottom: var(--space-s);
       position: relative;
       overflow: hidden;
-    }
-    .brochure-book-cover::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--grad-warm);
+      margin-top: var(--space-l);
     }
 
     /* ── Responsive ─────────────────────────────────────── */
     @media (max-width: 960px) {
       .board-grid-hero { grid-template-columns: 1fr; }
       .sizes-grid { grid-template-columns: 1fr; }
-      .tech-specs-grid { grid-template-columns: repeat(2, 1fr); }
       .schools-strip { grid-template-columns: 1fr; }
-      .schools-strip-media { height: 260px; }
+      .schools-strip-media { height: 240px; }
       .schools-strip-media::before { background: linear-gradient(to bottom, var(--surface) 0%, transparent 25%); }
       .games-grid { grid-template-columns: repeat(2, 1fr); }
       .traverse-highlight-grid { grid-template-columns: 1fr; }
       .stages-grid { grid-template-columns: repeat(2, 1fr); }
-      .maint-grid { grid-template-columns: 1fr; }
-      .brochure-banner { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .tech-specs-grid { grid-template-columns: 1fr; }
       .games-grid { grid-template-columns: 1fr; }
       .stages-grid { grid-template-columns: 1fr; }
-      .board-hero-image-wrap img, .traverse-image-card img { height: 250px; }
+      .board-hero-image-wrap img, .traverse-image-card img { height: 230px; }
     }
   </style>
 </head>
@@ -765,14 +564,14 @@
         <div class="offerings-hero-content reveal">
           <div class="pill-badge">
             <span class="pulse-dot" aria-hidden="true"></span>
-            <span>Modular Hardware · Smart App · Turnkey Installation</span>
+            <span>ClimbFit 2026 Collection</span>
           </div>
           <h1 id="offerings-title">
-            Interactive LED Climbing Walls &amp;<br>
-            <span class="gradient-text">Turnkey Systems.</span>
+            Smart LED Climbing Walls &amp;<br>
+            <span class="gradient-text">Complete Systems.</span>
           </h1>
           <p>
-            Modular bouldering boards, horizontal traverse walls, and end-to-end installation for schools, athletic clubs, and commercial gyms.
+            Light up thousands of routes with an app. No manual hold resetting, zero hassle, and safe for all skill levels.
           </p>
 
           <div class="hero-actions-row">
@@ -781,29 +580,28 @@
               Download 2026 Brochure (PDF)
             </a>
             <a href="about.html#contact" class="btn btn-outline">
-              Request Site Assessment <span aria-hidden="true">→</span>
+              Request a Quote <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <div style="font-size:0.82rem;color:var(--text-muted);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+          <div style="font-size:0.82rem;color:var(--text-muted);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:0.75rem;">
             <span>📐 Sizes S, M, L</span>
             <span>🛡️ 100% Zero-Harness Safety</span>
-            <span>⚡ Low Energy (&lt;350W)</span>
-            <span>⏱️ 1-Term Campus Pilot</span>
+            <span>⚡ Low Power (&lt;350W)</span>
+            <span>⏱️ Complete Turnkey Setup</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Sticky Quick Navigation ────────────────────────── -->
+    <!-- ── Quick Jump Bar ─────────────────────────────────── -->
     <div class="quick-anchor-nav" aria-label="Page sections">
       <div class="quick-anchor-list">
-        <a href="#training-board" class="quick-anchor-item">1. Training Board (Sizes)</a>
+        <a href="#training-board" class="quick-anchor-item">1. Training Boards (Sizes)</a>
         <a href="#schools-institutions" class="quick-anchor-item">2. Schools &amp; Institutions</a>
-        <a href="#traverse-wall" class="quick-anchor-item">3. Continuous Traverse Wall</a>
-        <a href="#turnkey-solutions" class="quick-anchor-item">4. Turnkey Solutions (6 Stages)</a>
-        <a href="#installation-maintenance" class="quick-anchor-item">5. Installation &amp; Care</a>
-        <a href="#brochure-download" class="quick-anchor-item" style="color:var(--accent-yellow);">📥 Download Brochure</a>
+        <a href="#traverse-wall" class="quick-anchor-item">3. Continuous Traverse Walls</a>
+        <a href="#turnkey-solutions" class="quick-anchor-item">4. Turnkey Installation (6 Stages)</a>
+        <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="quick-anchor-item" style="color:var(--accent-yellow);">📥 Download Brochure</a>
       </div>
     </div>
 
@@ -811,54 +609,51 @@
     <section class="offering-section" id="training-board" aria-labelledby="training-board-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-cyan);">Core Hardware</span>
+          <span class="label" style="color:var(--accent-cyan);">Training Board</span>
           <h2 class="heading-1" id="training-board-heading">ClimbFit Training Board</h2>
           <p>
-            One smart climbing wall. Thousands of illuminated routes. Zero manual hold resetting.
+            A smart climbing wall that lights up routes from your phone. Pick a climb, follow the glowing holds, and start climbing.
           </p>
         </header>
 
         <div class="board-grid-hero reveal">
           <div class="board-hero-image-wrap">
-            <img src="assets/images/training-board.jpg" alt="ClimbFit Training Board with athlete climbing on illuminated LED holds" loading="lazy">
+            <img src="assets/images/training-board.jpg" alt="ClimbFit Training Board with climber on glowing LED holds" loading="lazy">
             <div class="board-hero-tag">
-              <span style="color:var(--accent-cyan);font-weight:700;">● RGB Hold Matrix</span>
+              <span style="color:var(--accent-cyan);font-weight:700;">● RGB Glowing Holds</span>
               <span style="opacity:0.4;">|</span>
-              <span>Engineered Steel Frame</span>
+              <span>Durable Timber Panels</span>
             </div>
           </div>
 
           <div class="board-hero-specs">
-            <div style="margin-bottom:var(--space-s);">
-              <span class="tag tag-cyan">Smart Bouldering Tech</span>
-            </div>
-            <h3 class="heading-2" style="margin-bottom:var(--space-s);">Train Smarter on a Compact Footprint</h3>
-            <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.7;">
-              Traditional walls require hours of manual wrenching to change routes. ClimbFit connects to iOS and Android so climbers can light up benchmark problems and drills in seconds.
+            <h3 class="heading-2" style="margin-bottom:var(--space-xs);">How It Works</h3>
+            <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.65;">
+              On normal climbing walls, changing routes takes hours of taking holds off and screwing them back on. With ClimbFit, the wall stays in place while lights change the climb instantly.
             </p>
 
-            <div class="value-bullets">
-              <div class="value-bullet-item">
-                <span class="value-bullet-icon">📱</span>
-                <div class="value-bullet-text">
-                  <h4>Instant App Control</h4>
-                  <p>Choose problems by grade (V0–V14), create custom routes, and log sends with sub-10s Bluetooth pairing.</p>
+            <div class="simple-bullets">
+              <div class="simple-bullet">
+                <span class="simple-bullet-icon">📱</span>
+                <div class="simple-bullet-body">
+                  <h4>Control with Any Phone or Tablet</h4>
+                  <p>Choose climbs by difficulty, create your own routes, and track your progress in the ClimbFit app.</p>
                 </div>
               </div>
 
-              <div class="value-bullet-item">
-                <span class="value-bullet-icon">💡</span>
-                <div class="value-bullet-text">
-                  <h4>RGB Smart Hold Matrix</h4>
-                  <p>Impact-sealed LED holds indicate start holds, hand/foot targets, and finishes with clear multi-color illumination.</p>
+              <div class="simple-bullet">
+                <span class="simple-bullet-icon">💡</span>
+                <div class="simple-bullet-body">
+                  <h4>Follow the Lights</h4>
+                  <p>Each hold has built-in LEDs showing you exactly where to start, where to place hands and feet, and where to finish.</p>
                 </div>
               </div>
 
-              <div class="value-bullet-item">
-                <span class="value-bullet-icon">🛡️</span>
-                <div class="value-bullet-text">
-                  <h4>Engineered Steel Frame &amp; Crash Mats</h4>
-                  <p>Wall-mounted or freestanding frames paired with custom dual-layer safety mats tailored to your room.</p>
+              <div class="simple-bullet">
+                <span class="simple-bullet-icon">🛡️</span>
+                <div class="simple-bullet-body">
+                  <h4>Thick Safety Crash Mats Included</h4>
+                  <p>Custom-fitted high-density safety mats protect climbers during every session.</p>
                 </div>
               </div>
             </div>
@@ -866,12 +661,12 @@
         </div>
 
         <!-- 3 Configurations / Sizes -->
-        <div style="margin-top:var(--space-l);">
+        <div style="margin-top:var(--space-m);">
           <div style="text-align:center;margin-bottom:var(--space-m);" class="reveal">
-            <span class="label" style="color:var(--accent-yellow);">Standard Sizes</span>
-            <h3 class="heading-2">Choose the Right Scale for Your Space</h3>
-            <p style="color:var(--text-muted);font-size:0.92rem;max-width:540px;margin:0.4rem auto 0;">
-              Every board includes certified impact mats, the LED hold matrix, and companion software.
+            <span class="label" style="color:var(--accent-yellow);">Board Sizes</span>
+            <h3 class="heading-2">Choose the Right Size for Your Space</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;max-width:520px;margin:0.3rem auto 0;">
+              All sizes come complete with the LED holds, app connectivity, and custom safety mats.
             </p>
           </div>
 
@@ -879,105 +674,62 @@
             <!-- Size S -->
             <article class="size-card reveal reveal-delay-1">
               <div class="size-badge s">S</div>
-              <div class="size-dimensions">8 × 12 <span style="font-size:1.05rem;font-weight:600;color:var(--text-muted);">ft</span></div>
+              <div class="size-dimensions">8 × 12 <span style="font-size:1rem;font-weight:600;color:var(--text-muted);">ft</span></div>
               <div class="size-holds" style="color:var(--accent-cyan);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>
                 198 Holds
               </div>
               <p class="size-desc">
-                Ideal for residential clubhouses, boutique fitness studios, and compact school athletic corners.
+                Compact and space-efficient. Great for residential clubhouses, boutique studios, and small school fitness corners.
               </p>
               <ul class="size-specs-list">
-                <li>Dimensions: 2.4m wide × 3.6m high</li>
-                <li>Required ceiling: 3.8m+ clearance</li>
-                <li>Power: Standard 220–240V AC</li>
-                <li>Full companion app access &amp; BLE control</li>
-                <li>Custom-fitted dual-layer crash mats</li>
+                <li>Size: 2.4m wide × 3.6m high</li>
+                <li>Best ceiling height: 3.8m or higher</li>
+                <li>Runs on standard household power (220V)</li>
+                <li>Safety crash padding included</li>
               </ul>
-              <a href="about.html#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Inquire for Size S</a>
+              <a href="about.html#contact" class="btn btn-outline" style="width:100%;justify-content:center;font-size:0.85rem;padding:0.6rem;">Inquire for Size S</a>
             </article>
 
             <!-- Size M (Featured) -->
             <article class="size-card featured reveal reveal-delay-2">
               <div class="size-badge m">M</div>
-              <div class="size-dimensions">12 × 12 <span style="font-size:1.05rem;font-weight:600;color:var(--text-muted);">ft</span></div>
+              <div class="size-dimensions">12 × 12 <span style="font-size:1rem;font-weight:600;color:var(--text-muted);">ft</span></div>
               <div class="size-holds" style="color:var(--accent-yellow);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>
                 270 Holds
               </div>
               <p class="size-desc">
-                Our most popular size. The standard for secondary schools, athletic academies, and climbing gyms.
+                Our most popular size. The sweet spot for secondary schools, sports academies, and climbing gyms.
               </p>
               <ul class="size-specs-list">
-                <li>Dimensions: 3.6m wide × 3.6m high</li>
-                <li>Required ceiling: 3.8m+ clearance</li>
-                <li>Power: Under 350W peak consumption</li>
-                <li>Expanded route geometry &amp; dynamic sequences</li>
-                <li>Supports team training and coach drills</li>
+                <li>Size: 3.6m wide × 3.6m high</li>
+                <li>Best ceiling height: 3.8m or higher</li>
+                <li>Low energy use (under 350W)</li>
+                <li>Great for team training and classes</li>
               </ul>
-              <a href="about.html#contact" class="btn btn-primary" style="width:100%;justify-content:center;background:var(--accent-yellow);color:#080810;">Inquire for Size M</a>
+              <a href="about.html#contact" class="btn btn-primary" style="width:100%;justify-content:center;background:var(--accent-yellow);color:#080810;font-size:0.85rem;padding:0.6rem;">Inquire for Size M</a>
             </article>
 
             <!-- Size L -->
             <article class="size-card reveal reveal-delay-3">
               <div class="size-badge l">L</div>
-              <div class="size-dimensions">15 × 12 <span style="font-size:1.05rem;font-weight:600;color:var(--text-muted);">ft</span></div>
+              <div class="size-dimensions">15 × 12 <span style="font-size:1rem;font-weight:600;color:var(--text-muted);">ft</span></div>
               <div class="size-holds" style="color:var(--accent-pink);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>
                 324 Holds
               </div>
               <p class="size-desc">
-                Maximum training surface and hold density for university athletics, teams, and high-traffic centers.
+                Extra wide training surface. Built for university athletic centers, competitive climbing teams, and high-traffic gyms.
               </p>
               <ul class="size-specs-list">
-                <li>Dimensions: 4.6m wide × 3.6m high</li>
-                <li>Required ceiling: 4.0m+ clearance</li>
-                <li>Maximum lateral movement &amp; route density</li>
-                <li>Supports simultaneous dual-climber workouts</li>
-                <li>Heavy-duty institutional crash pad system</li>
+                <li>Size: 4.6m wide × 3.6m high</li>
+                <li>Best ceiling height: 4.0m or higher</li>
+                <li>Allows multiple climbers side-by-side</li>
+                <li>Heavy-duty institutional safety matting</li>
               </ul>
-              <a href="about.html#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Inquire for Size L</a>
+              <a href="about.html#contact" class="btn btn-outline" style="width:100%;justify-content:center;font-size:0.85rem;padding:0.6rem;">Inquire for Size L</a>
             </article>
-          </div>
-        </div>
-
-        <!-- Technical Specifications Grid -->
-        <div class="tech-specs-container reveal">
-          <div class="tech-specs-header">
-            <div>
-              <span class="label" style="color:var(--accent-cyan);">Engineering</span>
-              <h3 class="heading-3" style="margin-top:0.25rem;">Technical Specifications Matrix</h3>
-            </div>
-            <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="padding:0.45rem 1rem;font-size:0.82rem;">
-              Full Spec Sheet (PDF)
-            </a>
-          </div>
-
-          <div class="tech-specs-grid">
-            <div class="tech-spec-item">
-              <div class="tech-spec-label">Wall Architecture</div>
-              <div class="tech-spec-value">Modular steel chassis with CNC-machined Baltic birch panels and high-friction commercial texture.</div>
-            </div>
-            <div class="tech-spec-item">
-              <div class="tech-spec-label">Smart Hold Matrix</div>
-              <div class="tech-spec-value">Individually sealed RGB LED nodes inside durable polyurethane holds with 360° visibility.</div>
-            </div>
-            <div class="tech-spec-item">
-              <div class="tech-spec-label">Power &amp; Efficiency</div>
-              <div class="tech-spec-value">220–240 V AC (6A/16A). Under 350 W peak power draw with integrated surge protection.</div>
-            </div>
-            <div class="tech-spec-item">
-              <div class="tech-spec-label">App &amp; Connectivity</div>
-              <div class="tech-spec-value">iOS, Android &amp; iPad apps. Instant Bluetooth connection (&lt;10s), Wi-Fi sync, and standalone offline mode.</div>
-            </div>
-            <div class="tech-spec-item">
-              <div class="tech-spec-label">Safety Standards</div>
-              <div class="tech-spec-value">Custom-fitted dual-layer impact crash mats meeting international bouldering safety standards.</div>
-            </div>
-            <div class="tech-spec-item">
-              <div class="tech-spec-label">Modular Footprints</div>
-              <div class="tech-spec-value">Standard sizes 8×12ft, 12×12ft, 15×12ft, or custom angles (0°–45°) adapted to room ceiling height.</div>
-            </div>
           </div>
         </div>
 
@@ -988,84 +740,84 @@
     <section class="offering-section" id="schools-institutions" aria-labelledby="schools-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-yellow);">Campus Athletics</span>
+          <span class="label" style="color:var(--accent-yellow);">Schools &amp; Campuses</span>
           <h2 class="heading-1" id="schools-heading">Schools &amp; Institutions</h2>
           <p>
-            Bring Olympic-style climbing to your campus with 100% zero-harness safety, cognitive problem-solving, and pre-loaded PE modules.
+            Engaging, safe climbing for students of all ages. 100% zero-harness safety with pre-loaded games and PE lesson plans.
           </p>
         </header>
 
         <div class="schools-strip reveal">
           <div class="schools-strip-content">
-            <span class="tag tag-yellow" style="margin-bottom:var(--space-m);align-self:flex-start;">K–12, Colleges &amp; Academies</span>
-            <h3 class="heading-2" style="margin-bottom:var(--space-s);">
-              Real Athletic Agility with Zero Height Anxiety
+            <span class="tag tag-yellow" style="margin-bottom:var(--space-s);align-self:flex-start;">For K-12, Colleges &amp; Academies</span>
+            <h3 class="heading-2" style="margin-bottom:var(--space-xs);">
+              Safe, Active Fun Without Ropes or Fear of Heights
             </h3>
-            <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.75;margin-bottom:var(--space-m);">
-              Climbing builds full-body core strength, spatial memory, and focus. ClimbFit brings this to school sports halls with low-height walls and safety padding—no ropes, harnesses, or belaying certifications needed.
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.65;margin-bottom:var(--space-m);">
+              Climbing builds natural grip strength, balance, and problem-solving. ClimbFit keeps walls at a safe, low height over thick safety mats—so students climb freely with no ropes, no harness gear, and no belaying staff needed.
             </p>
-            <ul style="display:flex;flex-direction:column;gap:0.55rem;font-size:0.88rem;color:var(--text);margin-bottom:var(--space-l);">
-              <li style="display:flex;align-items:center;gap:0.5rem;">
+            <ul style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.86rem;color:var(--text);margin-bottom:var(--space-m);">
+              <li style="display:flex;align-items:center;gap:0.45rem;">
                 <span style="color:var(--accent-yellow);font-weight:700;">✓</span>
-                <span><strong>100% Zero-Harness Safety:</strong> Zero rope maintenance, zero fall-arrest liability, certified crash padding.</span>
+                <span><strong>Zero-Harness Safety:</strong> Low height bouldering and thick safety mats prevent fall injuries.</span>
               </li>
-              <li style="display:flex;align-items:center;gap:0.5rem;">
+              <li style="display:flex;align-items:center;gap:0.45rem;">
                 <span style="color:var(--accent-yellow);font-weight:700;">✓</span>
-                <span><strong>Physical Chess:</strong> Sharpens spatial memory, motor coordination, and screen-time posture.</span>
+                <span><strong>Fun Brain &amp; Body Workout:</strong> Builds core strength and spatial memory, counteracting screen fatigue.</span>
               </li>
-              <li style="display:flex;align-items:center;gap:0.5rem;">
+              <li style="display:flex;align-items:center;gap:0.45rem;">
                 <span style="color:var(--accent-yellow);font-weight:700;">✓</span>
-                <span><strong>36-Week PE Modules:</strong> Pre-built curriculum with iPad controls and student participation tracking.</span>
+                <span><strong>Ready-to-Use PE Lesson Plans:</strong> 36 weeks of structured drills on an easy teacher tablet app.</span>
               </li>
-              <li style="display:flex;align-items:center;gap:0.5rem;">
+              <li style="display:flex;align-items:center;gap:0.45rem;">
                 <span style="color:var(--accent-yellow);font-weight:700;">✓</span>
-                <span><strong>1-Term Campus Pilot:</strong> Includes full setup, teacher training, pre-loaded games, and SLA support.</span>
+                <span><strong>1-Term Campus Pilot:</strong> Try ClimbFit for a term with full equipment, setup, and teacher training.</span>
               </li>
             </ul>
             <div style="display:flex;gap:var(--space-s);flex-wrap:wrap;">
-              <a href="about.html#contact" class="btn btn-primary" style="background:var(--accent-yellow);color:#080810;">
+              <a href="about.html#contact" class="btn btn-primary" style="background:var(--accent-yellow);color:#080810;font-size:0.88rem;padding:0.65rem 1.4rem;">
                 Apply for Campus Pilot <span aria-hidden="true">→</span>
               </a>
-              <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline">
+              <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="font-size:0.88rem;padding:0.65rem 1.4rem;">
                 Download Brochure
               </a>
             </div>
           </div>
           <div class="schools-strip-media">
-            <img src="assets/images/media_1788251221312.jpg" alt="Students using ClimbFit interactive wall in physical education facility" loading="lazy">
+            <img src="assets/images/media_1788251221312.jpg" alt="Students using ClimbFit wall in PE class" loading="lazy">
           </div>
         </div>
 
         <!-- 4 Interactive Game Formats -->
-        <div style="margin-top:var(--space-l);" class="reveal">
+        <div style="margin-top:var(--space-m);" class="reveal">
           <div style="text-align:center;margin-bottom:var(--space-m);">
-            <span class="label" style="color:var(--accent-purple);">Gamified Training</span>
-            <h3 class="heading-2">Interactive Games That Keep Students Moving</h3>
-            <p style="color:var(--text-muted);font-size:0.92rem;max-width:540px;margin:0.4rem auto 0;">
-              Teachers launch games in seconds from the tablet app to engage every fitness level.
+            <span class="label" style="color:var(--accent-purple);">Climbing Games</span>
+            <h3 class="heading-2">Interactive Games Kids Love</h3>
+            <p style="color:var(--text-muted);font-size:0.88rem;max-width:500px;margin:0.25rem auto 0;">
+              Teachers start games with one tap on the tablet to get the whole class moving.
             </p>
           </div>
 
           <div class="games-grid">
             <div class="game-card">
               <div class="game-icon-box" style="background:rgba(255,77,141,0.15);color:var(--accent-pink);">🧠</div>
-              <h4>Memory Challenge</h4>
-              <p>Memorize and reproduce illuminated hold patterns to build working memory, focus, and neuromuscular agility.</p>
+              <h4>Memory Game</h4>
+              <p>Memorize the light pattern, then climb it. Great for focus, memory, and agility.</p>
             </div>
             <div class="game-card">
               <div class="game-icon-box" style="background:rgba(245,208,0,0.15);color:var(--accent-yellow);">⚡</div>
               <h4>Team Relay</h4>
-              <p>High-energy squad relays where teammates tag in and pass virtual batons across dynamic lighted routes.</p>
+              <p>High-energy team races where teammates tag in and follow the glowing path.</p>
             </div>
             <div class="game-card">
               <div class="game-icon-box" style="background:rgba(0,229,255,0.15);color:var(--accent-cyan);">🔤</div>
               <h4>Alphabet Run</h4>
-              <p>Climb illuminated holds to spell words or solve arithmetic before the countdown timer runs out.</p>
+              <p>Climb to touch glowing letters and spell words before the timer runs out.</p>
             </div>
             <div class="game-card">
               <div class="game-icon-box" style="background:rgba(177,79,255,0.15);color:var(--accent-purple);">👥</div>
-              <h4>Multi-Climber</h4>
-              <p>Multiple students share the wall at once, collaborating or racing on segregated color tracks in real time.</p>
+              <h4>Multiplayer</h4>
+              <p>Two or more students climb at the same time following their own color lights.</p>
             </div>
           </div>
         </div>
@@ -1077,44 +829,44 @@
     <section class="offering-section" id="traverse-wall" aria-labelledby="traverse-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-cyan);">Horizontal Movement</span>
+          <span class="label" style="color:var(--accent-cyan);">Horizontal Wall</span>
           <h2 class="heading-1" id="traverse-heading">Continuous Traverse Walls</h2>
           <p>
-            Low-height horizontal climbing designed for school corridors, gym sidelines, and multi-purpose activity halls.
+            Sideways climbing walls for school corridors, gym sidelines, and multi-purpose halls. Multiple climbers move together with zero fall risk.
           </p>
         </header>
 
         <div class="traverse-highlight-grid reveal">
           <div class="traverse-image-card">
-            <img src="assets/images/traverse-wall.jpg" alt="Continuous ClimbFit Traverse Wall in athletic facility with horizontal LED routes" loading="lazy">
-            <div class="traverse-callout-pill">Horizontal Bouldering · Low Ceiling Friendly</div>
+            <img src="assets/images/traverse-wall.jpg" alt="Continuous ClimbFit Traverse Wall with climbers moving sideways" loading="lazy">
+            <div class="traverse-callout-pill">Horizontal Climbing · Fits Any Room</div>
           </div>
 
           <div class="traverse-features-list">
             <div class="traverse-feature-card">
-              <h4><span class="bullet-dot"></span> Simultaneous Multi-User Flow</h4>
-              <p>Accommodates 4 to 8+ students or gym members climbing at once, eliminating long wait times during gym classes.</p>
+              <h4><span class="bullet-dot"></span> Multiple Climbers at Once</h4>
+              <p>Instead of taking turns one by one, 4 to 8+ students or members can climb side-by-side along the wall without waiting in line.</p>
             </div>
 
             <div class="traverse-feature-card">
               <h4><span class="bullet-dot" style="background:var(--accent-cyan);"></span> Fits Standard 8–10 ft Ceilings</h4>
-              <p>Maximizes lateral wall width instead of high vertical drops. Fits standard athletic rooms, corridors, and fitness zones.</p>
+              <p>Because climbers move sideways rather than high up, traverse walls fit standard rooms, hallways, and activity zones easily.</p>
             </div>
 
             <div class="traverse-feature-card">
               <h4><span class="bullet-dot" style="background:var(--accent-pink);"></span> Modular Length (12 ft to 48+ ft)</h4>
-              <p>Starts at 12 ft and expands in modular sections with continuous LED tracks and seamless impact crash matting.</p>
+              <p>Start with a 12 ft section and easily add more length as your facility grows, with seamless continuous mats along the floor.</p>
             </div>
 
             <div class="traverse-feature-card">
-              <h4><span class="bullet-dot" style="background:var(--accent-purple);"></span> Endurance Loops &amp; Sprints</h4>
-              <p>Pre-programmed with continuous lateral laps, relay sprints, and endurance circuits that keep athletes moving.</p>
+              <h4><span class="bullet-dot" style="background:var(--accent-purple);"></span> Endless Endurance Laps</h4>
+              <p>Pre-programmed with continuous sideways loops and timed relays that keep everyone active and engaged.</p>
             </div>
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:var(--space-m);" class="reveal">
-          <a href="about.html#contact" class="btn btn-primary">
+        <div style="text-align:center;margin-top:var(--space-s);" class="reveal">
+          <a href="about.html#contact" class="btn btn-primary" style="font-size:0.9rem;padding:0.65rem 1.6rem;">
             Plan a Traverse Wall Layout <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -1125,10 +877,10 @@
     <section class="offering-section" id="turnkey-solutions" aria-labelledby="turnkey-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-pink);">Turnkey Process</span>
-          <h2 class="heading-1" id="turnkey-heading">Turnkey Delivery in 6 Simple Stages</h2>
+          <span class="label" style="color:var(--accent-pink);">How We Build It</span>
+          <h2 class="heading-1" id="turnkey-heading">Turnkey Delivery in 6 Simple Steps</h2>
           <p>
-            From the initial 3D site scan to coach certification, we handle every step of your climbing wall installation.
+            From measuring your space to your first climb, our team takes care of everything.
           </p>
         </header>
 
@@ -1139,9 +891,8 @@
               <span class="stage-num gradient-text">01</span>
               <span class="stage-icon">📐</span>
             </div>
-            <h3>Site Inspection</h3>
-            <p>We evaluate your room dimensions, ceiling height, structural load capacity, and floor landing boundaries.</p>
-            <div class="stage-bar"></div>
+            <h3>Site Survey</h3>
+            <p>We check your room dimensions, ceiling height, wall structure, and floor space to ensure a safe fit.</p>
           </article>
 
           <!-- Stage 02 -->
@@ -1150,9 +901,8 @@
               <span class="stage-num" style="color:var(--accent-yellow);">02</span>
               <span class="stage-icon">✏️</span>
             </div>
-            <h3>3D Design &amp; Layout</h3>
-            <p>Our engineers draft custom 3D blueprints tailored to your room—wall-mounted structural framing or freestanding.</p>
-            <div class="stage-bar"></div>
+            <h3>3D Plan</h3>
+            <p>We design a 3D layout customized to your room, choosing wall-mounted or freestanding frames.</p>
           </article>
 
           <!-- Stage 03 -->
@@ -1161,9 +911,8 @@
               <span class="stage-num" style="color:var(--accent-cyan);">03</span>
               <span class="stage-icon">🛠️</span>
             </div>
-            <h3>Hardware Installation</h3>
-            <p>Technicians assemble the engineered steel framework, precision timber panels, LED harness, and controllers.</p>
-            <div class="stage-bar"></div>
+            <h3>Installation</h3>
+            <p>Our technicians install the steel frame, wood panels, glowing hold matrix, and wiring cleanly.</p>
           </article>
 
           <!-- Stage 04 -->
@@ -1172,9 +921,8 @@
               <span class="stage-num" style="color:var(--accent-pink);">04</span>
               <span class="stage-icon">🛡️</span>
             </div>
-            <h3>Custom Safety Matting</h3>
-            <p>We fabricate and fit dual-layer high-density crash mats cut to the exact perimeter of your landing zone.</p>
-            <div class="stage-bar"></div>
+            <h3>Safety Mats</h3>
+            <p>We fit custom-cut, dual-layer high-density crash mats across the landing area for maximum safety.</p>
           </article>
 
           <!-- Stage 05 -->
@@ -1183,9 +931,8 @@
               <span class="stage-num" style="color:var(--accent-purple);">05</span>
               <span class="stage-icon">📱</span>
             </div>
-            <h3>App Setup &amp; Sync</h3>
-            <p>We configure the tablet controller, pair Bluetooth and Wi-Fi mesh, calibrate hold illumination, and test offline mode.</p>
-            <div class="stage-bar"></div>
+            <h3>App Setup</h3>
+            <p>We set up your tablet or phone, connect the wall via Bluetooth/Wi-Fi, and test the lighting.</p>
           </article>
 
           <!-- Stage 06 -->
@@ -1194,214 +941,27 @@
               <span class="stage-num gradient-text-warm">06</span>
               <span class="stage-icon">🎓</span>
             </div>
-            <h3>Staff &amp; Coach Onboarding</h3>
-            <p>Hands-on training for PE teachers and gym staff on game modes, route selection, and safety best practices.</p>
-            <div class="stage-bar"></div>
+            <h3>Staff Training</h3>
+            <p>We train your PE teachers or gym staff on how to pick routes, start games, and supervise safely.</p>
           </article>
         </div>
 
-        <!-- Custom Solutions Callout -->
-        <div style="margin-top:var(--space-l);background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:var(--space-l);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-l);align-items:center;" class="reveal">
-          <div>
-            <span class="tag tag-cyan" style="margin-bottom:var(--space-s);">Custom Architecture</span>
-            <h3 class="heading-2" style="margin-bottom:var(--space-s);">Have Unique Spatial Constraints?</h3>
-            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7;margin-bottom:var(--space-m);">
-              We design custom ClimbFit configurations tailored to unusual room shapes, sloped ceilings, pillars, and outdoor covered spaces.
-            </p>
-            <div style="display:flex;gap:var(--space-s);flex-wrap:wrap;font-size:0.84rem;color:var(--text);font-weight:600;">
-              <span>1. Survey Space</span>
-              <span>→</span>
-              <span>2. Design 3D Layout</span>
-              <span>→</span>
-              <span>3. Install &amp; Connect App</span>
-            </div>
-          </div>
-          <div style="text-align:right;">
-            <a href="about.html#contact" class="btn btn-outline" style="border-color:var(--accent-cyan);color:var(--accent-cyan);">
-              Request Custom Design Consultation →
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── 5. Installation & Maintenance ─────────────────── -->
-    <section class="offering-section" id="installation-maintenance" aria-labelledby="maintenance-heading">
-      <div class="container">
-        <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-cyan);">Reliability</span>
-          <h2 class="heading-1" id="maintenance-heading">Installation &amp; Lifetime Care</h2>
-          <p>
-            Engineered for continuous institutional use with automated diagnostics, over-the-air updates, and dedicated support.
+        <!-- Clean Minimal CTA Card -->
+        <div class="simple-cta-card reveal">
+          <h2 class="heading-2" style="margin-bottom:var(--space-xs);">Ready to Bring Smart Climbing to Your Facility?</h2>
+          <p style="color:var(--text-muted);font-size:0.92rem;max-width:520px;margin:0 auto var(--space-m);">
+            Tell us about your room size and goals. We'll send a 3D plan, pricing, and brochure.
           </p>
-        </header>
-
-        <div class="maint-grid reveal">
-          <article class="maint-card">
-            <h3>
-              <span style="color:var(--accent-cyan);">🔧</span>
-              Certified Turnkey Installation
-            </h3>
-            <div class="maint-item-list">
-              <div class="maint-item">
-                <div class="maint-item-icon">🏗️</div>
-                <div class="maint-item-text">
-                  <h4>Non-Destructive Anchoring</h4>
-                  <p>Installed using vibration-damped structural anchors or independent self-supporting frames without building damage.</p>
-                </div>
-              </div>
-              <div class="maint-item">
-                <div class="maint-item-icon">⚡</div>
-                <div class="maint-item-text">
-                  <h4>Safe Low-Voltage DC Architecture</h4>
-                  <p>Hold LEDs run on safe low-voltage DC power. Total peak consumption stays under 350W for exceptional efficiency.</p>
-                </div>
-              </div>
-              <div class="maint-item">
-                <div class="maint-item-icon">🛡️</div>
-                <div class="maint-item-text">
-                  <h4>Impact Safety Compliance</h4>
-                  <p>Dual-layer impact crash mats are precision-cut and certified to meet international bouldering safety standards (EN 12572-2).</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="maint-card">
-            <h3>
-              <span style="color:var(--accent-yellow);">🔄</span>
-              Proactive Lifecycle Maintenance
-            </h3>
-            <div class="maint-item-list">
-              <div class="maint-item">
-                <div class="maint-item-icon">📡</div>
-                <div class="maint-item-text">
-                  <h4>Over-The-Air (OTA) Updates</h4>
-                  <p>Receive new app features, game modes, and route packs automatically via Wi-Fi with zero physical downtime.</p>
-                </div>
-              </div>
-              <div class="maint-item">
-                <div class="maint-item-icon">🔍</div>
-                <div class="maint-item-text">
-                  <h4>Automated Self-Diagnostics</h4>
-                  <p>In-app automated scans test every LED diode, current draw, and Bluetooth controller in under 30 seconds.</p>
-                </div>
-              </div>
-              <div class="maint-item">
-                <div class="maint-item-icon">📞</div>
-                <div class="maint-item-text">
-                  <h4>Priority Support &amp; Spare Parts</h4>
-                  <p>Direct priority support (+91 8982 789 640) with guaranteed dispatch of replacement holds and controllers.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Planned Product Roadmap Strip -->
-        <div style="margin-top:var(--space-l);background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:var(--space-l);" class="reveal">
-          <div style="margin-bottom:var(--space-m);">
-            <span class="label" style="color:var(--accent-yellow);">Product Roadmap</span>
-            <h3 class="heading-2" style="margin-top:0.25rem;">Upcoming Platform Milestones</h3>
+          <div style="display:flex;justify-content:center;gap:var(--space-s);flex-wrap:wrap;">
+            <a href="about.html#contact" class="btn btn-primary" style="font-size:0.9rem;padding:0.7rem 1.6rem;">Get Turnkey Quote <span aria-hidden="true">→</span></a>
+            <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="font-size:0.9rem;padding:0.7rem 1.6rem;border-color:var(--accent-yellow);color:var(--accent-yellow);">Download 2026 Brochure (PDF)</a>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:var(--space-m);">
-            <div style="background:var(--surface-raised);padding:var(--space-m);border-radius:var(--r-m);border:1px solid var(--border);">
-              <div style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent-cyan);margin-bottom:0.2rem;">2026</div>
-              <div style="font-weight:700;font-size:0.92rem;margin-bottom:0.3rem;">Phase 1: Core Launch</div>
-              <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.55;">Sub-10s Bluetooth pairing, express route editor, brush mode, one-tap hold tagging, and offline app control.</p>
-            </div>
-            <div style="background:var(--surface-raised);padding:var(--space-m);border-radius:var(--r-m);border:1px solid var(--border);">
-              <div style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent-yellow);margin-bottom:0.2rem;">2027</div>
-              <div style="font-weight:700;font-size:0.92rem;margin-bottom:0.3rem;">Phase 2: Community Hub</div>
-              <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.55;">Global route library, advanced difficulty filters, route sharing, downloads, likes, and verified creator profiles.</p>
-            </div>
-            <div style="background:var(--surface-raised);padding:var(--space-m);border-radius:var(--r-m);border:1px solid var(--border);">
-              <div style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent-pink);margin-bottom:0.2rem;">2028</div>
-              <div style="font-weight:700;font-size:0.92rem;margin-bottom:0.3rem;">Phase 3: Ecosystem</div>
-              <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.55;">Performance analytics, student progression metrics, leaderboards, smart wearable integration, and club features.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── 6. Download 2026 Brochure CTA Banner ───────────── -->
-    <section class="section" id="brochure-download" aria-labelledby="brochure-heading">
-      <div class="container">
-        <div class="brochure-banner reveal">
-          <div class="brochure-banner-text">
-            <span class="tag tag-yellow" style="margin-bottom:var(--space-m);">Official 2026 Edition</span>
-            <h2 id="brochure-heading">
-              Download the 2026 ClimbFit<br>
-              <span class="gradient-text-warm">Product &amp; Systems Brochure</span>
-            </h2>
-            <p>
-              Get the 11-page technical reference deck containing full board dimensions, hold matrix schematics, PE curriculum guides, turnkey timelines, and pilot pricing.
-            </p>
-            <div class="brochure-features">
-              <span class="brochure-feature-tag">S, M, L Dimensional Diagrams</span>
-              <span class="brochure-feature-tag">6-Stage Turnkey Process</span>
-              <span class="brochure-feature-tag">Power &amp; Electrical Specs</span>
-              <span class="brochure-feature-tag">School PE Curriculum Guide</span>
-            </div>
-            <div class="brochure-actions">
-              <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn brochure-btn" id="banner-download-brochure">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download 2026 Brochure (PDF)
-              </a>
-              <a href="about.html#contact" class="btn btn-outline">
-                Book Consultation
-              </a>
-            </div>
-          </div>
-
-          <div class="brochure-banner-preview">
-            <div class="brochure-book-card">
-              <div class="brochure-book-cover">
-                <img src="assets/brand/logo.png" alt="ClimbFit" style="height:24px;margin-bottom:0.75rem;" class="logo-dark-theme">
-                <div style="font-family:var(--font-display);font-weight:800;font-size:0.95rem;color:var(--text);line-height:1.2;margin-bottom:0.25rem;">
-                  Interactive LED Climbing
-                </div>
-                <div style="font-size:0.75rem;color:var(--accent-cyan);font-weight:600;">
-                  2026 Product &amp; Systems Deck
-                </div>
-              </div>
-              <div style="font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.2rem;">
-                Official ClimbFit Deck
-              </div>
-              <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:var(--space-s);">
-                PDF Document · 11 Slides
-              </div>
-              <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="width:100%;justify-content:center;font-size:0.82rem;padding:0.45rem;">
-                Direct Download (PDF)
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Contact / Discuss Project ─────────────────────── -->
-    <section class="section-sm" aria-labelledby="offerings-contact-heading">
-      <div class="container">
-        <div class="reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:var(--space-xl) var(--space-l);text-align:center;position:relative;overflow:hidden;">
-          <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(0,229,255,0.07),transparent 65%);"></div>
-          <h2 id="offerings-contact-heading" class="heading-1" style="margin-bottom:var(--space-s);position:relative;">Future-Proof Your Sports &amp;<br><span class="gradient-text">Fitness Infrastructure</span></h2>
-          <p style="color:var(--text-muted);margin-bottom:var(--space-l);position:relative;max-width:540px;margin-left:auto;margin-right:auto;font-size:0.95rem;">
-            Explore ClimbFit configurations tailored to your space, ceiling height, and athletic goals.
-          </p>
-          <div style="display:flex;justify-content:center;gap:var(--space-s);flex-wrap:wrap;position:relative;">
-            <a href="about.html#contact" class="btn btn-primary">Discuss Your Project <span aria-hidden="true">→</span></a>
-            <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline">Download 2026 Brochure</a>
-          </div>
-          <div style="margin-top:var(--space-m);display:flex;justify-content:center;gap:var(--space-m);flex-wrap:wrap;font-size:0.88rem;color:var(--text-muted);position:relative;">
+          <div style="margin-top:var(--space-m);display:flex;justify-content:center;gap:var(--space-m);flex-wrap:wrap;font-size:0.85rem;color:var(--text-muted);">
             <span>📞 <a href="tel:+918982789640" style="color:var(--text);">+91 8982 789 640</a></span>
             <span>✉️ <a href="mailto:contact@climbfit.in" style="color:var(--text);">contact@climbfit.in</a></span>
-            <span>🌐 <a href="https://www.climbfit.in" style="color:var(--text);">www.climbfit.in</a></span>
           </div>
         </div>
+
       </div>
     </section>
 
