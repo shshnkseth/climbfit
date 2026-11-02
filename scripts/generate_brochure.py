@@ -36,7 +36,7 @@ def generate_brochure():
         c.setFillColor(TEXT_MUTED)
         c.setFont("Helvetica", 8)
         c.drawString(40, 22, "ClimbFit Technologies — 2026 Official Products & Infrastructure Brochure")
-        c.drawRightString(page_width - 40, 22, "www.climbfit.in  |  contact@climbfit.in  |  +91 8982 789 640")
+        c.drawRightString(page_width - 40, 22, "www.climbfit.in  |  anind@climbfit.in  |  +91 8982 789 640")
         
         if category:
             c.setFont("Helvetica-Bold", 8)
@@ -316,7 +316,7 @@ def generate_brochure():
     c.setFillColor(YELLOW)
     c.drawString(65, 135, "PHONE:   +91 8982 789 640")
     c.setFillColor(CYAN)
-    c.drawString(65, 105, "EMAIL:   contact@climbfit.in")
+    c.drawString(65, 105, "EMAIL:   anind@climbfit.in")
     c.setFillColor(TEXT_WHITE)
     c.drawString(65, 75, "WEB:     www.climbfit.in")
     
