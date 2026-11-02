@@ -31,7 +31,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Geist+Pixel&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Schema.org Structured Data -->
@@ -55,48 +55,97 @@
     /* ── Hero ─────────────────────────────────────────────── */
     .hero {
       min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: var(--space-l);
-      padding-top: var(--nav-h);
-      overflow: hidden;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: calc(var(--nav-h) + 2rem);
+      padding-bottom: var(--space-xl);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 32%;
+      filter: brightness(0.82);
+      transform: scale(1.02);
+      transition: transform 0.6s var(--ease-out);
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8,8,16,0.76) 0%, rgba(8,8,16,0.35) 25%, rgba(8,8,16,0.65) 60%, rgba(8,8,16,0.92) 88%, var(--bg) 100%),
+        radial-gradient(circle at 50% 45%, rgba(8,8,16,0.15) 0%, rgba(8,8,16,0.85) 100%);
+      z-index: 1;
     }
 
     .hero-orb-1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,229,255,0.1) 0%, transparent 70%);
-      top: -100px; right: -100px;
+      width: 650px; height: 650px;
+      background: radial-gradient(circle, rgba(0,229,255,0.14) 0%, transparent 70%);
+      top: -120px; right: -80px;
+      z-index: 1;
     }
     .hero-orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(177,79,255,0.08) 0%, transparent 70%);
-      bottom: 0; left: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(177,79,255,0.12) 0%, transparent 70%);
+      bottom: -60px; left: -80px;
+      z-index: 1;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     .hero-content {
       position: relative;
-      z-index: 1;
-      padding: var(--space-xl) 0 var(--space-xl) clamp(1.5rem, 5vw, 5rem);
+      max-width: 840px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-m) 0;
     }
 
-    .hero-eyebrow { display: flex; align-items: center; gap: var(--space-s); margin-bottom: var(--space-m); }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-s);
+      margin-bottom: var(--space-m);
+    }
 
     .hold-indicator {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.35rem 0.9rem;
+      padding: 0.35rem 0.95rem;
       border-radius: var(--r-xl);
-      border: 1px solid rgba(0,229,255,0.3);
-      background: rgba(0,229,255,0.06);
+      border: 1px solid rgba(0,229,255,0.35);
+      background: rgba(8,8,16,0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent-cyan);
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--font-body);
     }
     .hold-indicator::before {
       content: '';
@@ -109,11 +158,12 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(3rem, 6.5vw, 6.2rem);
-      line-height: 1.02;
-      letter-spacing: -0.035em;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
       margin-bottom: var(--space-m);
+      text-align: center;
     }
 
     .hero-title .line-accent {
@@ -125,21 +175,32 @@
     }
 
     .hero-desc {
-      font-size: 1.08rem;
-      color: var(--text-muted);
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: rgba(228, 228, 240, 0.88);
       line-height: 1.75;
-      max-width: 500px;
-      margin-bottom: var(--space-l);
+      max-width: 640px;
+      margin: 0 auto var(--space-l);
+      text-align: center;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.5);
     }
 
-    .hero-actions { display: flex; align-items: center; gap: var(--space-s); flex-wrap: wrap; }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-s);
+      flex-wrap: wrap;
+    }
 
     .hero-stats {
       display: flex;
-      gap: var(--space-l);
+      justify-content: center;
+      gap: clamp(1.5rem, 5vw, 4rem);
       margin-top: var(--space-xl);
-      padding-top: var(--space-l);
-      border-top: 1px solid var(--border);
+      padding-top: var(--space-m);
+      border-top: 1px solid rgba(255,255,255,0.14);
+      width: 100%;
+      max-width: 640px;
     }
 
     .hero-stat-num {
@@ -159,25 +220,6 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-top: 2px;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      height: 100svh;
-      overflow: hidden;
-    }
-    .hero-image-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 38%;
-    }
-    .hero-image-wrap::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg, var(--bg) 0%, transparent 28%),
-                  linear-gradient(0deg, var(--bg) 0%, transparent 25%),
-                  linear-gradient(180deg, var(--bg) 0%, transparent 15%);
-      z-index: 1;
     }
 
     /* ── Services Cards ────────────────────────────────────── */
@@ -421,12 +463,9 @@
 
     /* Responsive */
     @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-content { padding: calc(var(--nav-h) + 3rem) var(--space-m) var(--space-l); text-align: center; }
-      .hero-actions { justify-content: center; }
-      .hero-stats   { justify-content: center; }
-      .hero-image-wrap { height: 70vw; }
-      .hero-image-wrap::before { background: linear-gradient(0deg, var(--bg) 0%, transparent 40%), linear-gradient(90deg, var(--bg) 0%, transparent 30%); }
+      .hero { min-height: 92svh; padding-top: calc(var(--nav-h) + 1.5rem); }
+      .hero-content { padding: var(--space-m) var(--space-xs); }
+      .hero-stats { gap: var(--space-m); flex-wrap: wrap; }
       .services-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
       .audience-grid { grid-template-columns: 1fr; }
@@ -475,65 +514,67 @@
 
     <!-- ── 1. Hero ─────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-heading">
-      <div class="glow-orb hero-orb-1" aria-hidden="true"></div>
-      <div class="glow-orb hero-orb-2" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span class="hold-indicator" aria-label="Smart LED Climbing Board with App">LED Climbing Board + App</span>
-        </div>
-
-        <h1 class="hero-title" id="hero-heading">
-          Climb Smarter.<br>
-          <span class="line-accent">Train Stronger.</span>
-        </h1>
-
-        <p class="hero-desc">
-          A compact smart climbing board with illuminated LED holds and an intuitive app. Pick from 1,000+ boulder problems, watch the holds light up, and start climbing. New routes added daily, built-in interactive game modes, and adjustable angles for any room.
-        </p>
-
-        <div class="hero-actions">
-          <a href="services.html" class="btn btn-primary">
-            Explore Our Services <span class="btn-icon" aria-hidden="true">→</span>
-          </a>
-          <a href="training-board.html" class="btn btn-outline">
-            Training Board Specs
-          </a>
-          <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="border-color:var(--accent-yellow);color:var(--accent-yellow);">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:2px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download 2026 Brochure
-          </a>
-        </div>
-
-        <dl class="hero-stats" aria-label="ClimbFit key stats">
-          <div>
-            <dt class="hero-stat-label">Routes Available</dt>
-            <dd class="hero-stat-num"><span data-count="1000" data-suffix="+">1,000+</span></dd>
-            <div class="hero-stat-badge">Added Daily</div>
-          </div>
-          <div>
-            <dt class="hero-stat-label">LED Response</dt>
-            <dd class="hero-stat-num"><span data-count="30" data-suffix="ms">&lt;30ms</span></dd>
-            <div class="hero-stat-badge">Instant Sync</div>
-          </div>
-          <div>
-            <dt class="hero-stat-label">Wall Angle</dt>
-            <dd class="hero-stat-num"><span data-count="45" data-suffix="°">0°–45°</span></dd>
-            <div class="hero-stat-badge">Adjustable</div>
-          </div>
-        </dl>
-      </div>
-
-      <div class="hero-image-wrap">
+      <div class="hero-bg" aria-hidden="true">
         <img
           src="assets/brand/hero-climbfit.jpg"
-          alt="Climber on a ClimbFit training board with color-coded LED holds glowing beneath each grip"
+          alt=""
           class="hero-parallax"
           loading="eager"
           fetchpriority="high"
-          width="681"
-          height="1024"
+          width="1920"
+          height="1080"
         >
+      </div>
+
+      <div class="glow-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="glow-orb hero-orb-2" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="hold-indicator" aria-label="Smart LED Climbing Board with App">LED Climbing Board + App</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-heading">
+            Climb Smarter.<br>
+            <span class="line-accent">Train Stronger.</span>
+          </h1>
+
+          <p class="hero-desc">
+            A compact smart climbing board with illuminated LED holds and an intuitive app. Pick from 1,000+ boulder problems, watch the holds light up, and start climbing. New routes added daily, built-in interactive game modes, and adjustable angles for any room.
+          </p>
+
+          <div class="hero-actions">
+            <a href="services.html" class="btn btn-primary">
+              Explore Our Services <span class="btn-icon" aria-hidden="true">→</span>
+            </a>
+            <a href="training-board.html" class="btn btn-outline">
+              Training Board Specs
+            </a>
+            <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="border-color:var(--accent-yellow);color:var(--accent-yellow);">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:2px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download 2026 Brochure
+            </a>
+          </div>
+
+          <dl class="hero-stats" aria-label="ClimbFit key stats">
+            <div>
+              <dt class="hero-stat-label">Routes Available</dt>
+              <dd class="hero-stat-num"><span data-count="1000" data-suffix="+">1,000+</span></dd>
+              <div class="hero-stat-badge">Added Daily</div>
+            </div>
+            <div>
+              <dt class="hero-stat-label">LED Response</dt>
+              <dd class="hero-stat-num"><span data-count="30" data-suffix="ms">&lt;30ms</span></dd>
+              <div class="hero-stat-badge">Instant Sync</div>
+            </div>
+            <div>
+              <dt class="hero-stat-label">Wall Angle</dt>
+              <dd class="hero-stat-num"><span data-count="45" data-suffix="°">0°–45°</span></dd>
+              <div class="hero-stat-badge">Adjustable</div>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
 
