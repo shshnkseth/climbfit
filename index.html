@@ -3,14 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClimbFit — LED Climbing &amp; Bouldering Wall System</title>
-  <meta name="description" content="A climbing wall with LED-lit holds and an app. 10,000+ routes synced to your phone, adjustable tilt from 0° to 45°. Built for gyms, schools, and training spaces.">
-  <meta name="keywords" content="smart climbing wall, LED bouldering wall, interactive climbing board, digital climbing board, Kilter board alternative, adjustable training wall, high tech bouldering equipment">
+  <title>ClimbFit — Smart LED Climbing Boards &amp; Turnkey Climbing Walls</title>
+  <meta name="description" content="A smart climbing board with LED holds and an intuitive app. 1,000+ routes with new climbs added daily, game modes, and full turnkey installation for gyms, schools, and homes.">
+  <meta name="keywords" content="smart climbing board, LED bouldering wall, interactive climbing wall, turnkey climbing installation, Kilter board alternative, school bouldering wall, adjustable training wall">
+  <link rel="canonical" href="https://www.climbfit.in/">
   <link rel="icon" href="assets/brand/logo-icon.png" type="image/png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Security & Privacy Meta -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.climbfit.in/">
+  <meta property="og:title" content="ClimbFit — Smart LED Climbing Boards &amp; Turnkey Walls">
+  <meta property="og:description" content="LED-lit holds, 1,000+ routes with new climbs added daily, game modes, and complete turnkey installation.">
+  <meta property="og:image" content="https://www.climbfit.in/assets/brand/hero-climbfit.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ClimbFit — Smart LED Climbing Boards">
+  <meta name="twitter:description" content="LED-lit holds, 1,000+ routes with daily updates, game modes, and complete turnkey installation.">
+  <meta name="twitter:image" content="https://www.climbfit.in/assets/brand/hero-climbfit.jpg">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "ClimbFit Technologies",
+    "description": "Smart LED climbing boards, continuous traverse walls, and turnkey climbing setups with app-synced routes.",
+    "url": "https://www.climbfit.in",
+    "telephone": "+918982789640",
+    "email": "anind@climbfit.in",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
   <style>
     /* ── Hero ─────────────────────────────────────────────── */
     .hero {
@@ -85,10 +125,10 @@
     }
 
     .hero-desc {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 480px;
+      line-height: 1.75;
+      max-width: 500px;
       margin-bottom: var(--space-l);
     }
 
@@ -111,6 +151,15 @@
       color: var(--text);
     }
     .hero-stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+    .hero-stat-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
 
     .hero-image-wrap {
       position: relative;
@@ -131,54 +180,140 @@
       z-index: 1;
     }
 
-    /* ── Feature cards ─────────────────────────────────────── */
-    .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-s); }
+    /* ── Services Cards ────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-m);
+      margin-top: var(--space-l);
+    }
 
-    .feature-card {
+    .service-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-l);
       padding: var(--space-l);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
-      position: relative; overflow: hidden;
     }
-    .feature-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 2px; opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .feature-card:hover::before { opacity: 1; }
-    .feature-card:hover {
-      border-color: transparent;
-      transform: translateY(-6px);
+    .service-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-4px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.35);
     }
-    .fc-cyan::before   { background: var(--grad-accent); }
-    .fc-pink::before   { background: var(--grad-pink); }
-    .fc-yellow::before { background: var(--grad-warm); }
-    .fc-cyan:hover   { box-shadow: 0 16px 48px rgba(0,229,255,0.1); }
-    .fc-pink:hover   { box-shadow: 0 16px 48px rgba(255,77,141,0.1); }
-    .fc-yellow:hover { box-shadow: 0 16px 48px rgba(245,208,0,0.1); }
+    .service-card.highlight {
+      border-color: rgba(0,229,255,0.4);
+      background: linear-gradient(180deg, rgba(0,229,255,0.05) 0%, var(--surface) 35%);
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover::before { opacity: 1; }
+    .sc-cyan::before   { background: var(--grad-accent); }
+    .sc-yellow::before { background: var(--grad-warm); }
+    .sc-pink::before   { background: var(--grad-pink); }
+    .sc-purple::before { background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan)); }
 
-    .feature-icon-wrap {
+    .service-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--space-m);
+    }
+    .service-icon-wrap {
       width: 52px; height: 52px;
       border-radius: var(--r-m);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem;
-      margin-bottom: var(--space-m);
     }
-
-    .feature-card h3 {
+    .service-card h3 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.35rem;
       letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
     }
-    .feature-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; }
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-m);
+      flex-grow: 1;
+    }
+    .service-specs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.86rem;
+      color: var(--text);
+      margin-bottom: var(--space-m);
+      border-top: 1px solid var(--border);
+      padding-top: var(--space-s);
+    }
+    .service-specs-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .service-specs-list li span.tick {
+      color: var(--accent-cyan);
+      font-weight: 700;
+    }
 
-    /* ── Comparison Banner ─────────────────────────────────── */
+    /* ── Process: 6 Steps ──────────────────────────────────── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-s);
+      margin-top: var(--space-l);
+    }
+    .process-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-l);
+      padding: var(--space-m);
+      position: relative;
+      transition: border-color 0.25s, transform 0.25s var(--ease-out);
+    }
+    .process-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+    }
+    .process-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+    .process-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .process-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.35rem;
+    }
+    .process-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Comparison Strip ─────────────────────────────────── */
     .comparison-strip {
       background: linear-gradient(135deg, rgba(0,229,255,0.06) 0%, rgba(177,79,255,0.06) 100%);
       border: 1px solid var(--border-active);
@@ -199,30 +334,42 @@
     }
     .comp-item-lbl { font-size: 0.85rem; color: var(--text-muted); }
 
-    /* ── In Action ─────────────────────────────────────────── */
-    .in-action {
-      position: relative; overflow: hidden;
+    /* ── Pillars: Why Choose ClimbFit ─────────────────────── */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-s);
+      margin-top: var(--space-l);
+    }
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--r-l);
-      margin: 0 var(--space-m);
+      padding: var(--space-m);
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
     }
-    .in-action img { width: 100%; height: 560px; object-fit: cover; object-position: center 30%; }
-    .in-action-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(8,8,16,0.92) 0%, rgba(8,8,16,0.4) 60%, transparent 100%);
-      display: flex; align-items: flex-end; padding: var(--space-xl);
+    .pillar-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,229,255,0.08);
     }
-    .in-action-text { max-width: 520px; }
-    .in-action-text h2 {
+    .pillar-num {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.025em;
-      line-height: 1.1;
-      margin-bottom: var(--space-s);
+      font-weight: 800; font-size: 1.5rem;
+      color: var(--accent-cyan);
+      margin-bottom: var(--space-xs);
     }
-    .in-action-text p { color: rgba(228,228,240,0.82); font-size: 1.05rem; margin-bottom: var(--space-m); line-height: 1.75; }
+    .pillar-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 1.05rem;
+      letter-spacing: -0.02em; margin-bottom: 0.4rem;
+    }
+    .pillar-card p {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.65;
+    }
 
-    /* ── Audience cards ────────────────────────────────────── */
+    /* ── Audience Cards ────────────────────────────────────── */
     .audience-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-s); }
 
     .audience-card {
@@ -272,61 +419,6 @@
     .cta-strip p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: var(--space-l); position: relative; max-width: 620px; margin-left: auto; margin-right: auto; }
     .cta-strip-actions { display: flex; justify-content: center; gap: var(--space-s); flex-wrap: wrap; position: relative; }
 
-    /* ── Tech Pills Bar ────────────────────────────────────── */
-    .tech-pills-bar {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-s);
-      margin-top: var(--space-m);
-    }
-    .tech-pill {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 0.6rem 1.25rem; border-radius: var(--r-xl);
-      background: var(--surface); border: 1px solid var(--border-active);
-      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em;
-      text-transform: uppercase; color: var(--text);
-    }
-    .tech-pill span.dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent-cyan); box-shadow: var(--glow-cyan);
-    }
-    .tech-pill-purple span.dot { background: var(--accent-purple); box-shadow: var(--glow-purple); }
-    .tech-pill-pink span.dot   { background: var(--accent-pink); box-shadow: var(--glow-pink); }
-    .tech-pill-yellow span.dot { background: var(--accent-yellow); box-shadow: var(--glow-yellow); }
-
-    /* ── 7 Pillars Grid ────────────────────────────────────── */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: var(--space-s);
-      margin-top: var(--space-l);
-    }
-    .pillar-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-l);
-      padding: var(--space-m);
-      position: relative; overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
-    }
-    .pillar-card:hover {
-      border-color: var(--accent-cyan);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,229,255,0.08);
-    }
-    .pillar-num {
-      font-family: var(--font-display);
-      font-weight: 800; font-size: 1.5rem;
-      color: var(--accent-cyan);
-      margin-bottom: var(--space-xs);
-    }
-    .pillar-card h3 {
-      font-family: var(--font-display);
-      font-weight: 700; font-size: 1.05rem;
-      letter-spacing: -0.02em; margin-bottom: 0.4rem;
-    }
-    .pillar-card p {
-      font-size: 0.88rem; color: var(--text-muted); line-height: 1.65;
-    }
-
     /* Responsive */
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -335,30 +427,34 @@
       .hero-stats   { justify-content: center; }
       .hero-image-wrap { height: 70vw; }
       .hero-image-wrap::before { background: linear-gradient(0deg, var(--bg) 0%, transparent 40%), linear-gradient(90deg, var(--bg) 0%, transparent 30%); }
-      .features-grid, .audience-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid { grid-template-columns: 1fr; }
       .comparison-strip { grid-template-columns: repeat(2, 1fr); }
-      .in-action { margin: 0; border-radius: 0; }
+    }
+    @media (max-width: 600px) {
+      .process-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Skip to main content (accessibility) -->
+  <!-- Skip to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ── Navigation ─────────────────────────────────────────── -->
   <nav class="site-nav" id="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="ClimbFit — go to homepage">
+      <a href="index.html" class="nav-logo" aria-label="ClimbFit homepage">
         <img src="assets/brand/logo.png" alt="ClimbFit" class="nav-logo-img logo-dark-theme" height="30">
         <img src="assets/brand/logo-dark.png" alt="ClimbFit" class="nav-logo-img logo-light-theme" height="30">
       </a>
 
       <div class="nav-links" role="menubar" aria-label="Site navigation">
         <a href="index.html" role="menuitem" aria-current="page">Home</a>
-        <a href="wall.html" role="menuitem">The Wall</a>
-        <a href="offerings.html" role="menuitem">Our Offerings</a>
-        <a href="about.html" role="menuitem">About</a>
+        <a href="services.html" role="menuitem">Our Services</a>
+        <a href="training-board.html" role="menuitem">Training Board</a>
+        <a href="about.html" role="menuitem">About Us</a>
         <a href="about.html#contact" class="nav-cta" role="menuitem">Get in Touch</a>
       </div>
 
@@ -377,14 +473,14 @@
 
   <main id="main-content">
 
-    <!-- ── Hero ───────────────────────────────────────────── -->
+    <!-- ── 1. Hero ─────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="glow-orb hero-orb-1" aria-hidden="true"></div>
       <div class="glow-orb hero-orb-2" aria-hidden="true"></div>
 
       <div class="hero-content">
         <div class="hero-eyebrow">
-          <span class="hold-indicator" aria-label="LED climbing wall with app">LED Climbing Wall + App</span>
+          <span class="hold-indicator" aria-label="Smart LED Climbing Board with App">LED Climbing Board + App</span>
         </div>
 
         <h1 class="hero-title" id="hero-heading">
@@ -393,34 +489,37 @@
         </h1>
 
         <p class="hero-desc">
-          A climbing wall with LED-lit holds and an app to match. Pick from 10,000+ boulder problems (V0–V14), watch the holds light up, and start climbing. Tracks your progress, adjusts the wall angle, and works in any gym, school, or training space.
+          A compact smart climbing board with illuminated LED holds and an intuitive app. Pick from 1,000+ boulder problems, watch the holds light up, and start climbing. New routes added daily, built-in interactive game modes, and adjustable angles for any room.
         </p>
 
         <div class="hero-actions">
-          <a href="offerings.html" class="btn btn-primary">
-            Explore Offerings <span class="btn-icon" aria-hidden="true">→</span>
+          <a href="services.html" class="btn btn-primary">
+            Explore Our Services <span class="btn-icon" aria-hidden="true">→</span>
+          </a>
+          <a href="training-board.html" class="btn btn-outline">
+            Training Board Specs
           </a>
           <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="border-color:var(--accent-yellow);color:var(--accent-yellow);">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:2px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download 2026 Brochure
-          </a>
-          <a href="wall.html" class="btn btn-outline">
-            The Wall Specs
           </a>
         </div>
 
         <dl class="hero-stats" aria-label="ClimbFit key stats">
           <div>
             <dt class="hero-stat-label">Routes Available</dt>
-            <dd class="hero-stat-num"><span data-count="10000" data-suffix="+">10,000+</span></dd>
+            <dd class="hero-stat-num"><span data-count="1000" data-suffix="+">1,000+</span></dd>
+            <div class="hero-stat-badge">Added Daily</div>
           </div>
           <div>
             <dt class="hero-stat-label">LED Response</dt>
             <dd class="hero-stat-num"><span data-count="30" data-suffix="ms">&lt;30ms</span></dd>
+            <div class="hero-stat-badge">Instant Sync</div>
           </div>
           <div>
             <dt class="hero-stat-label">Wall Angle</dt>
             <dd class="hero-stat-num"><span data-count="45" data-suffix="°">0°–45°</span></dd>
+            <div class="hero-stat-badge">Adjustable</div>
           </div>
         </dl>
       </div>
@@ -428,7 +527,7 @@
       <div class="hero-image-wrap">
         <img
           src="assets/brand/hero-climbfit.jpg"
-          alt="Climber on a ClimbFit wall with color-coded LED holds glowing beneath each grip"
+          alt="Climber on a ClimbFit training board with color-coded LED holds glowing beneath each grip"
           class="hero-parallax"
           loading="eager"
           fetchpriority="high"
@@ -438,191 +537,286 @@
       </div>
     </section>
 
-    <!-- ── Features ─────────────────────────────────────────── -->
-    <section class="section" aria-labelledby="features-heading">
+    <!-- ── 2. The Services We Offer ────────────────────────── -->
+    <section class="section" id="services" aria-labelledby="services-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" aria-hidden="true">How It Works</span>
-          <h2 class="heading-1" id="features-heading">LED Holds. Cloud Routes.<br>Solid Hardware.</h2>
-          <p>Every hold lights up in color to show you the route. Connects over Bluetooth. Pick a problem in the app and go.</p>
+          <span class="label" aria-hidden="true">What We Do</span>
+          <h2 class="heading-1" id="services-heading">The Services We Offer</h2>
+          <p>Everything you need under one roof: complete turnkey installations, modular training boards, continuous traverse walls, and ongoing spares support.</p>
         </header>
 
-        <div class="features-grid" role="list" aria-label="ClimbFit core features">
-          <article class="feature-card fc-cyan reveal reveal-delay-1" role="listitem">
-            <div class="feature-icon-wrap bg-cyan" aria-hidden="true">💡</div>
-            <h3>Color-Coded LED Holds</h3>
-            <p>Every hold has an RGB LED behind it. The colors tell you what to grab: Green for start, Cyan for hands &amp; feet, Orange for feet only, and Pink for the finish. No guessing.</p>
-          </article>
-          <article class="feature-card fc-pink reveal reveal-delay-2" role="listitem">
-            <div class="feature-icon-wrap bg-pink" aria-hidden="true">🧗</div>
-            <h3>10,000+ Graded Routes</h3>
-            <p>Browse a growing library of boulder problems graded V0 to V14 (and Font Scale). Find routes that match your level, try harder ones, and see how you stack up against other climbers.</p>
-          </article>
-          <article class="feature-card fc-yellow reveal reveal-delay-3" role="listitem">
-            <div class="feature-icon-wrap bg-yellow" aria-hidden="true">⚡</div>
-            <h3>Built to Last</h3>
-            <p>CNC-machined 18mm hardwood panels, sealed LED housings, and durable dual-texture PU holds. Designed for heavy daily use in busy commercial spaces.</p>
-          </article>
-        </div>
+        <div class="services-grid" role="list" aria-label="ClimbFit core services">
 
-        <div class="comparison-strip reveal">
-          <div class="comp-item">
-            <div class="comp-item-val">10,000+</div>
-            <div class="comp-item-lbl">Routes in the Library</div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-item-val">&lt; 30ms</div>
-            <div class="comp-item-lbl">LED Sync Speed</div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-item-val">0° to 45°</div>
-            <div class="comp-item-lbl">Adjustable Wall Angle</div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-item-val">&lt; 350W</div>
-            <div class="comp-item-lbl">Peak Power Draw</div>
-          </div>
-        </div>
+          <!-- Service 1: Turnkey Setup -->
+          <article class="service-card highlight sc-cyan reveal reveal-delay-1" role="listitem">
+            <div class="service-header-row">
+              <div class="service-icon-wrap bg-cyan" aria-hidden="true">🏗️</div>
+              <span class="tag tag-cyan">Full Turnkey</span>
+            </div>
+            <h3>Turnkey Wall Installation</h3>
+            <p>From initial room survey to your team's first climb, our technicians handle the whole project. We survey the space, fabricate the steel and timber structure, install custom safety mats, configure Bluetooth connectivity, and train your staff.</p>
+            <ul class="service-specs-list" aria-label="Turnkey features">
+              <li><span class="tick">✓</span> Room 3D layout &amp; structural engineering</li>
+              <li><span class="tick">✓</span> Certified frame mounting (wall or freestanding)</li>
+              <li><span class="tick">✓</span> Dual-layer high-density crash mats included</li>
+              <li><span class="tick">✓</span> On-site staff and coach training</li>
+            </ul>
+            <a href="about.html#contact" class="btn btn-primary" style="align-self:flex-start;">Request Turnkey Quote →</a>
+          </article>
 
-        <div class="tech-pills-bar reveal">
-          <div class="tech-pill"><span class="dot"></span> LED Hold System</div>
-          <div class="tech-pill tech-pill-purple"><span class="dot"></span> Always On</div>
-          <div class="tech-pill tech-pill-pink"><span class="dot"></span> Progress Tracking</div>
-          <div class="tech-pill tech-pill-yellow"><span class="dot"></span> Shared Route Library</div>
+          <!-- Service 2: Training Board -->
+          <article class="service-card sc-yellow reveal reveal-delay-2" role="listitem">
+            <div class="service-header-row">
+              <div class="service-icon-wrap bg-yellow" aria-hidden="true">🧗</div>
+              <span class="tag tag-yellow">Modular Sizes</span>
+            </div>
+            <h3>ClimbFit Training Board</h3>
+            <p>Our flagship smart training board available in three standard sizes (S: 8×12 ft, M: 12×12 ft, L: 15×12 ft). Backlit RGB LED holds connect to any phone or tablet, offering 1,000+ benchmark boulder problems with new routes added daily.</p>
+            <ul class="service-specs-list" aria-label="Training board features">
+              <li><span class="tick">✓</span> 198 to 324 ergonomic PU holds with RGB LEDs</li>
+              <li><span class="tick">✓</span> 1,000+ routes (V0–V14) + community setter tool</li>
+              <li><span class="tick">✓</span> Interactive game modes (Memory, Relays, Multi)</li>
+              <li><span class="tick">✓</span> Manual or hydraulic tilt adjustment (0° to 45°)</li>
+            </ul>
+            <a href="training-board.html" class="btn btn-outline" style="align-self:flex-start;">View Training Board Specs →</a>
+          </article>
+
+          <!-- Service 3: Traverse Walls -->
+          <article class="service-card sc-pink reveal reveal-delay-1" role="listitem">
+            <div class="service-header-row">
+              <div class="service-icon-wrap bg-pink" aria-hidden="true">↔️</div>
+              <span class="tag tag-pink">Zero Harness</span>
+            </div>
+            <h3>Continuous Traverse Walls</h3>
+            <p>Low-height horizontal climbing designed for school corridors, gym sidelines, and multi-purpose spaces. Climbers move sideways instead of up, letting 4 to 8+ students climb at the same time with zero fall risk and no ropes needed.</p>
+            <ul class="service-specs-list" aria-label="Traverse features">
+              <li><span class="tick">✓</span> Fits under regular 8–10 ft ceilings</li>
+              <li><span class="tick">✓</span> Modular lengths from 12 ft to 48+ ft</li>
+              <li><span class="tick">✓</span> 36-week pre-loaded PE lesson curriculum</li>
+              <li><span class="tick">✓</span> Continuous floor matting along entire length</li>
+            </ul>
+            <a href="services.html#traverse-wall" class="btn btn-outline" style="align-self:flex-start;">Explore Traverse Walls →</a>
+          </article>
+
+          <!-- Service 4: Spares & Accessories -->
+          <article class="service-card sc-purple reveal reveal-delay-2" role="listitem">
+            <div class="service-header-row">
+              <div class="service-icon-wrap bg-purple" aria-hidden="true">⚙️</div>
+              <span class="tag tag-purple">Spares &amp; Support</span>
+            </div>
+            <h3>Spares, Holds &amp; Accessories</h3>
+            <p>Keep your wall running for years with official replacement parts and hardware upgrades. We stock replacement LED nodes, dual-texture hold packs, crash mat extensions, power controllers, and tablet mounting brackets.</p>
+            <ul class="service-specs-list" aria-label="Spares features">
+              <li><span class="tick">✓</span> Sealed plug-and-play LED replacement modules</li>
+              <li><span class="tick">✓</span> Ergonomic PU hold add-ons and foot chips</li>
+              <li><span class="tick">✓</span> Custom-cut landing padding and floor covers</li>
+              <li><span class="tick">✓</span> Direct dispatch with full hardware warranty</li>
+            </ul>
+            <a href="services.html#spares-support" class="btn btn-outline" style="align-self:flex-start;">View Spares &amp; Support →</a>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ── 7 Pillars: The Smart Infrastructure Solution ────── -->
-    <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" aria-labelledby="pillars-heading">
+    <!-- ── 3. From Measuring Your Room to First Climb ──────── -->
+    <section class="section" id="process" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" aria-labelledby="process-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" aria-hidden="true">Why It Works</span>
-          <h2 class="heading-1" id="pillars-heading">One Wall. Thousands of Routes.</h2>
-          <p>Traditional climbing walls need tall ceilings, professional route setters, and constant resets. ClimbFit gives you thousands of routes on a single wall — change them instantly from the app, no bolts involved.</p>
+          <span class="label" style="color:var(--accent-cyan);" aria-hidden="true">Turnkey Process</span>
+          <h2 class="heading-1" id="process-heading">From Measuring Your Room to Your First Climb, We Take Care of Everything</h2>
+          <p>You don't need architects or climbing contractors. Our engineering team manages every step from site survey to teacher onboarding.</p>
         </header>
 
-        <div class="pillars-grid" role="list" aria-label="Seven reasons ClimbFit works">
+        <div class="process-grid" role="list" aria-label="ClimbFit six-step installation process">
+          <article class="process-card reveal reveal-delay-1" role="listitem">
+            <div class="process-header">
+              <span class="process-num gradient-text">01</span>
+              <span aria-hidden="true">📐</span>
+            </div>
+            <h3>We Measure Your Room</h3>
+            <p>We assess your room dimensions, ceiling clearance, wall structure, and electrical points to plan the best layout.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay-2" role="listitem">
+            <div class="process-header">
+              <span class="process-num" style="color:var(--accent-yellow);">02</span>
+              <span aria-hidden="true">✏️</span>
+            </div>
+            <h3>Design a 3D Layout</h3>
+            <p>We create a customized 3D plan showing the board or wall in your room, ensuring safe fall zones and clear walkways.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay-3" role="listitem">
+            <div class="process-header">
+              <span class="process-num" style="color:var(--accent-cyan);">03</span>
+              <span aria-hidden="true">🛠️</span>
+            </div>
+            <h3>Install Everything</h3>
+            <p>Our technicians erect the structural steel frame, CNC birch panels, illuminated hold matrix, and wiring cleanly.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay-1" role="listitem">
+            <div class="process-header">
+              <span class="process-num" style="color:var(--accent-pink);">04</span>
+              <span aria-hidden="true">🛡️</span>
+            </div>
+            <h3>Lay Down Safety Mats</h3>
+            <p>We install custom-cut, dual-layer high-density crash mats across the entire landing zone with zero seam gaps.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay-2" role="listitem">
+            <div class="process-header">
+              <span class="process-num" style="color:var(--accent-purple);">05</span>
+              <span aria-hidden="true">📱</span>
+            </div>
+            <h3>App &amp; Bluetooth Setup</h3>
+            <p>We pair your wall with the ClimbFit app, calibrate all 1,000+ routes, activate game modes, and test every LED.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay-3" role="listitem">
+            <div class="process-header">
+              <span class="process-num gradient-text-warm">06</span>
+              <span aria-hidden="true">🎓</span>
+            </div>
+            <h3>Train Your Team</h3>
+            <p>We run a hands-on session for your gym coaches or PE teachers on setting up drills, running games, and supervising.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. Why Choose ClimbFit (The 7 Pillars) ──────────── -->
+    <section class="section" id="why-climbfit" aria-labelledby="why-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="label" style="color:var(--accent-yellow);" aria-hidden="true">The ClimbFit Advantage</span>
+          <h2 class="heading-1" id="why-heading">Why Choose ClimbFit</h2>
+          <p>Traditional climbing walls need tall ceilings, professional route setters, and constant resets. ClimbFit delivers thousands of routes on a single fixed footprint with zero downtime.</p>
+        </header>
+
+        <div class="pillars-grid" role="list" aria-label="Seven reasons to choose ClimbFit">
           <article class="pillar-card reveal reveal-delay-1" role="listitem">
             <div class="pillar-num">01</div>
             <h3>Fits Normal Rooms</h3>
-            <p>Works under standard 10–12 ft ceilings. No major construction needed. Mount it flat on a wall or set it up freestanding.</p>
+            <p>Works under standard 10–12 ft ceilings. No major civil engineering needed. Mount it flat against a wall or freestanding.</p>
           </article>
 
           <article class="pillar-card reveal reveal-delay-2" role="listitem">
             <div class="pillar-num">02</div>
             <h3>No Route-Setting Bills</h3>
-            <p>Switch routes, sequences, and drills instantly from the app. No more paying someone to unbolt and rearrange holds by hand.</p>
+            <p>Switch routes, sequences, and drills instantly from the app. No more paying someone thousands to unbolt and reset holds.</p>
           </article>
 
           <article class="pillar-card reveal reveal-delay-3" role="listitem">
             <div class="pillar-num">03</div>
-            <h3>Easy Class Management</h3>
-            <p>Run PE classes, team practices, or group sessions using color-coded difficulty levels. Works from any tablet.</p>
+            <h3>1,000+ Routes &amp; Daily Updates</h3>
+            <p>Access 1,000+ boulder problems graded V0 to V14. Route setters and coaches add fresh training routes every day.</p>
           </article>
 
           <article class="pillar-card reveal reveal-delay-1" role="listitem">
             <div class="pillar-num">04</div>
-            <h3>Shared Route Library</h3>
-            <p>Access routes created by climbers and setters around the world. Try the same problems your friends are climbing on their walls.</p>
+            <h3>Interactive Game Modes</h3>
+            <p>Built-in Memory Games, Team Relays, Alphabet Runs, and Multiplayer formats keep kids and beginners fully engaged.</p>
           </article>
 
           <article class="pillar-card reveal reveal-delay-2" role="listitem">
             <div class="pillar-num">05</div>
-            <h3>Track Your Progress</h3>
-            <p>See which routes you've sent, how fast you climbed them, and how your strength is improving over weeks and months.</p>
+            <h3>Easy Class Management</h3>
+            <p>Run PE classes, team practices, or fitness batches using color-coded difficulty levels directly from any tablet.</p>
           </article>
 
           <article class="pillar-card reveal reveal-delay-3" role="listitem">
             <div class="pillar-num">06</div>
-            <h3>Low Maintenance</h3>
-            <p>Tough hardware that handles daily use. Firmware updates happen over the air. Holds are sweat-resistant. Very little upkeep.</p>
+            <h3>Track Your Progress</h3>
+            <p>Log sends, flash rates, and grade milestones in your personal logbook to see strength gains over weeks and months.</p>
           </article>
 
           <article class="pillar-card reveal reveal-delay-1" role="listitem">
             <div class="pillar-num">07</div>
-            <h3>Games &amp; Challenges</h3>
-            <p>Keep things fun with interactive climbing games, route memory challenges, and team relay races. Great for kids and beginners.</p>
+            <h3>Low Maintenance, High Uptime</h3>
+            <p>Precision birch panels, sweat-resistant holds, low power draw (&lt;350W), and over-the-air firmware updates.</p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- ── In Action ──────────────────────────────────────── -->
-    <section class="section-sm" aria-labelledby="in-action-heading">
-      <div class="in-action reveal">
-        <img
-          src="assets/images/media_1788251221317.jpg"
-          alt="Coach watching a climber on the ClimbFit wall while checking route data on a tablet"
-          loading="lazy"
-        >
-        <div class="in-action-overlay">
-          <div class="in-action-text">
-            <span class="tag tag-cyan" style="margin-bottom:1rem;">App + Bluetooth</span>
-            <h2 id="in-action-heading">Set Routes. Track Sends.<br>Climb Together.</h2>
-            <p>Create your own boulder problems in the app, log your sends, track your completion rate, and see how you compare on the leaderboard.</p>
-            <a href="wall.html" class="btn btn-primary">See Full Specs <span aria-hidden="true">→</span></a>
+        <div class="comparison-strip reveal">
+          <div class="comp-item">
+            <div class="comp-item-val">1,000+</div>
+            <div class="comp-item-lbl">Routes (New Daily)</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-val">&lt; 30ms</div>
+            <div class="comp-item-lbl">Hold LED Sync</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-val">0° to 45°</div>
+            <div class="comp-item-lbl">Adjustable Tilt</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-val">&lt; 350W</div>
+            <div class="comp-item-lbl">Peak Energy Use</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Who It's For ───────────────────────────────────── -->
-    <section class="section" aria-labelledby="audience-heading">
+    <!-- ── 5. Who's It For ─────────────────────────────────── -->
+    <section class="section" id="who-its-for" aria-labelledby="audience-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" aria-hidden="true">Who It's For</span>
-          <h2 class="heading-1" id="audience-heading">Built for Gyms, Schools &amp; Training Spaces</h2>
-          <p>From bouldering gyms to university rec centers and private coaching studios.</p>
+          <span class="label" aria-hidden="true">Applications</span>
+          <h2 class="heading-1" id="audience-heading">Who's It For</h2>
+          <p>Built for active spaces of every size — from commercial climbing gyms to educational campuses and private training spaces.</p>
         </header>
 
-        <div class="audience-grid">
-          <article class="audience-card reveal reveal-delay-1">
+        <div class="audience-grid" role="list" aria-label="Who uses ClimbFit">
+          <article class="audience-card reveal reveal-delay-1" role="listitem">
             <div class="audience-card-img">
-              <img src="assets/images/media_1788251221295.jpg" alt="Climber training on an LED climbing board in a gym" loading="lazy">
+              <img src="assets/images/media_1788251221295.jpg" alt="Commercial bouldering gym training board installation" loading="lazy">
             </div>
             <div class="audience-card-body">
               <span class="tag tag-cyan">Bouldering Gyms</span>
               <h3>Climbing &amp; Bouldering Gyms</h3>
-              <p>Get more out of your floor space. One 12×10 ft ClimbFit wall gives your members thousands of routes without weekly resets.</p>
+              <p>Get more out of your floor space. One compact ClimbFit training board gives your members thousands of routes without weekly resets or route-setting downtime.</p>
             </div>
           </article>
 
-          <article class="audience-card reveal reveal-delay-2">
+          <article class="audience-card reveal reveal-delay-2" role="listitem">
             <div class="audience-card-img">
               <img src="assets/images/media_1788251221312.jpg" alt="Students climbing on a ClimbFit wall during a PE class" loading="lazy">
             </div>
             <div class="audience-card-body">
               <span class="tag tag-yellow">Schools &amp; Universities</span>
               <h3>Universities &amp; School Programs</h3>
-              <p>Safe, low-height traversing — no harness needed. Builds core strength, coordination, and problem-solving skills for students and athletes.</p>
+              <p>Safe, low-height bouldering and horizontal traversing with zero harness risk. Builds natural grip strength, balance, and problem-solving skills for students of all ages.</p>
             </div>
           </article>
 
-          <article class="audience-card reveal reveal-delay-3">
+          <article class="audience-card reveal reveal-delay-3" role="listitem">
             <div class="audience-card-img">
               <img src="assets/images/media_1788251221317.jpg" alt="Trainer coaching a client on a ClimbFit wall using a tablet" loading="lazy">
             </div>
             <div class="audience-card-body">
               <span class="tag tag-pink">Training &amp; Coaching</span>
               <h3>Training Centers &amp; Private Studios</h3>
-              <p>Add climbing-based conditioning to your facility. Track grip endurance, run timed challenges, and give clients something they can't get anywhere else.</p>
+              <p>Add climbing-based conditioning to your facility or home setup. Track grip endurance, run timed game drills, and offer clients a unique athletic experience.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA Strip ──────────────────────────────────────── -->
-    <section class="section-sm" aria-labelledby="cta-heading">
+    <!-- ── 6. Ready to Set Up (CTA) ────────────────────────── -->
+    <section class="section-sm" id="ready-to-setup" aria-labelledby="cta-heading">
       <div class="container">
         <div class="cta-strip reveal">
           <h2 id="cta-heading">Ready to Set Up<br><span class="gradient-text">Your Wall?</span></h2>
-          <p>We offer packages for schools, gyms, clubs, and private studios. Every install includes a site visit, safety matting, hardware, and training for your team.</p>
+          <p>We offer turnkey packages for schools, gyms, sports clubs, and private studios. Every installation includes a room survey, custom safety matting, certified hardware, and team onboarding.</p>
           <div class="cta-strip-actions">
-            <a href="offerings.html" class="btn btn-primary">See All Offerings <span aria-hidden="true">→</span></a>
+            <a href="services.html" class="btn btn-primary">See Our Services <span aria-hidden="true">→</span></a>
             <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" class="btn btn-outline" style="border-color:var(--accent-yellow);color:var(--accent-yellow);">Download 2026 Brochure</a>
-            <a href="about.html#contact" class="btn btn-outline">Get a Quote</a>
+            <a href="about.html#contact" class="btn btn-outline">Get a Turnkey Quote</a>
           </div>
           <div style="margin-top:var(--space-m);display:flex;justify-content:center;gap:var(--space-m);flex-wrap:wrap;font-size:0.9rem;color:var(--text-muted);position:relative;">
             <span>📞 <a href="tel:+918982789640" style="color:var(--text);">+91 8982 789 640</a></span>
@@ -642,11 +836,12 @@
         <img src="assets/brand/logo-dark.png" alt="ClimbFit" class="nav-logo-img logo-light-theme" height="26" loading="lazy">
       </a>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="wall.html">The Wall</a>
-        <a href="offerings.html">Our Offerings</a>
-        <a href="about.html">About</a>
+        <a href="services.html">Our Services</a>
+        <a href="training-board.html">Training Board</a>
+        <a href="about.html">About Us</a>
         <a href="about.html#contact">Contact</a>
         <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf" style="color:var(--accent-yellow);">2026 Brochure (PDF)</a>
+        <button type="button" class="footer-link-btn" data-cookie-settings style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.875rem;">Cookie Settings</button>
       </nav>
       <p class="body-s text-muted">
         <small>© 2026 ClimbFit Technologies. All rights reserved.</small>
@@ -655,5 +850,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/cookie-consent.js" defer></script>
 </body>
 </html>

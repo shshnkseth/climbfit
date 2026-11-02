@@ -91,7 +91,7 @@ def generate_brochure():
     
     pillars = [
         ("Modular Engineered Wall", "Precision steel framework with high-grade Baltic birch panels and impact protection."),
-        ("RGB LED Smart Hold Matrix", "Individually controlled hold illumination guiding climbers through 10,000+ routes."),
+        ("RGB LED Smart Hold Matrix", "Individually controlled hold illumination guiding climbers through 1,000+ routes with daily additions."),
         ("Zero Physical Reset Downtime", "Switch difficulty grades, athletic drills, and youth games with a tap in the mobile app.")
     ]
     y = page_height - 170
@@ -200,7 +200,7 @@ def generate_brochure():
     c.showPage()
     
     # Page 5: Traverse Wall Systems
-    draw_bg(c, "Continuous Traverse Walls", "Offerings · 05")
+    draw_bg(c, "Continuous Traverse Walls", "Our Services · 05")
     c.setFont("Helvetica", 10.5)
     c.setFillColor(CYAN)
     c.drawString(40, page_height - 78, "Multi-User Low-Height Horizontal Climbing for Active Spaces & Corridors")

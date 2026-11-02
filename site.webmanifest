@@ -1,0 +1,21 @@
+{
+  "name": "ClimbFit — Smart LED Climbing Systems",
+  "short_name": "ClimbFit",
+  "description": "Interactive smart LED climbing walls and training boards with app-synced routes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080810",
+  "theme_color": "#00e5ff",
+  "icons": [
+    {
+      "src": "assets/brand/logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/brand/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -85,8 +85,15 @@
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
       const href = link.getAttribute('href');
-      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      const isMatch = href === currentPage ||
+        (currentPage === '' && href === 'index.html') ||
+        (href === 'training-board.html' && currentPage === 'wall.html') ||
+        (href === 'wall.html' && currentPage === 'training-board.html') ||
+        (href === 'services.html' && currentPage === 'offerings.html') ||
+        (href === 'offerings.html' && currentPage === 'services.html');
+      if (isMatch) {
         link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
       }
     });
 
@@ -236,6 +243,25 @@
 
       contactForm.addEventListener('submit', e => {
         e.preventDefault();
+
+        // 1. Anti-spam Honeypot Check
+        const honeypot = contactForm.querySelector('input[name="_gotcha"]');
+        if (honeypot && honeypot.value.trim() !== '') {
+          // Silently discard bot submission
+          contactForm.style.display = 'none';
+          const successPanel = document.getElementById('form-success');
+          if (successPanel) successPanel.style.display = 'block';
+          return;
+        }
+
+        // 2. Client-side Rate Limiting (prevent duplicate spam submits within 45s)
+        const lastSubmit = parseInt(sessionStorage.getItem('cf_last_submit') || '0', 10);
+        const now = Date.now();
+        if (now - lastSubmit < 45000) {
+          alert('You recently sent an inquiry. Please wait a moment before submitting again, or call us directly.');
+          return;
+        }
+
         let hasError = false;
 
         // Validate required fields
@@ -246,20 +272,21 @@
           if (!input.value.trim()) {
             setError(id, errId, `${input.labels[0]?.textContent?.replace(' *','') || 'This field'} is required.`);
             hasError = true;
-          } else if (input.type === 'email' && !/^[^@]+@[^@]+\.[^@]+$/.test(input.value)) {
+          } else if (input.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value.trim())) {
             setError(id, errId, 'Please enter a valid email address.');
             hasError = true;
           }
         });
 
         if (hasError) {
-          // Move focus to first error
           const firstInvalid = contactForm.querySelector('[aria-invalid="true"]');
           if (firstInvalid) firstInvalid.focus();
           return;
         }
 
-        // Simulate send
+        sessionStorage.setItem('cf_last_submit', String(now));
+
+        // Submit simulation
         const btn = document.getElementById('contact-submit');
         const successPanel = document.getElementById('form-success');
         btn.disabled = true;
@@ -271,7 +298,7 @@
             successPanel.style.display = 'block';
             successPanel.focus();
           }
-        }, 900);
+        }, 800);
       });
     }
 
