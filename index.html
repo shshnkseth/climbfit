@@ -4,14 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClimbFit | Interactive LED Climbing Walls for Schools, Clubs &amp; Gyms</title>
+  <title>ClimbFit (Climb Fit India) | Interactive LED Climbing Walls &amp; Training Boards</title>
   <meta name="description"
-    content="ClimbFit turns climbing walls into interactive, app-controlled experiences for schools, residential clubs, gyms, and studios. Modular LED boards, gamified challenges &amp; turnkey installation.">
+    content="ClimbFit (Climb Fit India) builds turnkey interactive LED climbing walls and smart modular training boards. Experience the Climb Fit wall with illuminated RGB holds, mobile app control, and gamified challenges for schools, residential clubs, and gyms across India.">
   <meta name="keywords"
-    content="interactive LED climbing walls, smart climbing wall India, ClimbFit, smart climbing board, bouldering wall for schools, residential club sports amenities, commercial gym training board, gamified climbing app, Anind Shrivastava, interactive sports infrastructure">
+    content="climb fit, climb fit india, climb fit wall, climbfit, climbfit india, climbfit wall, interactive LED climbing walls, smart climbing wall India, smart climbing board, bouldering wall for schools, residential club sports amenities, commercial gym training board, gamified climbing app, Anind S., interactive sports infrastructure">
   <meta name="author" content="ClimbFit Technologies">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://www.climbfit.in/">
+
+  <!-- Google Search Console Verification (Replace content with your verification token) -->
+  <meta name="google-site-verification" content="ADD_GOOGLE_VERIFICATION_TOKEN_HERE">
 
   <!-- Favicon suite (cache-busted to ensure the authentic holds icon loads) -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=20261103">
@@ -68,16 +71,23 @@
         "@type": "Organization",
         "@id": "https://www.climbfit.in/#organization",
         "name": "ClimbFit",
+        "alternateName": [
+          "Climb Fit",
+          "Climb Fit India",
+          "ClimbFit India",
+          "Climb Fit Wall",
+          "ClimbFit Wall"
+        ],
         "legalName": "ClimbFit Technologies",
         "url": "https://www.climbfit.in",
         "logo": "https://www.climbfit.in/assets/brand/logo.png",
         "image": "https://www.climbfit.in/assets/brand/hero-climbfit-board.jpg",
-        "description": "Interactive LED climbing walls and modular smart training systems for schools, residential clubs, and commercial gyms.",
+        "description": "Interactive LED climbing walls and modular smart training systems for schools, residential clubs, and commercial gyms across India.",
         "telephone": "+918982789640",
         "email": "anind@climbfit.in",
         "founder": {
           "@type": "Person",
-          "name": "Anind Shrivastava",
+          "name": "Anind S.",
           "jobTitle": "Founder"
         },
         "address": {
@@ -90,11 +100,21 @@
         "@id": "https://www.climbfit.in/#website",
         "url": "https://www.climbfit.in",
         "name": "ClimbFit",
+        "alternateName": [
+          "Climb Fit",
+          "Climb Fit India"
+        ],
         "publisher": { "@id": "https://www.climbfit.in/#organization" }
       },
       {
         "@type": "Product",
         "name": "ClimbFit Training Board",
+        "alternateName": [
+          "Climb Fit Wall",
+          "ClimbFit Wall",
+          "Climb Fit Training Board",
+          "Climb Fit Interactive Wall"
+        ],
         "image": "https://www.climbfit.in/assets/images/climbfit-overhang-smiling-climber.jpg",
         "description": "A modular climbing system with integrated LED lighting and app-based route control in 8x12ft (209 holds), 12x12ft (323 holds), and 15x12ft (437 holds) configurations.",
         "brand": {
@@ -108,10 +128,18 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is ClimbFit?",
+            "name": "What is ClimbFit (Climb Fit)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ClimbFit turns a climbing wall into an interactive experience with illuminated RGB LED holds and app-based control, creating unlimited climbing challenges for schools, clubs, and gyms."
+              "text": "ClimbFit (Climb Fit India) turns climbing walls into interactive training experiences with illuminated RGB LED holds and app-based control, creating unlimited climbing challenges for schools, clubs, and gyms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Climb Fit Wall?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Climb Fit Wall is an interactive LED climbing board engineered in India. It connects via Bluetooth and Wi-Fi to a dedicated mobile app, lighting up distinct routes and gamified challenges on demand without manually resetting holds."
             }
           },
           {
@@ -671,6 +699,7 @@
     .audience-card-img {
       height: 220px;
       overflow: hidden;
+      position: relative;
     }
 
     .audience-card-img img {
@@ -869,6 +898,10 @@
 
     <!-- ── 1. Hero ─────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-heading">
+      <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings" style="top:auto;bottom:24px;right:24px;z-index:15;">
+        <span aria-hidden="true">ⓘ</span>
+        <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+      </button>
       <div class="hero-bg" aria-hidden="true">
         <img src="assets/brand/hero-climbfit-board.jpg?v=20261103d"
           alt="ClimbFit interactive smart LED climbing wall installation" class="hero-parallax" loading="eager"
@@ -939,7 +972,11 @@
         <div class="services-accordion-layout reveal">
 
           <!-- Left Media Column (Crossfading Image Container) -->
-          <div class="services-media-col" aria-hidden="true">
+          <div class="services-media-col">
+            <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+              <span aria-hidden="true">ⓘ</span>
+              <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+            </button>
             <img src="assets/images/climbfit-spotlight-overhang-climber.jpg" alt="ClimbFit Modular Training Board with RGB LED holds" class="services-media-img is-active" id="service-img-0" loading="lazy">
             <img src="assets/images/climbfit-female-climber-board.jpg" alt="ClimbFit mobile app route control on smart climbing wall" class="services-media-img" id="service-img-1" loading="lazy">
             <img src="assets/images/climbfit-alphabet-interactive-game.jpg" alt="Interactive game formats and alphabet challenge on ClimbFit wall" class="services-media-img" id="service-img-2" loading="lazy">
@@ -1134,6 +1171,10 @@
           <!-- Right Column: Visual with Metric Overlay -->
           <div class="reveal reveal-delay-1"
             style="border-radius:var(--r-l);overflow:hidden;position:relative;border:1px solid var(--border);">
+            <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+              <span aria-hidden="true">ⓘ</span>
+              <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+            </button>
             <img src="assets/images/climbfit-spotlight-overhang-climber.jpg"
               alt="A climber reaching for a lit hold on the ClimbFit wall during an interactive training session"
               loading="lazy" style="width:100%;height:520px;object-fit:cover;object-position:center top;">
@@ -1257,6 +1298,10 @@
           <!-- 01 Schools -->
           <article class="audience-card reveal reveal-delay-1" role="listitem">
             <div class="audience-card-img">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
               <img src="assets/images/climbfit-school-classroom.jpg"
                 alt="Students engaging with ClimbFit interactive climbing wall in school PE class" loading="lazy">
             </div>
@@ -1270,6 +1315,10 @@
           <!-- 02 Residential Clubs -->
           <article class="audience-card reveal reveal-delay-2" role="listitem">
             <div class="audience-card-img">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
               <img src="assets/images/climbfit-residential-living-board.jpg"
                 alt="ClimbFit smart LED climbing wall in a modern residential living space and clubhouse"
                 loading="lazy">
@@ -1284,6 +1333,10 @@
           <!-- 03 Commercial Gyms -->
           <article class="audience-card reveal reveal-delay-3" role="listitem">
             <div class="audience-card-img">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
               <img src="assets/images/climbfit-commercial-gym-facility.jpg"
                 alt="ClimbFit commercial gym climbing facility with LED bouldering board and training wall"
                 loading="lazy">
@@ -1298,6 +1351,10 @@
           <!-- 04 Entertainment Centers -->
           <article class="audience-card reveal reveal-delay-1" role="listitem">
             <div class="audience-card-img">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
               <img src="assets/images/climbfit-gamezone-entertainment.jpg" alt="ClimbFit GameZone interactive climbing attraction in an entertainment center" loading="lazy">
             </div>
             <div class="audience-card-body">
@@ -1310,6 +1367,10 @@
           <!-- 05 Custom-Built for Any Space -->
           <article class="audience-card reveal reveal-delay-2" role="listitem">
             <div class="audience-card-img">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
               <img src="assets/images/climbfit-custom-column-geometry.jpg"
                 alt="Custom center-column interactive climbing wall installation" loading="lazy">
             </div>
@@ -1467,7 +1528,7 @@
 
           <div
             style="margin-top:var(--space-l);display:flex;justify-content:center;gap:clamp(1rem, 3vw, 2.5rem);flex-wrap:wrap;font-size:0.92rem;color:var(--text-muted);position:relative;">
-            <span>👤 <strong>Anind Shrivastava</strong></span>
+            <span>👤 <strong>Anind S.</strong></span>
             <span>📞 <a href="tel:+918982789640" style="color:var(--text);font-weight:600;">+91 8982 789 640</a></span>
             <span>✉️ <a href="mailto:anind@climbfit.in"
                 style="color:var(--text);font-weight:600;">anind@climbfit.in</a></span>
