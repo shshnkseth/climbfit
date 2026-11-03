@@ -302,5 +302,106 @@
       });
     }
 
+    /* ── Products & Services Interactive Accordion ──────────────── */
+    const accordionItems = document.querySelectorAll('.service-accordion-item');
+    const mediaImages = document.querySelectorAll('.services-media-img');
+    const mediaBadge = document.getElementById('services-active-badge');
+
+    if (accordionItems.length && mediaImages.length) {
+      function activateAccordion(index) {
+        accordionItems.forEach((item, i) => {
+          const isActive = (i === index);
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-expanded', String(isActive));
+        });
+        mediaImages.forEach((img, i) => {
+          img.classList.toggle('is-active', i === index);
+        });
+        if (mediaBadge && accordionItems[index]) {
+          const tagText = accordionItems[index].getAttribute('data-tag') || '';
+          mediaBadge.textContent = tagText;
+        }
+      }
+
+      accordionItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', () => activateAccordion(index));
+        item.addEventListener('focusin', () => activateAccordion(index));
+        item.addEventListener('click', (e) => {
+          // Allow internal link clicks to navigate naturally
+          if (e.target.closest('a')) return;
+          activateAccordion(index);
+        });
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target.closest('a')) return;
+            e.preventDefault();
+            activateAccordion(index);
+          }
+        });
+      });
+    }
+
+    /* ── Editorial Services Carousel Controls & Drag-to-Scroll (Fallback) ── */
+    const servPrev = document.getElementById('services-prev');
+    const servNext = document.getElementById('services-next');
+    const servTrack = document.getElementById('services-track');
+    if (servTrack) {
+      if (servPrev && servNext) {
+        servPrev.addEventListener('click', () => {
+          const cardWidth = servTrack.querySelector('.sec-card')?.offsetWidth || 400;
+          servTrack.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
+        });
+        servNext.addEventListener('click', () => {
+          const cardWidth = servTrack.querySelector('.sec-card')?.offsetWidth || 400;
+          servTrack.scrollBy({ left: (cardWidth + 24), behavior: 'smooth' });
+        });
+      }
+
+      // Drag to scroll functionality
+      let isDown = false;
+      let startX = 0;
+      let scrollLeftPos = 0;
+      let dragDistance = 0;
+
+      servTrack.addEventListener('mousedown', (e) => {
+        isDown = true;
+        servTrack.classList.add('is-dragging');
+        startX = e.pageX - servTrack.offsetLeft;
+        scrollLeftPos = servTrack.scrollLeft;
+        dragDistance = 0;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        servTrack.classList.remove('is-dragging');
+      });
+
+      servTrack.addEventListener('mouseleave', () => {
+        if (!isDown) return;
+        isDown = false;
+        servTrack.classList.remove('is-dragging');
+      });
+
+      servTrack.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - servTrack.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        dragDistance = Math.abs(x - startX);
+        servTrack.scrollLeft = scrollLeftPos - walk;
+      });
+
+      // Prevent accidental link clicks during drag
+      servTrack.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          if (dragDistance > 6) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
+      });
+    }
+
   }); // end DOMContentLoaded
 })();
