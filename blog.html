@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog &amp; Stories | ClimbFit (Climb Fit India) Insights &amp; Updates</title>
+  <meta name="description"
+    content="Read the latest stories, engineering notes, school PE case studies, and climbing technology updates from the ClimbFit team in India.">
+  <meta name="keywords"
+    content="ClimbFit blog, climbing stories India, interactive climbing technology, school sports innovation, smart bouldering gym case studies, Anind S. notes">
+  <link rel="canonical" href="https://www.climbfit.in/blog.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- International & Multi-Geography SEO -->
+  <link rel="alternate" hreflang="x-default" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en-IN" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en-US" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en-GB" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en-AU" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en-SG" href="https://www.climbfit.in/blog.html">
+  <link rel="alternate" hreflang="en-AE" href="https://www.climbfit.in/blog.html">
+  <meta name="distribution" content="global">
+  <meta name="coverage" content="Worldwide">
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="ADD_GOOGLE_VERIFICATION_TOKEN_HERE">
+
+  <!-- Favicon suite -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=20261103">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon.png?v=20261103">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/favicon.png?v=20261103">
+  <link rel="shortcut icon" href="favicon.ico?v=20261103">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Security & Privacy Meta -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: https://*.clarity.ms; connect-src 'self' https://*.clarity.ms;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Microsoft Clarity Tracking -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "z7lsmypvm0");
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ClimbFit">
+  <meta property="og:url" content="https://www.climbfit.in/blog.html">
+  <meta property="og:title" content="Blog &amp; Stories | ClimbFit (Climb Fit India)">
+  <meta property="og:description"
+    content="Read stories, technical insights, school PE transformations, and climbing technology updates from the ClimbFit engineering team.">
+  <meta property="og:image" content="https://www.climbfit.in/assets/brand/hero-climbfit-board.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
+  <meta property="og:locale:alternate" content="en_AU">
+  <meta property="og:locale:alternate" content="en_SG">
+  <meta property="og:locale:alternate" content="en_AE">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Geist+Pixel&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .blog-hero {
+      padding: clamp(6rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 4.5rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-l);
+      margin-bottom: var(--space-xl);
+    }
+
+    .story-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--r-m);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .story-card:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .story-card-img-wrap {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .story-card:hover .story-card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .story-card-body {
+      padding: var(--space-m) var(--space-l);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-s);
+    }
+
+    .story-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: var(--space-s);
+      color: var(--text);
+    }
+
+    .story-card-excerpt {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: var(--space-m);
+      flex: 1;
+    }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "ClimbFit Stories & Blog",
+    "url": "https://www.climbfit.in/blog.html",
+    "description": "Climbing engineering insights, school PE transformations, and interactive wall case studies.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ClimbFit",
+      "url": "https://www.climbfit.in"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ClimbFit homepage">
+        <img src="assets/brand/logo.png" alt="ClimbFit" class="nav-logo-img logo-dark-theme" height="30">
+        <img src="assets/brand/logo-dark.png" alt="ClimbFit" class="nav-logo-img logo-light-theme" height="30">
+      </a>
+      <div class="nav-links" role="menubar" aria-label="Site navigation">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="services.html" role="menuitem">Our Services</a>
+        <a href="training-board.html" role="menuitem">Training Board</a>
+        <a href="app.html" role="menuitem">App</a>
+        <a href="about.html" role="menuitem">About Us</a>
+        <a href="about.html#contact" class="nav-cta" role="menuitem">Get in Touch</a>
+      </div>
+      <div class="nav-controls">
+        <button class="theme-toggle" aria-label="Switch to light mode" id="theme-btn">
+          <span class="icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </span>
+        </button>
+        <button class="nav-menu-btn" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="nav-links-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ── Hero ────────────────────────────────────────────── -->
+    <section class="blog-hero">
+      <div class="glow-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="glow-orb hero-orb-2" aria-hidden="true"></div>
+      <div class="container">
+        <span class="tag tag-purple" style="margin-bottom:var(--space-s);">ClimbFit Journal</span>
+        <h1 class="heading-1" style="margin-bottom:var(--space-s);">
+          Blog &amp; Stories<br><span class="gradient-text">Engineering Active Movement.</span>
+        </h1>
+        <p style="color:var(--text-muted);max-width:620px;margin:0 auto;line-height:1.7;">
+          Insights into smart climbing wall design, school athletics innovation, coach training routines, and our journey building interactive sports hardware in India.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Stories Grid ────────────────────────────────────── -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="stories-grid reveal">
+
+          <!-- Story 01 -->
+          <article class="story-card">
+            <div class="story-card-img-wrap">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
+              <img src="assets/images/hero-climbfit-board.jpg" alt="ClimbFit modular interactive LED board" loading="lazy">
+            </div>
+            <div class="story-card-body">
+              <div class="story-meta">
+                <span class="tag tag-cyan" style="font-size:0.75rem;">Engineering Note</span>
+                <span>November 2026</span>
+              </div>
+              <h2 class="story-card-title">Building India's Modular Smart Climbing System: From Prototype to Facilities</h2>
+              <p class="story-card-excerpt">
+                Why we chose Boiling Water Proof (BWP) grade plywood over imported birch, engineered individual RGB LED hold harnesses, and developed sub-30ms offline Bluetooth sync for Indian facility climates.
+              </p>
+              <div style="margin-top:auto;">
+                <span style="font-weight:600;font-size:0.88rem;color:var(--accent-cyan);">By Anind S. · 5 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 02 -->
+          <article class="story-card">
+            <div class="story-card-img-wrap">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
+              <img src="assets/images/climbfit-alphabet-interactive-game.jpg" alt="Students engaged in interactive alphabet climbing challenge in school gym" loading="lazy">
+            </div>
+            <div class="story-card-body">
+              <div class="story-meta">
+                <span class="tag tag-pink" style="font-size:0.75rem;">School PE</span>
+                <span>October 2026</span>
+              </div>
+              <h2 class="story-card-title">Why Progressive Schools Are Replacing Static Gym Walls with Interactive Bouldering</h2>
+              <p class="story-card-excerpt">
+                How combining physical movement with gamified alphabet runs and memory drills engages every student—from hesitant first-timers to competitive young athletes.
+              </p>
+              <div style="margin-top:auto;">
+                <span style="font-weight:600;font-size:0.88rem;color:var(--accent-cyan);">Case Study · 4 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 03 -->
+          <article class="story-card">
+            <div class="story-card-img-wrap">
+              <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
+                <span aria-hidden="true">ⓘ</span>
+                <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
+              </button>
+              <img src="assets/images/climbfit-commercial-gym-facility.jpg" alt="Commercial gym climbing facility with ClimbFit LED training wall" loading="lazy">
+            </div>
+            <div class="story-card-body">
+              <div class="story-meta">
+                <span class="tag tag-yellow" style="font-size:0.75rem;">Fitness ROI</span>
+                <span>September 2026</span>
+              </div>
+              <h2 class="story-card-title">Eliminating the Route-Setting Bottleneck: How LED Boards Multiply Facility Capacity</h2>
+              <p class="story-card-excerpt">
+                Traditional commercial gyms spend hundreds of hours manually unbolting and setting routes. Discover how thousands of software-controlled boulder problems maximize revenue per square foot.
+              </p>
+              <div style="margin-top:auto;">
+                <span style="font-weight:600;font-size:0.88rem;color:var(--accent-cyan);">Gym Operations · 6 min read</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="nav-logo" aria-label="ClimbFit homepage">
+        <img src="assets/brand/logo.png" alt="ClimbFit" class="nav-logo-img logo-dark-theme" height="26" loading="lazy">
+        <img src="assets/brand/logo-dark.png" alt="ClimbFit" class="nav-logo-img logo-light-theme" height="26"
+          loading="lazy">
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="services.html">Our Services</a>
+        <a href="training-board.html">Training Board</a>
+        <a href="app.html">Mobile App</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" aria-current="page">Blog &amp; Stories</a>
+        <a href="support.html">Help &amp; Support</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="assets/ClimbFit-Brochure-2026.pdf" download="ClimbFit-Brochure-2026.pdf"
+          style="color:var(--accent-yellow);">2026 Brochure (PDF)</a>
+        <button type="button" class="footer-link-btn" data-cookie-settings
+          style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.875rem;">Cookie
+          Settings</button>
+      </nav>
+      <p class="body-s text-muted">
+        <small>© 2026 ClimbFit Technologies. Proudly built in India. All rights reserved.</small>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cookie-consent.js" defer></script>
+</body>
+
+</html>
