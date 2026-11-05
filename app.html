@@ -744,6 +744,116 @@
       .floating-chip { display: none; }
       .app-subnav { display: none; }
     }
+
+    /* ── CTA Strip Scoped ─────────────────────────────────── */
+    .cta-strip {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--r-l);
+      padding: clamp(var(--space-l), 6vw, var(--space-xl)) var(--space-l);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% -10%, rgba(0, 229, 255, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-strip h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: var(--space-s);
+      position: relative;
+      text-align: center;
+    }
+
+    .cta-strip p {
+      color: var(--text-muted);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      line-height: 1.7;
+      margin-bottom: var(--space-m);
+      position: relative;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .cta-strip-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-s);
+      flex-wrap: wrap;
+      position: relative;
+      margin-top: var(--space-s);
+    }
+
+    .app-store-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-s);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-m);
+      position: relative;
+    }
+
+    .app-store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.65rem 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--r-m);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .app-store-btn:hover {
+      background: rgba(0, 229, 255, 0.12);
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
+    }
+
+    .app-store-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    body.light-theme .app-store-btn {
+      background: #f1f5f9;
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #0f172a;
+    }
+
+    body.light-theme .app-store-btn:hover {
+      background: #ffffff;
+      border-color: var(--accent-cyan);
+      color: #0f172a;
+    }
   </style>
 </head>
 
@@ -1129,37 +1239,52 @@
         </div>
       </section>
 
-      <!-- ── Closing CTA Section (Existing Pattern) ──────────── -->
-      <section class="section-sm" id="download" aria-labelledby="cta-heading">
-        <div class="container">
-          <div class="cta-strip reveal">
-            <span class="label" style="color:var(--accent-cyan);margin-bottom:var(--space-xs);display:inline-block;"
-              aria-hidden="true">Ready to Climb?</span>
-            <h2 id="cta-heading">Experience Intelligent Climbing.<br><span class="gradient-text">On Your Own Facility Wall.</span></h2>
-            <p>
-              Pair the ClimbFit mobile app with our modular LED training boards or request a custom turnkey setup for your school, gym, or residential clubhouse.
-            </p>
+    </div>
 
-            <div class="cta-strip-actions" style="margin-top:var(--space-m);">
-              <a href="about.html#contact" class="btn btn-primary">
-                Request Facility App Demo <span aria-hidden="true">→</span>
-              </a>
-              <a href="training-board.html" class="btn btn-outline" style="border-color:rgba(0,229,255,0.3);color:var(--accent-cyan);">
-                Explore Board Sizes
-              </a>
-            </div>
+    <!-- ── Closing CTA Section ──────────────────────────────── -->
+    <section class="section-sm" id="download" aria-labelledby="cta-heading" style="padding-top:var(--space-xl);padding-bottom:var(--space-xl);">
+      <div class="container">
+        <div class="cta-strip reveal">
+          <span class="label" style="color:var(--accent-cyan);margin-bottom:var(--space-xs);display:inline-block;"
+            aria-hidden="true">Ready to Climb?</span>
+          <h2 id="cta-heading">
+            Experience Intelligent Climbing.<br>
+            <span class="gradient-text">On Your Own Facility Wall.</span>
+          </h2>
+          <p>
+            Pair the ClimbFit mobile app with our modular LED training boards or request a custom turnkey setup for your school, gym, or residential clubhouse.
+          </p>
 
-            <div
-              style="margin-top:var(--space-l);display:flex;justify-content:center;gap:clamp(1rem, 3vw, 2.5rem);flex-wrap:wrap;font-size:0.92rem;color:var(--text-muted);position:relative;">
-              <span>👤 <strong>Anind S.</strong></span>
-              <span>📞 <a href="tel:+918982789640" style="color:var(--text);font-weight:600;">+91 8982 789 640</a></span>
-              <span>✉️ <a href="mailto:anind@climbfit.in" style="color:var(--text);font-weight:600;">anind@climbfit.in</a></span>
-            </div>
+          <!-- App Store & Google Play Badges -->
+          <div class="app-store-badges">
+            <a href="about.html#contact" class="app-store-btn" aria-label="Download for iOS">
+              <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-13.9 69.5-34.3z"/></svg>
+              <span>Download on iOS (TestFlight)</span>
+            </a>
+            <a href="about.html#contact" class="app-store-btn" aria-label="Download for Android">
+              <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+              <span>Get Android App (Early Access)</span>
+            </a>
+          </div>
+
+          <div class="cta-strip-actions">
+            <a href="about.html#contact" class="btn btn-primary">
+              Request Facility App Demo <span aria-hidden="true">→</span>
+            </a>
+            <a href="training-board.html" class="btn btn-outline" style="border-color:rgba(0,229,255,0.3);color:var(--accent-cyan);">
+              Explore Board Sizes
+            </a>
+          </div>
+
+          <div
+            style="margin-top:var(--space-l);display:flex;justify-content:center;gap:clamp(1rem, 3vw, 2.5rem);flex-wrap:wrap;font-size:0.92rem;color:var(--text-muted);position:relative;">
+            <span>👤 <strong>Anind S.</strong></span>
+            <span>📞 <a href="tel:+918982789640" style="color:var(--text);font-weight:600;">+91 8982 789 640</a></span>
+            <span>✉️ <a href="mailto:anind@climbfit.in" style="color:var(--text);font-weight:600;">anind@climbfit.in</a></span>
           </div>
         </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
   </main>
 
   <!-- ── Footer ─────────────────────────────────────────────── -->

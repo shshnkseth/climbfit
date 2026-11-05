@@ -1569,3 +1569,113 @@ body.light-theme .render-info-tip {
   gap: 0.4rem;
   opacity: 0.85;
 }
+
+/* ── Global CTA Strip ──────────────────────────────────── */
+.cta-strip {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-l);
+  padding: clamp(var(--space-l), 6vw, var(--space-xl)) var(--space-l);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.cta-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% -10%, rgba(0, 229, 255, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-strip h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: var(--space-s);
+  position: relative;
+  text-align: center;
+}
+
+.cta-strip p {
+  color: var(--text-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: var(--space-l);
+  position: relative;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.cta-strip-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+  position: relative;
+  margin: var(--space-m) auto 0;
+}
+
+.app-store-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-m);
+  position: relative;
+}
+
+.app-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--r-m);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.app-store-btn:hover {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
+}
+
+.app-store-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+body.light-theme .app-store-btn {
+  background: #f1f5f9;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+body.light-theme .app-store-btn:hover {
+  background: #ffffff;
+  border-color: var(--accent-cyan);
+  color: #0f172a;
+}
