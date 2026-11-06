@@ -139,6 +139,30 @@
       }
     });
 
+    // Close dropdown on item click and smooth-scroll to page anchors
+    document.querySelectorAll('.nav-dropdown-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        dropdowns.forEach(d => {
+          d.classList.remove('is-open');
+          const btn = d.querySelector('.nav-dropdown-trigger');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+        const href = item.getAttribute('href');
+        if (href && href.includes('#')) {
+          const [path, hash] = href.split('#');
+          const isCurrentPage = !path || path === currentPage || (currentPage === 'training-board.html' && path === 'training-board.html');
+          if (isCurrentPage && hash) {
+            const target = document.getElementById(hash);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              history.pushState(null, '', '#' + hash);
+            }
+          }
+        }
+      });
+    });
+
     /* ── Mobile menu toggle ─────────────────────────────────────── */
     const menuBtn = document.querySelector('.nav-menu-btn');
     const navLinks = document.querySelector('.nav-links');

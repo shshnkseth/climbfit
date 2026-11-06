@@ -140,9 +140,9 @@
     .page-hero-text h1 {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(2.5rem, 5.5vw, 5rem);
-      line-height: 1.02;
-      letter-spacing: -0.035em;
+      font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
       margin-bottom: var(--space-m);
     }
 
@@ -451,19 +451,20 @@
       margin: 0;
     }
 
-    /* Uniform 14px spacing between text and image across EVERY card */
+    /* Uniform 20px spacing between text and image across EVERY card */
     .bento-filters-img,
     .bento-set-route-img,
     .bento-analytics-img,
     .bento-connect-img,
     .bento-browse-img,
     .bento-download-visual {
-      margin-top: 14px;
+      margin-top: 20px;
     }
 
-    /* Card 1: Filters */
+    /* Card 1: Filters (reduced size) */
     .bento-filters-img {
-      max-width: 100%;
+      width: 100%;
+      max-width: 320px;
       height: auto;
       display: block;
     }
@@ -590,34 +591,94 @@
       border-color: rgba(177, 79, 255, 0.4);
     }
 
-    /* Light theme overrides */
+    /* ── Light Mode Bento Grid Overrides ───────────────────────── */
+    [data-theme="light"] .bento-card,
     body.light-theme .bento-card {
       background: #ffffff;
-      border-color: rgba(0, 0, 0, 0.08);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
     }
 
+    [data-theme="light"] .bento-card:hover,
+    body.light-theme .bento-card:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 0 20px rgba(168, 85, 247, 0.12);
+    }
+
+    [data-theme="light"] .bento-card-filters,
+    body.light-theme .bento-card-filters {
+      background: linear-gradient(135deg, #ffffff 0%, #f6f8fc 100%);
+    }
+
+    [data-theme="light"] .bento-card-set-route,
+    body.light-theme .bento-card-set-route {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f4fa 100%);
+    }
+
+    [data-theme="light"] .bento-card-analytics,
+    body.light-theme .bento-card-analytics {
+      background: #ffffff;
+    }
+
+    [data-theme="light"] .bento-card-connect,
+    body.light-theme .bento-card-connect {
+      background: #fafbfd;
+    }
+
+    [data-theme="light"] .bento-card-browse,
+    body.light-theme .bento-card-browse {
+      background: linear-gradient(135deg, #ffffff 0%, #f6f8fc 100%);
+    }
+
+    [data-theme="light"] .bento-card-download,
     body.light-theme .bento-card-download {
-      background: linear-gradient(135deg, #f7f2ff 0%, #ede4ff 100%);
-      border-color: rgba(177, 79, 255, 0.25);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.09) 0%, #fbf9ff 60%, #ffffff 100%);
+      border: 1px solid rgba(168, 85, 247, 0.28);
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.08);
     }
 
-    body.light-theme .bento-emoji-chip {
-      background: rgba(0, 0, 0, 0.04);
-      border-color: rgba(0, 0, 0, 0.08);
+    [data-theme="light"] .bento-card-download:hover,
+    body.light-theme .bento-card-download:hover {
+      border-color: rgba(168, 85, 247, 0.5);
+      box-shadow: 0 12px 32px rgba(168, 85, 247, 0.15);
     }
 
-    body.light-theme .bento-filters-stage,
-    body.light-theme .bento-analytics-stage,
-    body.light-theme .bento-connect-stage {
-      background: #f8fafc;
-      border-color: rgba(0, 0, 0, 0.08);
+    [data-theme="light"] .bento-card-title,
+    body.light-theme .bento-card-title {
+      color: #0e1017;
     }
 
+    [data-theme="light"] .bento-card-desc,
+    body.light-theme .bento-card-desc {
+      color: #555c70;
+    }
+
+    [data-theme="light"] .bento-mini-pill,
+    body.light-theme .bento-mini-pill {
+      background: rgba(0, 163, 196, 0.08);
+      border-color: rgba(0, 163, 196, 0.28);
+      color: #007a99;
+    }
+
+    [data-theme="light"] .bento-store-mock-pill,
     body.light-theme .bento-store-mock-pill {
       background: rgba(0, 0, 0, 0.04);
       border-color: rgba(0, 0, 0, 0.12);
       color: #0e1017;
+    }
+
+    [data-theme="light"] .bento-store-mock-pill:hover,
+    body.light-theme .bento-store-mock-pill:hover {
+      background: rgba(0, 0, 0, 0.08);
+      border-color: rgba(168, 85, 247, 0.45);
+      color: #8b28cf;
+    }
+
+    [data-theme="light"] #mobile-app,
+    body.light-theme #mobile-app {
+      background: #f7f8fa !important;
+      border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
     }
 
     /* ── Gallery ────────────────────────────────────────── */
@@ -690,7 +751,7 @@
       }
 
       .page-hero-text h1 {
-        font-size: clamp(2rem, 8vw, 3.5rem);
+        font-size: clamp(1.85rem, 6.5vw, 2.75rem);
       }
 
       .page-hero-image img {
@@ -819,6 +880,10 @@
             <a href="training-board.html" class="nav-dropdown-item" role="menuitem">
               <span class="dropdown-item-title">Modular Training Boards</span>
               <span class="dropdown-item-desc">Sizes S, M, L with RGB LED holds</span>
+            </a>
+            <a href="training-board.html#mobile-app" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">Mobile App</span>
+              <span class="dropdown-item-desc">Route setter, LED sync &amp; climber logbook</span>
             </a>
             <a href="services.html#custom-solutions" class="nav-dropdown-item" role="menuitem">
               <span class="dropdown-item-title">Custom Solutions</span>
@@ -1158,7 +1223,7 @@
     </section>
 
     <!-- ── App Showcase ───────────────────────────────────── -->
-    <section class="section"
+    <section class="section" id="mobile-app"
       style="background:rgba(255,255,255,0.01);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);"
       aria-labelledby="app-heading">
       <div class="container">
