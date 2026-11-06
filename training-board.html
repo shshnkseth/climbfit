@@ -356,7 +356,7 @@
     /* ── Bento Grid for Mobile App Features ────────────────── */
     .app-bento-grid {
       display: grid;
-      grid-template-columns: 1.35fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1.08fr;
       grid-template-rows: auto auto auto;
       gap: 18px;
       max-width: 1140px;
@@ -365,7 +365,7 @@
 
     .bento-card {
       border-radius: 24px;
-      padding: clamp(26px, 2.5vw, 32px);
+      padding: clamp(24px, 2.4vw, 30px);
       background: rgba(18, 22, 34, 0.95);
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
@@ -385,51 +385,59 @@
     }
 
     /* Surface tone variations */
-    .bento-card-a {
-      grid-column: 1;
+    .bento-card-filters {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      background: linear-gradient(135deg, rgba(22, 26, 42, 0.96) 0%, rgba(18, 22, 34, 0.96) 100%);
+      justify-content: space-between;
+    }
+
+    .bento-card-set-route {
+      grid-column: 3;
       grid-row: 1 / 3;
       background: linear-gradient(180deg, rgba(20, 24, 38, 0.98) 0%, rgba(13, 16, 26, 0.98) 100%);
       justify-content: space-between;
     }
 
-    .bento-card-b {
-      grid-column: 2 / 4;
-      grid-row: 1;
-      background: linear-gradient(135deg, rgba(24, 28, 44, 0.96) 0%, rgba(18, 22, 34, 0.96) 100%);
+    .bento-card-analytics {
+      grid-column: 1;
+      grid-row: 2;
+      background: rgba(16, 20, 32, 0.96);
       justify-content: space-between;
     }
 
-    .bento-card-c {
+    .bento-card-connect {
       grid-column: 2;
       grid-row: 2;
-      background: rgba(16, 20, 32, 0.95);
+      background: rgba(20, 24, 38, 0.96);
       justify-content: space-between;
     }
 
-    .bento-card-d {
-      grid-column: 3;
-      grid-row: 2;
-      background: rgba(22, 26, 40, 0.95);
+    .bento-card-browse {
+      grid-column: 1 / 3;
+      grid-row: 3;
+      background: linear-gradient(135deg, rgba(22, 26, 42, 0.96) 0%, rgba(16, 18, 28, 0.96) 100%);
       justify-content: space-between;
     }
 
     /* Purple-tinted accent card for Download App */
-    .bento-card-e {
-      grid-column: 1 / 4;
+    .bento-card-download {
+      grid-column: 3;
       grid-row: 3;
-      background: linear-gradient(135deg, rgba(177, 79, 255, 0.16) 0%, rgba(32, 20, 52, 0.96) 55%, rgba(18, 14, 32, 0.98) 100%);
-      border: 1px solid rgba(177, 79, 255, 0.28);
+      background: linear-gradient(135deg, rgba(177, 79, 255, 0.18) 0%, rgba(32, 20, 52, 0.96) 55%, rgba(18, 14, 32, 0.98) 100%);
+      border: 1px solid rgba(177, 79, 255, 0.32);
       box-shadow: 0 14px 35px rgba(177, 79, 255, 0.08);
+      justify-content: space-between;
     }
 
-    .bento-card-e:hover {
+    .bento-card-download:hover {
       border-color: rgba(177, 79, 255, 0.55);
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(177, 79, 255, 0.2);
     }
 
     /* Card typography & header */
     .bento-card-content {
-      margin-bottom: 1.15rem;
+      margin-bottom: 0.85rem;
     }
 
     .bento-emoji-chip {
@@ -461,257 +469,128 @@
       margin: 0;
     }
 
-    /* Card A Phone Stage */
-    .bento-phone-stage {
-      position: relative;
-      margin-top: 1.5rem;
+    /* Image stage containers */
+    .bento-filters-stage {
+      margin-top: 1.15rem;
+      padding: 0.75rem 1rem;
+      background: rgba(10, 12, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--r-m);
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
 
-    .bento-phone-frame {
-      width: 245px;
-      height: 285px;
-      background: #090c14;
-      border-radius: 32px 32px 0 0;
-      border: 5px solid #252b40;
-      border-bottom: none;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 25px rgba(177, 79, 255, 0.15);
+    .bento-filters-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Card 2: Set Route Tall Phone */
+    .bento-tall-phone-stage {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
       overflow: hidden;
-      position: relative;
       margin-bottom: -32px;
-      transform: translateY(6px);
-      transition: transform 0.3s ease;
     }
 
-    .bento-card-a:hover .bento-phone-frame {
+    .bento-tall-phone-img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: translateY(6px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bento-card-set-route:hover .bento-tall-phone-img {
       transform: translateY(0);
     }
 
-    .bento-phone-speaker {
-      width: 52px;
-      height: 4px;
-      background: #1e2436;
-      border-radius: 4px;
-      margin: 8px auto 6px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .bento-phone-screen {
-      width: 100%;
-      height: calc(100% - 18px);
+    /* Card 3: Analytics */
+    .bento-analytics-stage {
+      margin-top: 1rem;
       overflow: hidden;
-      position: relative;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
 
-    .bento-phone-screen img {
-      width: 215%;
-      max-width: none;
-      margin-left: -58%;
-      margin-top: -10%;
+    .bento-analytics-img {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
-    .bento-phone-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 9999px;
-      background: rgba(12, 16, 26, 0.88);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(0, 229, 255, 0.35);
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .bento-ble-pulse {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent-cyan);
-      box-shadow: 0 0 8px var(--accent-cyan);
-      animation: pulse-dot 2s infinite ease-in-out;
-    }
-
-    /* Card B Filter UI */
-    .bento-filter-ui {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
+    /* Card 4: Connect */
+    .bento-connect-stage {
       margin-top: 1rem;
-    }
-
-    .bento-chips-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .bento-grade-chip,
-    .bento-tag-chip {
-      padding: 0.42rem 0.9rem;
-      border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-muted);
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-
-    .bento-grade-chip.active-chip {
-      background: rgba(0, 229, 255, 0.12);
-      border-color: rgba(0, 229, 255, 0.4);
-      color: var(--text);
-    }
-
-    .bento-grade-chip.active-purple-chip {
-      background: rgba(177, 79, 255, 0.16);
-      border-color: rgba(177, 79, 255, 0.45);
-      color: #fff;
-      box-shadow: 0 0 12px rgba(177, 79, 255, 0.2);
-    }
-
-    .bento-tag-chip.active-cyan-chip {
-      background: rgba(0, 229, 255, 0.12);
-      border-color: rgba(0, 229, 255, 0.4);
-      color: var(--accent-cyan);
-    }
-
-    /* Card C Hold Grid */
-    .bento-grid-preview {
-      margin-top: 1rem;
-      background: rgba(10, 12, 20, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--r-m);
-      padding: 1.1rem 1rem;
-      position: relative;
       overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
 
-    .mini-hold-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      justify-items: center;
-      align-items: center;
-    }
-
-    .hold-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      display: inline-block;
-      transition: all 0.25s ease;
-    }
-
-    .hold-inactive {
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .hold-start {
-      background: #00e676;
-      box-shadow: 0 0 10px #00e676;
-    }
-
-    .hold-hand {
-      background: #00e5ff;
-      box-shadow: 0 0 10px #00e5ff;
-    }
-
-    .hold-foot {
-      background: #ffea00;
-      box-shadow: 0 0 8px #ffea00;
-    }
-
-    .hold-finish {
-      background: #d500f9;
-      box-shadow: 0 0 12px #d500f9;
-    }
-
-    .bento-publish-pill {
-      margin-top: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 9999px;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid rgba(0, 229, 255, 0.3);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .publish-pulse {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-cyan);
-      animation: pulse-dot 1.8s infinite ease-in-out;
-    }
-
-    /* Card D Analytics */
-    .bento-analytics-ui {
-      margin-top: 1rem;
-    }
-
-    .bento-stats-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 0.85rem;
-    }
-
-    .bento-stat-val {
-      font-size: 1.45rem;
-      font-weight: 800;
-      line-height: 1;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-
-    .bento-stat-lbl {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-left: 0.35rem;
-    }
-
-    .bento-chart-wrap {
+    .bento-connect-img {
       width: 100%;
-      height: 55px;
-      overflow: hidden;
-    }
-
-    .bento-chart-svg {
-      width: 100%;
-      height: 100%;
+      height: auto;
       display: block;
     }
 
-    /* Card E Download Banner */
-    .bento-download-inner {
+    /* Card 5: Browse Split */
+    .bento-browse-split {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
-      flex-wrap: wrap;
+      height: 100%;
     }
 
+    .bento-browse-left {
+      flex: 1;
+    }
+
+    .bento-browse-phone-stage {
+      width: 215px;
+      flex-shrink: 0;
+      margin-bottom: -32px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bento-browse-phone-img {
+      max-width: 210px;
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: translateY(6px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bento-card-browse:hover .bento-browse-phone-img {
+      transform: translateY(0);
+    }
+
+    .bento-mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.32rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      color: var(--accent-cyan);
+      margin-top: 0.75rem;
+      margin-right: 0.4rem;
+    }
+
+    /* Card 6: Download App */
     .bento-card-header-row {
       display: flex;
       align-items: center;
@@ -719,26 +598,21 @@
       margin-bottom: 0.4rem;
     }
 
-    .bento-download-right {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-    }
-
     .bento-store-mock-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      padding: 0.55rem 1.15rem;
+      padding: 0.5rem 1.05rem;
       border-radius: 9999px;
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: var(--text);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       user-select: none;
       transition: all 0.2s ease;
+      margin-right: 0.4rem;
+      margin-top: 0.4rem;
     }
 
     .bento-store-mock-pill:hover {
@@ -753,7 +627,7 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
-    body.light-theme .bento-card-e {
+    body.light-theme .bento-card-download {
       background: linear-gradient(135deg, #f7f2ff 0%, #ede4ff 100%);
       border-color: rgba(177, 79, 255, 0.25);
     }
@@ -763,19 +637,10 @@
       border-color: rgba(0, 0, 0, 0.08);
     }
 
-    body.light-theme .bento-phone-frame {
-      background: #ffffff;
-      border-color: #e2e8f0;
-    }
-
-    body.light-theme .bento-phone-badge {
-      background: rgba(255, 255, 255, 0.95);
-      border-color: rgba(0, 114, 178, 0.35);
-      color: #0072b2;
-    }
-
-    body.light-theme .bento-grid-preview {
-      background: rgba(0, 0, 0, 0.03);
+    body.light-theme .bento-filters-stage,
+    body.light-theme .bento-analytics-stage,
+    body.light-theme .bento-connect-stage {
+      background: #f8fafc;
       border-color: rgba(0, 0, 0, 0.08);
     }
 
@@ -876,23 +741,26 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
       }
-      .bento-card-a {
+      .bento-card-filters {
         grid-column: 1 / -1;
-        grid-row: auto;
       }
-      .bento-card-b {
-        grid-column: 1 / -1;
-        grid-row: auto;
-      }
-      .bento-card-c {
+      .bento-card-set-route {
         grid-column: 1;
         grid-row: auto;
       }
-      .bento-card-d {
+      .bento-card-analytics {
         grid-column: 2;
         grid-row: auto;
       }
-      .bento-card-e {
+      .bento-card-connect {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      .bento-card-browse {
+        grid-column: 2;
+        grid-row: auto;
+      }
+      .bento-card-download {
         grid-column: 1 / -1;
         grid-row: auto;
       }
@@ -906,18 +774,23 @@
       .bento-card {
         padding: 24px 20px;
         border-radius: 20px;
+        grid-column: 1 !important;
+        grid-row: auto !important;
       }
-      .bento-card-c,
-      .bento-card-d {
-        grid-column: 1;
-      }
-      .bento-download-inner {
+      .bento-browse-split {
         flex-direction: column;
         align-items: flex-start;
       }
-      .bento-phone-frame {
-        width: 220px;
-        height: 250px;
+      .bento-browse-phone-stage {
+        width: 100%;
+        margin-bottom: -24px;
+        margin-top: 1rem;
+      }
+      .bento-browse-phone-img {
+        max-width: 220px;
+      }
+      .bento-tall-phone-img {
+        max-width: 220px;
       }
     }
 
@@ -1315,31 +1188,8 @@
 
         <div class="app-bento-grid reveal">
 
-          <!-- Card A: Instant Bluetooth & Wi-Fi Sync (Large tall card, spans left rows) -->
-          <article class="bento-card bento-card-a">
-            <div class="bento-card-content">
-              <div class="bento-emoji-chip" aria-hidden="true">📲</div>
-              <h3 class="bento-card-title">Instant Bluetooth &amp; Wi-Fi Sync</h3>
-              <p class="bento-card-desc">
-                One-tap connection pairs your phone or gym tablet with the wall controller (&lt;30ms response) with full offline session support.
-              </p>
-            </div>
-            <div class="bento-phone-stage" aria-hidden="true">
-              <div class="bento-phone-badge">
-                <span class="bento-ble-pulse"></span>
-                <span>&lt;30ms Response</span>
-              </div>
-              <div class="bento-phone-frame">
-                <div class="bento-phone-speaker"></div>
-                <div class="bento-phone-screen">
-                  <img src="assets/brand/dashboard-1.png" alt="ClimbFit Bluetooth wall pairing flow interface" loading="lazy">
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card B: Filter by Difficulty & Style (Wide card, top right) -->
-          <article class="bento-card bento-card-b">
+          <!-- Card 1: Filter by Difficulty & Style (uses bento-filters.png) -->
+          <article class="bento-card bento-card-filters">
             <div class="bento-card-content">
               <div class="bento-emoji-chip" aria-hidden="true">🔍</div>
               <h3 class="bento-card-title">Filter by Difficulty &amp; Style</h3>
@@ -1347,24 +1197,13 @@
                 Browse climbs from beginner warmup circuits to elite technical problems. Search by grade (V0–V14), setter, hold type, or movement focus.
               </p>
             </div>
-            <div class="bento-filter-ui" aria-hidden="true">
-              <div class="bento-chips-row">
-                <span class="bento-grade-chip active-chip">V0–V2 Warmup</span>
-                <span class="bento-grade-chip">V3–V5 Circuit</span>
-                <span class="bento-grade-chip active-purple-chip">V6–V8 Power</span>
-                <span class="bento-grade-chip">V9–V14 Elite</span>
-              </div>
-              <div class="bento-chips-row">
-                <span class="bento-tag-chip active-cyan-chip">⚡ Dynamic Moves</span>
-                <span class="bento-tag-chip">📌 Crimps</span>
-                <span class="bento-tag-chip">🎯 Slopers</span>
-                <span class="bento-tag-chip">🪜 Compression</span>
-              </div>
+            <div class="bento-filters-stage">
+              <img src="assets/app/bento-filters.png" alt="ClimbFit route filter chips: 11x19, Medium, V3-V5, 4+ stars" class="bento-filters-img" loading="lazy">
             </div>
           </article>
 
-          <!-- Card C: Set & Publish Boulder Problems (Square card, mid row) -->
-          <article class="bento-card bento-card-c">
+          <!-- Card 2: Set & Publish Boulder Problems (uses bento-set-route.png) -->
+          <article class="bento-card bento-card-set-route">
             <div class="bento-card-content">
               <div class="bento-emoji-chip" aria-hidden="true">💡</div>
               <h3 class="bento-card-title">Set &amp; Publish Boulder Problems</h3>
@@ -1372,35 +1211,13 @@
                 Tap holds directly on the virtual board grid in the app to define starts, feet, hands, and finishes. Publish instantly to the community.
               </p>
             </div>
-            <div class="bento-grid-preview" aria-hidden="true">
-              <div class="mini-hold-grid">
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-hand"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-finish"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-hand"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-hand"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-foot"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-start"></span>
-                <span class="hold-dot hold-inactive"></span>
-                <span class="hold-dot hold-foot"></span>
-              </div>
-              <div style="text-align:center;">
-                <div class="bento-publish-pill">
-                  <span class="publish-pulse"></span>
-                  <span>Tap to Publish</span>
-                </div>
-              </div>
+            <div class="bento-tall-phone-stage">
+              <img src="assets/app/bento-set-route.png" alt="ClimbFit mobile app route setter screen with interactive hold grid" class="bento-tall-phone-img" loading="lazy">
             </div>
           </article>
 
-          <!-- Card D: Climber Logbook & Analytics (Square card, mid row) -->
-          <article class="bento-card bento-card-d">
+          <!-- Card 3: Climber Logbook & Analytics (uses bento-analytics.png) -->
+          <article class="bento-card bento-card-analytics">
             <div class="bento-card-content">
               <div class="bento-emoji-chip" aria-hidden="true">📈</div>
               <h3 class="bento-card-title">Climber Logbook &amp; Analytics</h3>
@@ -1408,53 +1225,63 @@
                 Track attempts, sends, flash rates, and grade progression over time. View facility activity summaries for coaches and trainers.
               </p>
             </div>
-            <div class="bento-analytics-ui" aria-hidden="true">
-              <div class="bento-stats-row">
+            <div class="bento-analytics-stage">
+              <img src="assets/app/bento-analytics.png" alt="Climber logbook showing sessions, sends, projects, and bar chart progression" class="bento-analytics-img" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 4: Instant Bluetooth & Wi-Fi Sync (uses bento-connect.png) -->
+          <article class="bento-card bento-card-connect">
+            <div class="bento-card-content">
+              <div class="bento-emoji-chip" aria-hidden="true">📲</div>
+              <h3 class="bento-card-title">Instant Bluetooth &amp; Wi-Fi Sync</h3>
+              <p class="bento-card-desc">
+                One-tap connection pairs your phone or gym tablet with the wall controller (&lt;30ms response) with full offline session support.
+              </p>
+            </div>
+            <div class="bento-connect-stage">
+              <img src="assets/app/bento-connect.png" alt="Connect a Wall screen showing nearby ClimbFit wall and connect status" class="bento-connect-img" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 5: Browse from 1,000+ Routes (uses bento-browse.png) -->
+          <article class="bento-card bento-card-browse">
+            <div class="bento-browse-split">
+              <div class="bento-browse-left">
+                <div class="bento-emoji-chip" aria-hidden="true">🧗</div>
+                <h3 class="bento-card-title">Browse from 1,000+ Routes</h3>
+                <p class="bento-card-desc">
+                  Select a route, follow illuminated holds, and switch between compatible routes without physically resetting the wall.
+                </p>
                 <div>
-                  <span class="bento-stat-val">142</span>
-                  <span class="bento-stat-lbl">Sends</span>
-                </div>
-                <div>
-                  <span class="bento-stat-val" style="color:var(--accent-cyan);">78%</span>
-                  <span class="bento-stat-lbl">Flash Rate</span>
+                  <span class="bento-mini-pill">🔥 Community Benchmarks</span>
+                  <span class="bento-mini-pill">⚡ Instant LED Sync</span>
                 </div>
               </div>
-              <div class="bento-chart-wrap">
-                <svg viewBox="0 0 200 60" fill="none" class="bento-chart-svg" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#b14fff" stop-opacity="0.4"/>
-                      <stop offset="100%" stop-color="#b14fff" stop-opacity="0"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M0,50 Q40,46 70,34 T130,20 T200,6 L200,60 L0,60 Z" fill="url(#chartGrad)"/>
-                  <path d="M0,50 Q40,46 70,34 T130,20 T200,6" stroke="#b14fff" stroke-width="2.5" stroke-linecap="round"/>
-                  <circle cx="200" cy="6" r="4" fill="#00e5ff" stroke="#fff" stroke-width="1.5"/>
-                </svg>
+              <div class="bento-browse-phone-stage">
+                <img src="assets/app/bento-browse.png" alt="ClimbFit app route browser with grade ratings and setter details" class="bento-browse-phone-img" loading="lazy">
               </div>
             </div>
           </article>
 
-          <!-- Card E: Download App (Wide Accent Card, bottom row) -->
-          <article class="bento-card bento-card-e">
-            <div class="bento-download-inner">
-              <div class="bento-download-left">
-                <div class="bento-card-header-row">
-                  <div class="bento-emoji-chip" aria-hidden="true" style="background:rgba(255,255,255,0.1);margin-bottom:0;">📱</div>
-                  <span class="badge-coming-soon" style="background:rgba(0,229,255,0.15);border-color:rgba(0,229,255,0.4);">COMING SOON</span>
-                </div>
-                <h3 class="bento-card-title" style="font-size:1.35rem;margin-top:0.75rem;margin-bottom:0.35rem;">Download App</h3>
-                <p class="bento-card-desc" style="margin-bottom:0;">
-                  iOS &amp; Android companion app in beta facility testing
-                </p>
+          <!-- Card 6: Download App (COMING SOON) -->
+          <article class="bento-card bento-card-download">
+            <div class="bento-card-content">
+              <div class="bento-card-header-row">
+                <div class="bento-emoji-chip" aria-hidden="true" style="background:rgba(255,255,255,0.1);margin-bottom:0;">🚀</div>
+                <span class="badge-coming-soon" style="background:rgba(0,229,255,0.15);border-color:rgba(0,229,255,0.4);">COMING SOON</span>
               </div>
-              <div class="bento-download-right">
+              <h3 class="bento-card-title" style="font-size:1.25rem;margin-top:0.75rem;margin-bottom:0.35rem;">Download App</h3>
+              <p class="bento-card-desc" style="margin-bottom:1.25rem;">
+                iOS &amp; Android companion app in beta facility testing
+              </p>
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:0.5rem;">
                 <div class="bento-store-mock-pill">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.86c.62-.77 1.05-1.84.93-2.86-.9.04-2.03.62-2.67 1.38-.56.65-1.06 1.73-.93 2.76 1.01.08 2.05-.53 2.67-1.28z"/></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.86c.62-.77 1.05-1.84.93-2.86-.9.04-2.03.62-2.67 1.38-.56.65-1.06 1.73-.93 2.76 1.01.08 2.05-.53 2.67-1.28z"/></svg>
                   <span>App Store</span>
                 </div>
                 <div class="bento-store-mock-pill">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.365-1.281V3.095c0-.493.136-.942.364-1.281zm11.235 11.236l2.164-2.165-12.02-6.868 9.856 9.033zm2.164-3.882l2.392 1.367c.813.465.813 1.22 0 1.685l-2.392 1.367-2.443-2.443 2.443-1.976zm-3.216 2.748l-9.856 9.033 12.02-6.868-2.164-2.165z"/></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.365-1.281V3.095c0-.493.136-.942.364-1.281zm11.235 11.236l2.164-2.165-12.02-6.868 9.856 9.033zm2.164-3.882l2.392 1.367c.813.465.813 1.22 0 1.685l-2.392 1.367-2.443-2.443 2.443-1.976zm-3.216 2.748l-9.856 9.033 12.02-6.868-2.164-2.165z"/></svg>
                   <span>Google Play</span>
                 </div>
               </div>
