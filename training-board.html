@@ -479,11 +479,29 @@
       margin-top: 1.5rem;
     }
 
-    .bento-analytics-img {
+    /* Card 3: Analytics Stat Cards Stack */
+    .bento-stats-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
       width: 100%;
+    }
+
+    .bento-stat-card-img {
+      width: 114px;
+      max-width: 100%;
       height: auto;
       display: block;
-      margin-top: 1.25rem;
+      border-radius: 12px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+    }
+
+    .bento-stat-card-img:hover {
+      transform: translateY(-2px) scale(1.03);
+      filter: drop-shadow(0 8px 18px rgba(168, 85, 247, 0.25)) brightness(1.06);
     }
 
     .bento-connect-img {
@@ -1199,7 +1217,7 @@
             </div>
           </article>
 
-          <!-- Card 3: Climber Logbook & Analytics (uses bento-analytics.png) -->
+          <!-- Card 3: Climber Logbook & Analytics (uses stacked stat cards) -->
           <article class="bento-card bento-card-analytics">
             <div class="bento-card-content">
               <h3 class="bento-card-title">Climber Logbook &amp; Analytics</h3>
@@ -1207,7 +1225,11 @@
                 Track attempts, sends, flash rates, and grade progression over time. View facility activity summaries for coaches and trainers.
               </p>
             </div>
-            <img src="assets/app/bento-analytics.png" alt="Climber logbook showing sessions, sends, projects, and bar chart progression" class="bento-analytics-img" loading="lazy">
+            <div class="bento-stats-stack">
+              <img src="assets/app/bento-stat-sessions.png" alt="Climber Sessions: 24" class="bento-stat-card-img" loading="lazy">
+              <img src="assets/app/bento-stat-sends.png" alt="Climber Sends: 18 (+5)" class="bento-stat-card-img" loading="lazy">
+              <img src="assets/app/bento-stat-projects.png" alt="Climber Projects: 6 (+2)" class="bento-stat-card-img" loading="lazy">
+            </div>
           </article>
 
           <!-- Card 4: Instant Bluetooth & Wi-Fi Sync (uses bento-connect.png) -->
