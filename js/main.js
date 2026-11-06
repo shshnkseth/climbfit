@@ -98,7 +98,7 @@
     });
 
     // Highlight parent dropdown trigger when child page is active
-    const servicesPages = ['services.html', 'training-board.html', 'app.html', 'wall.html', 'offerings.html'];
+    const servicesPages = ['services.html', 'training-board.html', 'wall.html', 'offerings.html'];
     const companyPages = ['about.html', 'blog.html', 'support.html'];
     if (servicesPages.includes(currentPage)) {
       const sBtn = document.getElementById('services-menu-btn');
@@ -442,6 +442,107 @@
             e.stopPropagation();
           }
         });
+      });
+    }
+
+    /* ── Blog & Stories Interactive Logic ──────────────────────── */
+    const blogPills = document.querySelectorAll('.blog-pill-btn');
+    const blogCards = document.querySelectorAll('.story-card');
+    const blogSearch = document.getElementById('blog-search');
+    const articleModal = document.getElementById('article-modal');
+    const articleModalClose = document.getElementById('article-modal-close');
+    const articleModalBody = document.getElementById('article-modal-body');
+
+    if (blogCards.length) {
+      let activeCategory = 'all';
+      let searchQuery = '';
+
+      const filterStories = () => {
+        blogCards.forEach(card => {
+          const category = card.dataset.category || '';
+          const text = (card.innerText || '').toLowerCase();
+          const matchesCategory = activeCategory === 'all' || category.includes(activeCategory);
+          const matchesSearch = !searchQuery || text.includes(searchQuery);
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      };
+
+      blogPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          blogPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          activeCategory = pill.dataset.filter || 'all';
+          filterStories();
+        });
+      });
+
+      if (blogSearch) {
+        blogSearch.addEventListener('input', (e) => {
+          searchQuery = e.target.value.toLowerCase().trim();
+          filterStories();
+        });
+      }
+    }
+
+    // Article Reader Modal
+    document.querySelectorAll('[data-read-article]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const articleId = btn.getAttribute('data-read-article');
+        const template = document.getElementById(articleId);
+        if (template && articleModal && articleModalBody) {
+          articleModalBody.innerHTML = template.innerHTML;
+          articleModal.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    const closeModal = () => {
+      if (articleModal) {
+        articleModal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    };
+
+    if (articleModalClose) {
+      articleModalClose.addEventListener('click', closeModal);
+    }
+    if (articleModal) {
+      articleModal.addEventListener('click', (e) => {
+        if (e.target === articleModal) closeModal();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && articleModal && articleModal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    // Newsletter submit feedback
+    const blogNewsletterForm = document.getElementById('blog-newsletter-form');
+    if (blogNewsletterForm) {
+      blogNewsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = blogNewsletterForm.querySelector('input[type="email"]');
+        const btn = blogNewsletterForm.querySelector('button[type="submit"]');
+        if (input && input.value) {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = 'Subscribed ✓';
+          btn.style.background = '#00e5ff';
+          btn.style.color = '#0b0f19';
+          input.value = '';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 3500);
+        }
       });
     }
 
