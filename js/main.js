@@ -81,7 +81,7 @@
       onScroll();
     }
 
-    /* ── Active nav link ────────────────────────────────────────── */
+    /* ── Active nav link & dropdown highlights ─────────────────── */
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
       const href = link.getAttribute('href');
@@ -94,6 +94,48 @@
       if (isMatch) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
+      }
+    });
+
+    // Highlight parent dropdown trigger when child page is active
+    const servicesPages = ['services.html', 'training-board.html', 'app.html', 'wall.html', 'offerings.html'];
+    const companyPages = ['about.html', 'blog.html', 'support.html'];
+    if (servicesPages.includes(currentPage)) {
+      const sBtn = document.getElementById('services-menu-btn');
+      if (sBtn) sBtn.classList.add('is-active');
+    }
+    if (companyPages.includes(currentPage)) {
+      const cBtn = document.getElementById('company-menu-btn');
+      if (cBtn) cBtn.classList.add('is-active');
+    }
+
+    /* ── Dropdown interactions (click/tap toggle & outside click) ─ */
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+      const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.contains('is-open');
+        dropdowns.forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('is-open');
+            const otherBtn = d.querySelector('.nav-dropdown-trigger');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        dropdown.classList.toggle('is-open', !isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        dropdowns.forEach(d => {
+          d.classList.remove('is-open');
+          const btn = d.querySelector('.nav-dropdown-trigger');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
       }
     });
 

@@ -900,11 +900,60 @@
       </a>
 
       <div class="nav-links" role="menubar" aria-label="Site navigation">
-        <a href="index.html" role="menuitem" aria-current="page">Home</a>
-        <a href="services.html" role="menuitem">Our Services</a>
-        <a href="training-board.html" role="menuitem">Training Board</a>
-        <a href="app.html" role="menuitem">App</a>
-        <a href="about.html" role="menuitem">About Us</a>
+        <a href="index.html" role="menuitem">Home</a>
+
+        <!-- Services Dropdown -->
+        <div class="nav-dropdown" role="none">
+          <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="services-menu-btn">
+            <span>Services</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu" aria-labelledby="services-menu-btn">
+            <a href="services.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">All Services &amp; Products</span>
+              <span class="dropdown-item-desc">Turnkey setups, hardware &amp; installation</span>
+            </a>
+            <a href="training-board.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">Modular Training Boards</span>
+              <span class="dropdown-item-desc">Sizes S, M, L with RGB LED holds</span>
+            </a>
+            <a href="app.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">ClimbFit Mobile App</span>
+              <span class="dropdown-item-desc">Route library, BLE sync &amp; problem setter</span>
+            </a>
+            <a href="services.html#custom-solutions" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">Custom Solutions</span>
+              <span class="dropdown-item-desc">Atrium adventure towers &amp; bespoke geometries</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company Dropdown -->
+        <div class="nav-dropdown" role="none">
+          <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="company-menu-btn">
+            <span>Company</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu" aria-labelledby="company-menu-btn">
+            <a href="about.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">About Us</span>
+              <span class="dropdown-item-desc">Our mission, story &amp; founder's note</span>
+            </a>
+            <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">Blog &amp; Stories</span>
+              <span class="dropdown-item-desc">Engineering updates &amp; PE case studies</span>
+            </a>
+            <a href="support.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">Help &amp; Support</span>
+              <span class="dropdown-item-desc">Pairing guides, FAQs &amp; technical care</span>
+            </a>
+            <a href="about.html#contact" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-title">Contact</span>
+              <span class="dropdown-item-desc">Discuss your facility layout &amp; pricing</span>
+            </a>
+          </div>
+        </div>
+
         <a href="about.html#contact" class="nav-cta" role="menuitem">Get in Touch</a>
       </div>
 
