@@ -176,62 +176,6 @@
       border: 1px solid var(--border-active);
     }
 
-    /* ── Color Logic Card ───────────────────────────────── */
-    .color-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-s);
-      margin-bottom: var(--space-xl);
-    }
-
-    .color-card {
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: var(--r-m);
-      padding: var(--space-m);
-      text-align: center;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .color-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      margin: 0 auto var(--space-xs);
-    }
-
-    .dot-green {
-      background: #00ff88;
-      box-shadow: 0 0 16px rgba(0, 255, 136, 0.6);
-    }
-
-    .dot-cyan {
-      background: var(--accent-cyan);
-      box-shadow: var(--glow-cyan);
-    }
-
-    .dot-yellow {
-      background: var(--accent-yellow);
-      box-shadow: var(--glow-yellow);
-    }
-
-    .dot-pink {
-      background: var(--accent-pink);
-      box-shadow: var(--glow-pink);
-    }
-
-    .color-card h4 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .color-card p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
     /* ── Specs ──────────────────────────────────────────── */
     .specs-section {
       background: rgba(255, 255, 255, 0.015);
@@ -758,9 +702,6 @@
         height: 300px;
       }
 
-      .color-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
 
       .specs-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -967,40 +908,6 @@
       </div>
     </section>
 
-    <!-- ── Color Logic Section ────────────────────────────── -->
-    <section class="section-sm" aria-labelledby="led-logic-heading">
-      <div class="container">
-        <header class="section-header reveal">
-          <span class="label" aria-hidden="true">LED Color System</span>
-          <h2 class="heading-1" id="led-logic-heading">What the Colors Mean</h2>
-          <p>Each hold color tells you what to do. Here's the system — it's the same standard used on LED boards
-            everywhere.</p>
-        </header>
-
-        <div class="color-grid reveal" role="list" aria-label="ClimbFit LED hold color guide">
-          <div class="color-card" role="listitem">
-            <div class="color-dot dot-green"></div>
-            <h4>Green</h4>
-            <p>Start Holds (Hands/Feet)</p>
-          </div>
-          <div class="color-card" role="listitem">
-            <div class="color-dot dot-cyan"></div>
-            <h4>Cyan / Blue</h4>
-            <p>Hand &amp; Foot Holds</p>
-          </div>
-          <div class="color-card" role="listitem">
-            <div class="color-dot dot-yellow"></div>
-            <h4>Yellow / Orange</h4>
-            <p>Foot-Only Holds</p>
-          </div>
-          <div class="color-card" role="listitem">
-            <div class="color-dot dot-pink"></div>
-            <h4>Pink / Magenta</h4>
-            <p>Finish / Top-Out Holds</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ── Board Configurations (From Official Brochure) ── -->
     <section class="section" id="specs" aria-labelledby="specs-heading">
@@ -1185,43 +1092,6 @@
       </div>
     </section>
 
-    <!-- ── Games & Interactive Formats (PDF Page 7) ────────── -->
-    <section class="section" style="border-top:1px solid rgba(255,255,255,0.05);" aria-labelledby="games-heading">
-      <div class="container">
-        <header class="section-header reveal">
-          <span class="label" aria-hidden="true">Gamified Movement</span>
-          <h2 class="heading-1" id="games-heading">Games &amp; Interactive Formats</h2>
-          <p>ClimbFit transforms physical conditioning into high-engagement interactive play for students, youth teams, gym members, and community events.</p>
-        </header>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:var(--space-m);" class="reveal">
-          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
-            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(0,229,255,0.3));" aria-hidden="true">🧠</div>
-            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Memory Challenge</h3>
-            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Climbers remember and repeat illuminated hold sequences under time pressure. Builds cognitive agility, spatial recall, and motor discipline.</p>
-          </div>
-
-          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
-            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(177,79,255,0.3));" aria-hidden="true">⚡</div>
-            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Team Relay</h3>
-            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Competitive speed climbing race with synchronized lighting and turn-based rounds. Highly popular for school PE classes, corporate offsites, and club tournaments.</p>
-          </div>
-
-          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
-            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(255,183,3,0.3));" aria-hidden="true">🔤</div>
-            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Alphabets Run</h3>
-            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Spell target words or strike letter markers on lit holds in rapid succession. Blends dynamic physical movement with playful gamified literacy.</p>
-          </div>
-
-          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
-            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(0,255,136,0.3));" aria-hidden="true">👥</div>
-            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Multi-Climber Modes</h3>
-            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Simultaneous dual-climber tracks or synchronized routes designed for side-by-side climbing, partner drills, and fast queue management in busy gyms.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ── App Showcase ───────────────────────────────────── -->
     <section class="section" id="mobile-app"
       style="background:rgba(255,255,255,0.01);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);"
@@ -1319,6 +1189,43 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Games & Interactive Formats (PDF Page 7) ────────── -->
+    <section class="section" style="border-top:1px solid rgba(255,255,255,0.05);" aria-labelledby="games-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="label" aria-hidden="true">Gamified Movement</span>
+          <h2 class="heading-1" id="games-heading">Games &amp; Interactive Formats</h2>
+          <p>ClimbFit transforms physical conditioning into high-engagement interactive play for students, youth teams, gym members, and community events.</p>
+        </header>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:var(--space-m);" class="reveal">
+          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(0,229,255,0.3));" aria-hidden="true">🧠</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Memory Challenge</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Climbers remember and repeat illuminated hold sequences under time pressure. Builds cognitive agility, spatial recall, and motor discipline.</p>
+          </div>
+
+          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(177,79,255,0.3));" aria-hidden="true">⚡</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Team Relay</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Competitive speed climbing race with synchronized lighting and turn-based rounds. Highly popular for school PE classes, corporate offsites, and club tournaments.</p>
+          </div>
+
+          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(255,183,3,0.3));" aria-hidden="true">🔤</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Alphabets Run</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Spell target words or strike letter markers on lit holds in rapid succession. Blends dynamic physical movement with playful gamified literacy.</p>
+          </div>
+
+          <div style="padding:1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;filter:drop-shadow(0 4px 12px rgba(0,255,136,0.3));" aria-hidden="true">👥</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);">Multi-Climber Modes</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin:0;">Simultaneous dual-climber tracks or synchronized routes designed for side-by-side climbing, partner drills, and fast queue management in busy gyms.</p>
+          </div>
         </div>
       </div>
     </section>

@@ -310,6 +310,30 @@
       animation: pulse-dot 2s infinite;
     }
 
+    .shipping-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--r-xl);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-family: var(--font-body);
+    }
+
+    [data-theme="light"] .shipping-pill {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.1);
+      color: #0e1017;
+    }
+
     .hero-title {
       font-family: var(--font-display);
       font-weight: 700;
@@ -995,6 +1019,10 @@
         <div class="hero-content">
           <div class="hero-eyebrow">
             <span class="hold-indicator" aria-label="Smart Infrastructure">Smart Infrastructure</span>
+            <span class="shipping-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:2px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              Shipping Worldwide
+            </span>
           </div>
 
           <h1 class="hero-title" id="hero-heading">
@@ -1642,6 +1670,7 @@
             <span>📞 <a href="tel:+918982789640" style="color:var(--text);font-weight:600;">+91 8982 789 640</a></span>
             <span>✉️ <a href="mailto:anind@climbfit.in"
                 style="color:var(--text);font-weight:600;">anind@climbfit.in</a></span>
+            <span>🌐 <strong style="color:var(--text);">Shipping Worldwide</strong></span>
           </div>
         </div>
       </div>
@@ -1671,7 +1700,7 @@
           Settings</button>
       </nav>
       <p class="body-s text-muted">
-        <small>© 2026 ClimbFit Technologies. Proudly built in India. Started in 2023. All rights reserved.</small>
+        <small>© 2026 ClimbFit Technologies. Proudly built in India · Shipping worldwide. Started in 2023. All rights reserved.</small>
       </p>
     </div>
   </footer>
