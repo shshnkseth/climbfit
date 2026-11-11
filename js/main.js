@@ -570,5 +570,51 @@
       });
     }
 
+    // Training Board Size Switcher (Homepage)
+    const boardSwitchBtns = document.querySelectorAll('.board-switch-btn');
+    const boardPanels = document.querySelectorAll('.board-panel');
+    if (boardSwitchBtns.length && boardPanels.length) {
+      boardSwitchBtns.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          const targetSize = btn.getAttribute('data-size');
+          boardSwitchBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          boardPanels.forEach(panel => {
+            if (panel.getAttribute('data-size') === targetSize) {
+              panel.classList.add('active');
+              panel.removeAttribute('hidden');
+            } else {
+              panel.classList.remove('active');
+              panel.setAttribute('hidden', '');
+            }
+          });
+        });
+
+        // Accessible keyboard arrow navigation
+        btn.addEventListener('keydown', (e) => {
+          let newIdx = null;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            newIdx = (idx + 1) % boardSwitchBtns.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            newIdx = (idx - 1 + boardSwitchBtns.length) % boardSwitchBtns.length;
+          } else if (e.key === 'Home') {
+            newIdx = 0;
+          } else if (e.key === 'End') {
+            newIdx = boardSwitchBtns.length - 1;
+          }
+          if (newIdx !== null) {
+            e.preventDefault();
+            boardSwitchBtns[newIdx].focus();
+            boardSwitchBtns[newIdx].click();
+          }
+        });
+      });
+    }
+
   }); // end DOMContentLoaded
 })();
