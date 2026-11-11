@@ -616,5 +616,81 @@
       });
     }
 
+    // E-Commerce Product Detail Size Switcher (services.html)
+    const ecomSizeChips = document.querySelectorAll('.ecom-size-chip');
+    const ecomThumbBtns = document.querySelectorAll('.ecom-thumb-btn');
+    const ecomVisuals = document.querySelectorAll('.ecom-visual-item');
+    const ecomSpecBlocks = document.querySelectorAll('.ecom-spec-block');
+    const ecomSizeLabel = document.getElementById('ecom-size-label');
+
+    const ecomLabels = {
+      s: 'Size S (8 × 12 ft)',
+      m: 'Size M (12 × 12 ft)',
+      l: 'Size L (15 × 12 ft)'
+    };
+
+    function selectEcomSize(size) {
+      if (!size) return;
+      ecomSizeChips.forEach(chip => {
+        const isMatch = chip.getAttribute('data-size') === size;
+        chip.classList.toggle('active', isMatch);
+        chip.setAttribute('aria-checked', String(isMatch));
+      });
+      ecomThumbBtns.forEach(thumb => {
+        const isMatch = thumb.getAttribute('data-size') === size;
+        thumb.classList.toggle('active', isMatch);
+        thumb.setAttribute('aria-selected', String(isMatch));
+      });
+      ecomVisuals.forEach(vis => {
+        vis.classList.toggle('active', vis.getAttribute('data-size') === size);
+      });
+      ecomSpecBlocks.forEach(spec => {
+        spec.classList.toggle('active', spec.getAttribute('data-size') === size);
+      });
+      if (ecomSizeLabel && ecomLabels[size]) {
+        ecomSizeLabel.textContent = ecomLabels[size];
+      }
+    }
+
+    if (ecomSizeChips.length || ecomThumbBtns.length) {
+      ecomSizeChips.forEach((chip, idx) => {
+        chip.addEventListener('click', () => {
+          selectEcomSize(chip.getAttribute('data-size'));
+        });
+        chip.addEventListener('keydown', (e) => {
+          let targetIdx = null;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            targetIdx = (idx + 1) % ecomSizeChips.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            targetIdx = (idx - 1 + ecomSizeChips.length) % ecomSizeChips.length;
+          }
+          if (targetIdx !== null) {
+            e.preventDefault();
+            ecomSizeChips[targetIdx].focus();
+            ecomSizeChips[targetIdx].click();
+          }
+        });
+      });
+
+      ecomThumbBtns.forEach((thumb, idx) => {
+        thumb.addEventListener('click', () => {
+          selectEcomSize(thumb.getAttribute('data-size'));
+        });
+        thumb.addEventListener('keydown', (e) => {
+          let targetIdx = null;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            targetIdx = (idx + 1) % ecomThumbBtns.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            targetIdx = (idx - 1 + ecomThumbBtns.length) % ecomThumbBtns.length;
+          }
+          if (targetIdx !== null) {
+            e.preventDefault();
+            ecomThumbBtns[targetIdx].focus();
+            ecomThumbBtns[targetIdx].click();
+          }
+        });
+      });
+    }
+
   }); // end DOMContentLoaded
 })();
