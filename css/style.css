@@ -1974,23 +1974,23 @@ body.light-theme .nav-dropdown-item.active .dropdown-item-title {
 .badge-coming-soon {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.55rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  border-radius: 9999px;
-  background: rgba(0, 229, 255, 0.12);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  border-radius: var(--r-xl);
+  background: transparent;
   color: var(--accent-cyan);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  border: 1px solid rgba(0, 229, 255, 0.25);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: 1;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
 }
 
 body.light-theme .badge-coming-soon,
 [data-theme="light"] .badge-coming-soon {
-  background: rgba(0, 114, 178, 0.1);
+  background: transparent;
   color: #0072b2;
-  border-color: rgba(0, 114, 178, 0.3);
+  border-color: rgba(0, 114, 178, 0.25);
 }
 
 .coming-soon-btn {
@@ -2307,27 +2307,23 @@ body.light-theme .featured-story-card {
 
 /* Bottom caption under hold grid */
 .board-config-bottom-caption {
-  margin-top: 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem 1.15rem;
-  border-radius: var(--r-xl);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1rem;
+  display: block;
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-align: center;
-  transition: all 0.25s var(--ease-out);
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 [data-theme="light"] .board-config-bottom-caption {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.08);
+  background: none;
+  border: none;
   color: var(--text-muted);
 }
 
