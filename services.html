@@ -181,7 +181,7 @@
     }
     .offerings-hero p {
       font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-      color: rgba(228,228,240,0.85);
+      color: var(--text-muted);
       line-height: 1.65;
       max-width: 580px;
       margin: 0 auto var(--space-m);
@@ -595,6 +595,87 @@
       position: relative;
       overflow: hidden;
       margin-top: var(--space-l);
+    }
+
+    /* ── Light Theme Overrides ──────────────────────────── */
+    [data-theme="light"] .quick-anchor-nav,
+    body.light-theme .quick-anchor-nav {
+      background: rgba(255, 255, 255, 0.94);
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    [data-theme="light"] .quick-anchor-item:hover,
+    body.light-theme .quick-anchor-item:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+    [data-theme="light"] .pill-badge,
+    body.light-theme .pill-badge {
+      background: rgba(0, 0, 0, 0.03);
+      border-color: rgba(0, 0, 0, 0.08);
+      color: var(--text);
+    }
+    [data-theme="light"] .schools-strip,
+    body.light-theme .schools-strip {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    [data-theme="light"] .traverse-image-card,
+    body.light-theme .traverse-image-card {
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+    [data-theme="light"] .traverse-callout-pill,
+    body.light-theme .traverse-callout-pill {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(0, 114, 178, 0.35);
+      color: #0072b2;
+    }
+    [data-theme="light"] .traverse-feature-card,
+    body.light-theme .traverse-feature-card {
+      border-bottom-color: rgba(0, 0, 0, 0.06);
+    }
+    [data-theme="light"] .turnkey-phase-card,
+    body.light-theme .turnkey-phase-card {
+      border-bottom-color: rgba(0, 0, 0, 0.06);
+    }
+    [data-theme="light"] .turnkey-phase-card:hover,
+    body.light-theme .turnkey-phase-card:hover {
+      border-bottom-color: #0072b2;
+    }
+    [data-theme="light"] .turnkey-delivery-card,
+    body.light-theme .turnkey-delivery-card {
+      background: #ffffff;
+      border-color: rgba(0, 114, 178, 0.35);
+      box-shadow: 0 12px 32px rgba(0, 114, 178, 0.08);
+    }
+    [data-theme="light"] .catalog-card,
+    body.light-theme .catalog-card {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    [data-theme="light"] .catalog-card:hover,
+    body.light-theme .catalog-card:hover {
+      background: #ffffff;
+      border-color: rgba(0, 114, 178, 0.4);
+      box-shadow: 0 12px 28px rgba(0, 114, 178, 0.1);
+    }
+    [data-theme="light"] .catalog-badge,
+    body.light-theme .catalog-badge {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.08);
+      color: var(--text-muted);
+    }
+    [data-theme="light"] .catalog-meta,
+    body.light-theme .catalog-meta {
+      border-top-color: rgba(0, 0, 0, 0.06);
+    }
+    [data-theme="light"] .simple-cta-card,
+    body.light-theme .simple-cta-card {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
     }
 
     /* ── Responsive ─────────────────────────────────────── */

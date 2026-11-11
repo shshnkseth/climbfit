@@ -242,6 +242,14 @@
       margin-top: 2px;
     }
 
+    /* ── How It Works Grid ───────────────────────────────── */
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
     /* ── Steps ──────────────────────────────────────────── */
     .steps-wrap {
       display: flex;
@@ -626,6 +634,38 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
     }
 
+    /* Light Theme Specs Section */
+    [data-theme="light"] .specs-section,
+    body.light-theme .specs-section {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    [data-theme="light"] .specs-grid,
+    body.light-theme .specs-grid {
+      background: rgba(0, 0, 0, 0.08);
+    }
+    [data-theme="light"] .spec-item,
+    body.light-theme .spec-item {
+      background: #ffffff;
+    }
+    [data-theme="light"] .spec-item:hover,
+    body.light-theme .spec-item:hover {
+      background: #f8fafc;
+    }
+    [data-theme="light"] .spec-label,
+    body.light-theme .spec-label {
+      color: #64748b;
+    }
+    [data-theme="light"] .spec-value,
+    body.light-theme .spec-value {
+      color: #0e1017;
+    }
+    [data-theme="light"] .spec-unit,
+    body.light-theme .spec-unit {
+      color: #475569;
+    }
+
     /* ── Gallery ────────────────────────────────────────── */
     .gallery-grid {
       display: grid;
@@ -690,24 +730,6 @@
       font-size: 1.4rem;
     }
 
-    @media (max-width: 860px) {
-      .page-hero-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .page-hero-text h1 {
-        font-size: clamp(1.85rem, 6.5vw, 2.75rem);
-      }
-
-      .page-hero-image img {
-        height: 300px;
-      }
-
-
-      .specs-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
     /* Responsive Bento Grid Rules */
     @media (max-width: 1023px) {
       .app-bento-grid {
@@ -753,7 +775,62 @@
       }
     }
 
+    @media (max-width: 860px) {
+      .page-hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .page-hero-text h1 {
+        font-size: clamp(1.85rem, 6.5vw, 2.75rem);
+      }
+      .page-hero-image img {
+        height: 300px;
+      }
+      .how-it-works-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-l);
+      }
+      .specs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1px;
+      }
+      .spec-item:nth-child(9),
+      .spec-item:last-child {
+        grid-column: span 2;
+        text-align: center;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .gallery-item.span-2 {
+        grid-column: span 1;
+      }
+      .gallery-item {
+        height: 240px;
+      }
+    }
+
     @media (max-width: 640px) {
+      .specs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1px;
+      }
+      .spec-item {
+        padding: 0.95rem 0.75rem;
+      }
+      .spec-label {
+        font-size: 0.62rem;
+        margin-bottom: 0.25rem;
+      }
+      .spec-value {
+        font-size: 0.98rem;
+        line-height: 1.25;
+      }
+      .spec-unit {
+        font-size: 0.72rem;
+        line-height: 1.35;
+        margin-top: 0.25rem;
+      }
       .app-bento-grid {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -776,20 +853,6 @@
       .bento-set-route-img {
         max-width: 190px;
         margin: 14px auto -18px auto;
-      }
-    }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        height: auto;
-      }
-
-      .gallery-item.span-2 {
-        grid-column: span 1;
-      }
-
-      .gallery-item {
-        height: 240px;
       }
     }
   </style>
@@ -1171,7 +1234,7 @@
     <!-- ── How It Works ───────────────────────────────────── -->
     <section class="section" aria-labelledby="how-heading">
       <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:center;">
+        <div class="how-it-works-grid">
           <div>
             <header style="margin-bottom:var(--space-l);" class="reveal">
               <span class="label" style="color:var(--accent-cyan);display:block;margin-bottom:var(--space-s);">How It Works</span>
@@ -1181,22 +1244,22 @@
               <li class="step-item reveal reveal-delay-1">
                 <div class="step-num" aria-hidden="true">01</div>
                 <div class="step-body">
-                  <h3>Choose an Activity</h3>
-                  <p>Pick an activity, route, or game directly from the ClimbFit smartphone app. Filter by grade, setter, or specific athletic movement.</p>
+                  <h3>Choose the Route</h3>
+                  <p>Pick any boulder problem, circuit, or interactive drill from the ClimbFit companion app. Filter by grade (V0–V14), setter, or movement focus.</p>
                 </div>
               </li>
               <li class="step-item reveal reveal-delay-2">
                 <div class="step-num" aria-hidden="true">02</div>
                 <div class="step-body">
-                  <h3>Follow the Lights</h3>
-                  <p>Holds illuminate with precise, high-visibility colors instantly (<30ms), guiding climbers step-by-step from start to finish hold.</p>
+                  <h3>Light the Wall</h3>
+                  <p>Holds illuminate instantly with high-visibility LED colors (&lt;30ms), guiding your ascent clearly from start holds to the finish.</p>
                 </div>
               </li>
               <li class="step-item reveal reveal-delay-3">
                 <div class="step-num" aria-hidden="true">03</div>
                 <div class="step-body">
-                  <h3>Change the Challenge</h3>
-                  <p>Select a brand-new activity or next route with a single tap. No wrenching holds, no manual route resetting, and zero downtime.</p>
+                  <h3>Share Your Progress</h3>
+                  <p>Log your sends, record flash attempts, track grade progression, and share problems with your gym community and coaching staff.</p>
                 </div>
               </li>
             </ol>

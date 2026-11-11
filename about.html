@@ -148,8 +148,15 @@
     }
     .about-hero-inner p {
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-      color: rgba(228,228,240,0.85); line-height: 1.75; max-width: 650px;
+      color: var(--text-muted); line-height: 1.75; max-width: 650px;
       margin: 0 auto;
+    }
+
+    [data-theme="light"] .about-hero-badge,
+    body.light-theme .about-hero-badge {
+      background: rgba(0, 0, 0, 0.03) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      color: var(--text-muted) !important;
     }
 
     /* ── Mission split ────────────────────────────── */
@@ -492,7 +499,7 @@
       <div class="glow-orb about-hero-orb-2" aria-hidden="true"></div>
       <div class="container">
         <div class="about-hero-inner reveal">
-          <div style="display:inline-flex;align-items:center;gap:0.75rem;padding:0.4rem 1.1rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:100px;font-size:0.85rem;color:var(--text-muted);margin-bottom:var(--space-m);">
+          <div class="about-hero-badge" style="display:inline-flex;align-items:center;gap:0.75rem;padding:0.4rem 1.1rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:100px;font-size:0.85rem;color:var(--text-muted);margin-bottom:var(--space-m);">
             <span>🇮🇳 <strong>Proudly built in India</strong></span>
             <span style="opacity:0.3;">•</span>
             <span>Started in <strong>2023</strong></span>
