@@ -281,244 +281,6 @@
       background: radial-gradient(ellipse at center, var(--border-active) 0%, transparent 75%);
     }
 
-    /* ── Training Board Minimal Layout (No Boxes) ───────── */
-    .minimal-board-detail {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 5vw, 4.5rem);
-      align-items: center;
-      margin-top: var(--space-m);
-    }
-
-    .minimal-board-media {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .minimal-grid-stage {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 420px;
-    }
-
-    .minimal-grid-glow {
-      position: absolute;
-      width: min(440px, 85%);
-      height: 280px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(177, 79, 255, 0.14) 0%, rgba(0, 229, 255, 0.08) 45%, transparent 70%);
-      filter: blur(40px);
-      z-index: 1;
-    }
-
-    [data-theme="light"] .minimal-grid-glow {
-      background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.07) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 75%);
-    }
-
-    .minimal-dim-tag {
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .minimal-board-media .ecom-visual-item {
-      display: none;
-      opacity: 0;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      position: relative;
-      z-index: 2;
-    }
-
-    .minimal-board-media .ecom-visual-item.active {
-      display: flex;
-      opacity: 1;
-      animation: minimalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes minimalFadeIn {
-      0% { opacity: 0; transform: translateY(8px) scale(0.99); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .minimal-board-media .ecom-grid-img {
-      height: clamp(280px, 46vh, 430px);
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 35px rgba(0, 0, 0, 0.35));
-      transition: transform 0.3s var(--ease-out);
-    }
-
-    .minimal-board-media .ecom-grid-img:hover {
-      transform: translateY(-3px) scale(1.015);
-    }
-
-    [data-theme="light"] .minimal-board-media .ecom-grid-img {
-      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.08));
-    }
-
-    .ecom-grid-light { display: none; }
-    [data-theme="light"] .ecom-grid-dark { display: none; }
-    [data-theme="light"] .ecom-grid-light { display: block; }
-
-    /* Right: Minimal Info */
-    .minimal-board-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .minimal-product-title {
-      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin: 0 0 0.65rem 0;
-      color: var(--text);
-    }
-
-    .minimal-product-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin: 0 0 1.5rem 0;
-      max-width: 480px;
-    }
-
-    .minimal-size-picker {
-      margin-bottom: 1.25rem;
-    }
-
-    .minimal-picker-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .minimal-size-toggles {
-      display: inline-flex;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 0.3rem;
-      border-radius: var(--r-xl);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      max-width: 100%;
-    }
-
-    [data-theme="light"] .minimal-size-toggles {
-      background: rgba(0, 0, 0, 0.03);
-      border-color: rgba(0, 0, 0, 0.08);
-    }
-
-    .minimal-size-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.6rem 1.15rem;
-      border-radius: var(--r-l);
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-family: var(--font-body);
-      text-align: center;
-      transition: all 0.2s var(--ease-out);
-    }
-
-    .minimal-size-btn strong {
-      font-size: 0.9rem;
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .minimal-size-btn span {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-top: 1px;
-    }
-
-    .minimal-size-btn:hover {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .minimal-size-btn.active {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(0, 229, 255, 0.4);
-      box-shadow: 0 4px 16px rgba(0, 229, 255, 0.12);
-    }
-
-    [data-theme="light"] .minimal-size-btn:hover {
-      background: rgba(0, 0, 0, 0.04);
-    }
-
-    [data-theme="light"] .minimal-size-btn.active {
-      background: #ffffff;
-      border-color: rgba(14, 165, 233, 0.4);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    }
-
-    .minimal-specs-wrap {
-      margin-bottom: 0.9rem;
-    }
-
-    .minimal-spec-row {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-    }
-
-    .minimal-spec-row strong {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .ecom-spec-block {
-      display: none;
-      opacity: 0;
-    }
-
-    .ecom-spec-block.active {
-      display: block;
-      opacity: 1;
-      animation: minimalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .minimal-includes {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin: 0 0 1.5rem 0;
-      max-width: 460px;
-    }
-
-    .minimal-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-    }
-
     /* ── Schools & Institutions ─────────────────────────── */
     .schools-strip {
       background: var(--surface);
@@ -1031,102 +793,124 @@
     <!-- ── 1. ClimbFit Training Board (with Sizes) ────────── -->
     <section class="offering-section" id="training-board" aria-labelledby="training-board-heading">
       <div class="container">
-        <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-cyan);">Training Board</span>
-          <h2 class="heading-1" id="training-board-heading">The ClimbFit Training Board</h2>
-          <p>
-            An interactive climbing wall where holds light up. Pick a route on your phone, follow the lights, and train.
-          </p>
-        </header>
 
-        <!-- Minimal 2-Column Layout (No Boxes) -->
-        <div class="minimal-board-detail reveal">
+        <div class="board-config-layout reveal">
 
-          <!-- LEFT: Grid Image -->
-          <div class="minimal-board-media">
-            <div class="minimal-grid-stage">
-              <div class="minimal-grid-glow" aria-hidden="true"></div>
+          <!-- Left Column: Hold Matrix Graphic with Bottom Caption -->
+          <div class="board-config-visual-col">
+            <div class="board-config-glow" aria-hidden="true"></div>
 
-              <!-- Size S Visual -->
-              <div class="ecom-visual-item" data-size="s">
-                <div class="minimal-dim-tag">8 × 12 ft · 209 Holds</div>
-                <img src="assets/boards/grid-s-dark.png" alt="Size S LED climbing grid" class="ecom-grid-img ecom-grid-dark" width="312" height="536" loading="lazy">
-                <img src="assets/boards/grid-s-light.png" alt="Size S LED climbing grid" class="ecom-grid-img ecom-grid-light" width="312" height="536" loading="lazy">
-              </div>
+            <!-- Size S Visual -->
+            <div class="board-config-visual-item" data-size="s">
+              <img src="assets/boards/grid-s-dark.png" alt="ClimbFit Size S LED hold matrix (209 holds, 8x12ft)" class="board-config-img board-config-img-dark" width="312" height="536" loading="lazy">
+              <img src="assets/boards/grid-s-light.png" alt="ClimbFit Size S LED hold matrix (209 holds, 8x12ft)" class="board-config-img board-config-img-light" width="312" height="536" loading="lazy">
+              <div class="board-config-bottom-caption">8 × 12 ft · 209 LED Holds</div>
+            </div>
 
-              <!-- Size M Visual (Active) -->
-              <div class="ecom-visual-item active" data-size="m">
-                <div class="minimal-dim-tag">12 × 12 ft · 323 Holds</div>
-                <img src="assets/boards/grid-m-dark.png" alt="Size M LED climbing grid" class="ecom-grid-img ecom-grid-dark" width="424" height="536" loading="lazy">
-                <img src="assets/boards/grid-m-light.png" alt="Size M LED climbing grid" class="ecom-grid-img ecom-grid-light" width="424" height="536" loading="lazy">
-              </div>
+            <!-- Size M Visual (Default Active) -->
+            <div class="board-config-visual-item active" data-size="m">
+              <img src="assets/boards/grid-m-dark.png" alt="ClimbFit Size M LED hold matrix (323 holds, 12x12ft)" class="board-config-img board-config-img-dark" width="424" height="536" loading="lazy">
+              <img src="assets/boards/grid-m-light.png" alt="ClimbFit Size M LED hold matrix (323 holds, 12x12ft)" class="board-config-img board-config-img-light" width="424" height="536" loading="lazy">
+              <div class="board-config-bottom-caption">12 × 12 ft · 323 LED Holds</div>
+            </div>
 
-              <!-- Size L Visual -->
-              <div class="ecom-visual-item" data-size="l">
-                <div class="minimal-dim-tag">15 × 12 ft · 437 Holds</div>
-                <img src="assets/boards/grid-l-dark.png" alt="Size L LED climbing grid" class="ecom-grid-img ecom-grid-dark" width="648" height="536" loading="lazy">
-                <img src="assets/boards/grid-l-light.png" alt="Size L LED climbing grid" class="ecom-grid-img ecom-grid-light" width="648" height="536" loading="lazy">
-              </div>
+            <!-- Size L Visual -->
+            <div class="board-config-visual-item" data-size="l">
+              <img src="assets/boards/grid-l-dark.png" alt="ClimbFit Size L LED hold matrix (437 holds, 15x12ft)" class="board-config-img board-config-img-dark" width="648" height="536" loading="lazy">
+              <img src="assets/boards/grid-l-light.png" alt="ClimbFit Size L LED hold matrix (437 holds, 15x12ft)" class="board-config-img board-config-img-light" width="648" height="536" loading="lazy">
+              <div class="board-config-bottom-caption">15 × 12 ft · 437 LED Holds</div>
             </div>
           </div>
 
-          <!-- RIGHT: Size Selection & CTAs -->
-          <div class="minimal-board-info">
-            <div class="minimal-size-picker">
-              <span class="minimal-picker-title">Select Size</span>
-              <div class="minimal-size-toggles" role="radiogroup" aria-label="Select board size">
-                <button type="button" class="minimal-size-btn ecom-size-chip" data-size="s" role="radio" aria-checked="false">
-                  <strong>Size S</strong>
-                  <span>8 × 12 ft</span>
-                </button>
-                <button type="button" class="minimal-size-btn ecom-size-chip active" data-size="m" role="radio" aria-checked="true">
-                  <strong>Size M</strong>
-                  <span>12 × 12 ft</span>
-                </button>
-                <button type="button" class="minimal-size-btn ecom-size-chip" data-size="l" role="radio" aria-checked="false">
-                  <strong>Size L</strong>
-                  <span>15 × 12 ft</span>
-                </button>
-              </div>
+          <!-- Right Column: Section Header, Title, Desc, Sizes, Details, and CTA -->
+          <div class="board-config-detail-col">
+
+            <!-- 1. Section Header -->
+            <div class="board-config-header-row">
+              <span class="label" style="color:var(--accent-cyan);margin:0;">Training Board</span>
             </div>
 
-            <!-- Minimal Dynamic Spec Line -->
-            <div class="minimal-specs-wrap">
-              <div class="ecom-spec-block" data-size="s">
-                <div class="minimal-spec-row">
-                  <span><strong>209</strong> LED Holds</span>
-                  <span>•</span>
-                  <span><strong>11×19</strong> Grid</span>
-                  <span>•</span>
-                  <span>Boutique &amp; Schools</span>
-                </div>
-              </div>
-              <div class="ecom-spec-block active" data-size="m">
-                <div class="minimal-spec-row">
-                  <span><strong>323</strong> LED Holds</span>
-                  <span>•</span>
-                  <span><strong>17×19</strong> Grid</span>
-                  <span>•</span>
-                  <span>Commercial Gyms</span>
-                </div>
-              </div>
-              <div class="ecom-spec-block" data-size="l">
-                <div class="minimal-spec-row">
-                  <span><strong>437</strong> LED Holds</span>
-                  <span>•</span>
-                  <span><strong>23×19</strong> Grid</span>
-                  <span>•</span>
-                  <span>Competition &amp; Relays</span>
-                </div>
-              </div>
-            </div>
+            <!-- 2. Product Title -->
+            <h2 class="board-config-title" id="training-board-heading">The ClimbFit Training Board</h2>
 
-            <p class="minimal-includes">
-              Includes precision CNC panels, addressable LED holds, steel chassis, sub-30ms app sync, and custom crash mats.
+            <!-- 3. Product Description -->
+            <p class="board-config-desc">
+              An interactive climbing wall where holds light up. Pick a route on your phone, follow the lights, and train.
             </p>
 
-            <!-- Action CTAs -->
-            <div class="minimal-actions">
+            <!-- 4. Sizes -->
+            <div class="board-config-picker-wrap">
+              <span class="board-config-picker-label">Select Size</span>
+              <div class="board-config-pills" role="radiogroup" aria-label="Select board size">
+                <button type="button" class="board-config-pill-btn" data-size="s" role="radio" aria-checked="false">
+                  <strong class="pill-size">Size S</strong>
+                  <span class="pill-dim">8 × 12 ft</span>
+                </button>
+                <button type="button" class="board-config-pill-btn active" data-size="m" role="radio" aria-checked="true">
+                  <strong class="pill-size">Size M</strong>
+                  <span class="pill-dim">12 × 12 ft</span>
+                </button>
+                <button type="button" class="board-config-pill-btn" data-size="l" role="radio" aria-checked="false">
+                  <strong class="pill-size">Size L</strong>
+                  <span class="pill-dim">15 × 12 ft</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 5. Details (Dynamic per size) -->
+            <div class="board-config-details-wrap">
+
+              <!-- Size S Details -->
+              <div class="board-config-content-panel" data-size="s">
+                <div class="board-config-highlight-wrap">
+                  <div class="board-config-highlight-val">209 LED Holds <small>· 8 × 12 ft</small></div>
+                  <div class="board-config-highlight-sub">— Best for Boutique Studios, Schools &amp; Home Walls</div>
+                </div>
+                <ul class="board-config-bullets">
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 11 × 19 high-density grid with 209 individually addressable RGB LEDs</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Sub-30ms Bluetooth 5.0 app synchronization and route generator</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Precision CNC-drilled birch plywood panels with modular t-nuts</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Engineered steel chassis with 0° to 65° angle adjustment</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted dual-layer impact safety crash mats included</li>
+                </ul>
+              </div>
+
+              <!-- Size M Details (Default Active) -->
+              <div class="board-config-content-panel active" data-size="m">
+                <div class="board-config-highlight-wrap">
+                  <div class="board-config-highlight-val">323 LED Holds <small>· 12 × 12 ft</small></div>
+                  <div class="board-config-highlight-sub">— Commercial Gym Standard <span class="board-config-popular-badge">Most Popular</span></div>
+                </div>
+                <ul class="board-config-bullets">
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 17 × 19 symmetric grid with 323 individually addressable RGB LEDs</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Full-width movement for endurance circuits and boulder problems</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Precision CNC-drilled birch plywood panels with modular t-nuts</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Heavy-duty commercial steel chassis with 0° to 65° angle adjustment</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted dual-layer impact safety crash mats included</li>
+                </ul>
+              </div>
+
+              <!-- Size L Details -->
+              <div class="board-config-content-panel" data-size="l">
+                <div class="board-config-highlight-wrap">
+                  <div class="board-config-highlight-val">437 LED Holds <small>· 15 × 12 ft</small></div>
+                  <div class="board-config-highlight-sub">— National Training Centers &amp; High-Volume Gyms</div>
+                </div>
+                <ul class="board-config-bullets">
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 23 × 19 XL competition grid with 437 individually addressable RGB LEDs</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Dual simultaneous climbing lanes for side-by-side challenges and relays</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Precision CNC-drilled birch plywood panels with modular t-nuts</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Reinforced commercial frame engineered for non-stop facility utilization</li>
+                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted dual-layer impact safety crash mats included</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="board-config-divider"></div>
+
+            <!-- 6. Action CTAs -->
+            <div class="board-config-actions">
               <a href="about.html#contact" class="btn btn-primary">
                 Get Your Wall <span aria-hidden="true">→</span>
               </a>
@@ -1134,6 +918,7 @@
                 Know More About The Wall
               </a>
             </div>
+
           </div>
 
         </div>

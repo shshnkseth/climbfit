@@ -692,7 +692,7 @@
       });
     }
 
-    // Shared Board Configurator (Reference Redesign on index.html and training-board.html)
+    // Shared Board Configurator (Reference Redesign on services.html, index.html, and training-board.html)
     document.querySelectorAll('.board-config-layout').forEach(layout => {
       const pillBtns = layout.querySelectorAll('.board-config-pill-btn');
       const visualItems = layout.querySelectorAll('.board-config-visual-item');
@@ -704,9 +704,11 @@
           pillBtns.forEach(b => {
             b.classList.remove('active');
             b.setAttribute('aria-selected', 'false');
+            b.setAttribute('aria-checked', 'false');
           });
           btn.classList.add('active');
           btn.setAttribute('aria-selected', 'true');
+          btn.setAttribute('aria-checked', 'true');
 
           visualItems.forEach(item => {
             item.classList.toggle('active', item.getAttribute('data-size') === targetSize);

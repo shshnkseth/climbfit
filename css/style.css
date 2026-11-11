@@ -2184,6 +2184,7 @@ body.light-theme .featured-story-card {
   width: 100%;
   position: relative;
   z-index: 2;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -2206,7 +2207,7 @@ body.light-theme .featured-story-card {
 }
 
 .board-config-img {
-  height: clamp(320px, 52vh, 520px);
+  height: clamp(300px, 48vh, 480px);
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -2226,6 +2227,32 @@ body.light-theme .featured-story-card {
 [data-theme="light"] .board-config-img-dark { display: none; }
 [data-theme="light"] .board-config-img-light { display: block; }
 
+/* Bottom caption under hold grid */
+.board-config-bottom-caption {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--r-xl);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  transition: all 0.25s var(--ease-out);
+}
+
+[data-theme="light"] .board-config-bottom-caption {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: var(--text-muted);
+}
+
 /* Right: Details & Switcher */
 .board-config-detail-col {
   display: flex;
@@ -2234,7 +2261,25 @@ body.light-theme .featured-story-card {
   z-index: 2;
 }
 
-/* Top Pill Switcher */
+.board-config-header-row {
+  margin-bottom: 0.75rem;
+}
+
+/* Size Switcher */
+.board-config-picker-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.board-config-picker-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 .board-config-pills {
   display: inline-flex;
   gap: 0.5rem;
@@ -2243,7 +2288,6 @@ body.light-theme .featured-story-card {
   border-radius: var(--r-xl);
   border: 1px solid rgba(255, 255, 255, 0.08);
   width: fit-content;
-  margin-bottom: 1.5rem;
   max-width: 100%;
 }
 
@@ -2253,17 +2297,34 @@ body.light-theme .featured-story-card {
 }
 
 .board-config-pill-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0.55rem 1.25rem;
-  border-radius: var(--r-xl);
+  border-radius: var(--r-l);
   border: 1px solid transparent;
   background: transparent;
   color: var(--text-muted);
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.22s var(--ease-out);
+  text-align: center;
   white-space: nowrap;
+}
+
+.board-config-pill-btn strong,
+.board-config-pill-btn .pill-size {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.board-config-pill-btn span,
+.board-config-pill-btn .pill-dim {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 1px;
 }
 
 .board-config-pill-btn:hover {
@@ -2273,10 +2334,19 @@ body.light-theme .featured-story-card {
 
 .board-config-pill-btn.active {
   background: #00ff88;
-  color: #060913;
-  font-weight: 700;
   border-color: #00ff88;
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.35);
+}
+
+.board-config-pill-btn.active strong,
+.board-config-pill-btn.active .pill-size {
+  color: #060913;
+}
+
+.board-config-pill-btn.active span,
+.board-config-pill-btn.active .pill-dim {
+  color: rgba(6, 9, 19, 0.85);
+  font-weight: 600;
 }
 
 [data-theme="light"] .board-config-pill-btn:hover {
@@ -2285,9 +2355,18 @@ body.light-theme .featured-story-card {
 
 [data-theme="light"] .board-config-pill-btn.active {
   background: #10b981;
-  color: #ffffff;
   border-color: #10b981;
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+[data-theme="light"] .board-config-pill-btn.active strong,
+[data-theme="light"] .board-config-pill-btn.active .pill-size {
+  color: #ffffff;
+}
+
+[data-theme="light"] .board-config-pill-btn.active span,
+[data-theme="light"] .board-config-pill-btn.active .pill-dim {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Category Eyebrow & Badges */
@@ -2513,17 +2592,27 @@ body.light-theme .featured-story-card {
     gap: 2.5rem;
   }
   .board-config-visual-col {
-    min-height: 340px;
+    min-height: auto;
+    padding-bottom: 0.5rem;
   }
   .board-config-img {
     height: clamp(240px, 42vh, 360px);
+  }
+  .board-config-pills {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .board-config-pill-btn {
+    padding: 0.5rem 0.35rem;
   }
   .board-config-actions {
     flex-direction: column;
     width: 100%;
   }
   .board-config-btn-primary,
-  .board-config-btn-secondary {
+  .board-config-btn-secondary,
+  .board-config-actions .btn {
     width: 100%;
     justify-content: center;
   }
