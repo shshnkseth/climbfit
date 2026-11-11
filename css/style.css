@@ -4,12 +4,13 @@
    ============================================================ */
 
 /* ----- Fonts ---------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Geist+Pixel&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ----- Design Tokens -------------------------------------- */
 :root {
-  --font-display:   'Geist Pixel', 'Bitcount', monospace;
+  --font-display:   'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-highlight: 'Bitcount', monospace;
 
   /* Dark mode (default) */
   --bg:             #080810;
@@ -651,9 +652,9 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
+  font-family: var(--font-highlight);
+  font-weight: 700;
+  font-size: 1.15rem;
   color: var(--accent-cyan);
   flex-shrink: 0;
   position: relative;
@@ -957,11 +958,11 @@ body::before {
 }
 
 .service-accordion-num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.95rem;
+  font-family: var(--font-highlight);
+  font-weight: 700;
+  font-size: 1.05rem;
   color: var(--accent-cyan);
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .service-accordion-item.is-active .service-accordion-num {
@@ -1158,9 +1159,9 @@ body::before {
 }
 
 .turnkey-node-num {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 800;
+  font-family: var(--font-highlight);
+  font-size: 0.78rem;
+  font-weight: 700;
   color: var(--accent-cyan);
   letter-spacing: 0.05em;
   line-height: 1;
@@ -1399,9 +1400,9 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
+  font-family: var(--font-highlight);
+  font-weight: 700;
+  font-size: 1.15rem;
   color: var(--accent-cyan);
   flex-shrink: 0;
   position: relative;
@@ -2233,14 +2234,14 @@ body.light-theme .featured-story-card {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 1.15rem;
+  padding: 0.45rem 1.25rem;
   border-radius: var(--r-xl);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-family: var(--font-highlight);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-align: center;
@@ -2434,15 +2435,15 @@ body.light-theme .featured-story-card {
 }
 
 .board-config-highlight-val {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.4vw, 2.75rem);
-  font-weight: 800;
+  font-family: var(--font-highlight);
+  font-size: clamp(2.1rem, 3.6vw, 2.85rem);
+  font-weight: 700;
   color: #00ff88;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   display: flex;
   align-items: baseline;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 [data-theme="light"] .board-config-highlight-val {
@@ -2450,6 +2451,7 @@ body.light-theme .featured-story-card {
 }
 
 .board-config-highlight-val small {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -2616,4 +2618,13 @@ body.light-theme .featured-story-card {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ----- Highlight Typography (Bitcount) --------------------- */
+.font-highlight,
+.font-bitcount,
+.highlight-font,
+.metric-badge dd,
+.metric-item dd {
+  font-family: var(--font-highlight) !important;
 }

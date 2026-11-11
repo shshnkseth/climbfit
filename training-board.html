@@ -102,10 +102,11 @@
   }
   </script>
 
+  <!-- Fonts: Geist (Headings), Inter (Body), Bitcount (Highlights) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Geist+Pixel&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -224,7 +225,7 @@
       text-transform: uppercase;
       color: var(--text-faint);
       margin-bottom: 0.5rem;
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--font-body);
     }
 
     .spec-value {
@@ -379,7 +380,7 @@
     }
 
     .bento-card-title {
-      font-family: var(--font-display, 'Geist Pixel', monospace);
+      font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 600;
       color: var(--text);
