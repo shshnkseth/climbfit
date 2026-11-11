@@ -316,52 +316,6 @@
       z-index: 1;
     }
 
-    /* 4 Interactive Games Card Grid */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-s);
-      margin-top: var(--space-m);
-    }
-    .game-card {
-      background: rgba(255,255,255,0.015);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: var(--r-m);
-      padding: var(--space-m);
-      display: flex;
-      flex-direction: column;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      transition: transform 0.2s, border-color 0.2s, background 0.2s;
-    }
-    .game-card:hover {
-      background: rgba(255,255,255,0.035);
-      transform: translateY(-3px);
-      border-color: rgba(0,229,255,0.3);
-    }
-    .game-icon-box {
-      width: auto;
-      height: auto;
-      border: none;
-      background: none;
-      font-size: 1.8rem;
-      line-height: 1;
-      margin-bottom: 0.6rem;
-      filter: drop-shadow(0 2px 10px rgba(0,229,255,0.25));
-    }
-    .game-card h4 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
-    .game-card p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin: 0;
-    }
-
     /* ── Traverse Wall ──────────────────────────────────── */
     .traverse-highlight-grid {
       display: grid;
@@ -648,13 +602,11 @@
       .schools-strip { grid-template-columns: 1fr; }
       .schools-strip-media { height: 240px; }
       .schools-strip-media::before { background: linear-gradient(to bottom, var(--surface) 0%, transparent 25%); }
-      .games-grid { grid-template-columns: repeat(2, 1fr); }
       .traverse-highlight-grid { grid-template-columns: 1fr; }
       .turnkey-split { grid-template-columns: 1fr; }
       .catalog-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
-      .games-grid { grid-template-columns: 1fr; }
       .catalog-grid { grid-template-columns: 1fr; }
       .traverse-image-card img { height: 230px; }
     }
@@ -950,35 +902,35 @@
         </div>
 
         <!-- 4 Interactive Game Formats -->
-        <div style="margin-top:var(--space-m);" class="reveal">
+        <div style="margin-top:var(--space-m);" id="games-training" class="reveal">
           <div style="text-align:center;margin-bottom:var(--space-m);">
-            <span class="label" style="color:var(--accent-purple);">Climbing Games</span>
-            <h3 class="heading-2">Games Kids Actually Want to Play</h3>
-            <p style="color:var(--text-muted);font-size:0.88rem;max-width:500px;margin:0.25rem auto 0;">
-              One tap on the tablet and the whole class is moving.
+            <span class="label" style="color:var(--accent-purple);">Gamified Movement</span>
+            <h3 class="heading-2">Games &amp; Interactive Formats</h3>
+            <p style="color:var(--text-muted);font-size:0.88rem;max-width:560px;margin:0.25rem auto 0;">
+              ClimbFit transforms physical conditioning into high-engagement interactive play for students, youth teams, gym members, and community events.
             </p>
           </div>
 
           <div class="games-grid">
             <div class="game-card">
-              <div class="game-icon-box" style="background:rgba(255,77,141,0.15);color:var(--accent-pink);">🧠</div>
-              <h4>Memory Game</h4>
-              <p>Watch the lights flash a pattern, then climb it from memory. Tests focus and recall.</p>
+              <div class="game-icon-box" style="color:var(--accent-pink);">🧠</div>
+              <h4>Memory Challenge</h4>
+              <p>Watch the lights flash a pattern, then climb it from memory under time pressure. Builds cognitive agility, spatial recall, and motor discipline.</p>
             </div>
             <div class="game-card">
-              <div class="game-icon-box" style="background:rgba(245,208,0,0.15);color:var(--accent-yellow);">⚡</div>
+              <div class="game-icon-box" style="color:var(--accent-yellow);">⚡</div>
               <h4>Team Relay</h4>
-              <p>Teams race each other on the wall. Tag in your teammate, follow the glowing path, go fast.</p>
+              <p>Competitive speed climbing race with synchronized lighting and turn-based rounds. Tag in teammates, follow illuminated paths, and race the clock.</p>
             </div>
             <div class="game-card">
-              <div class="game-icon-box" style="background:rgba(0,229,255,0.15);color:var(--accent-cyan);">🔤</div>
+              <div class="game-icon-box" style="color:var(--accent-cyan);">🔤</div>
               <h4>Alphabet Run</h4>
-              <p>Climb to the glowing letters and spell words before time runs out. Learning meets climbing.</p>
+              <p>Climb to illuminated letter holds to spell target words or strike markers before time runs out. Blends dynamic movement with playful gamified literacy.</p>
             </div>
             <div class="game-card">
-              <div class="game-icon-box" style="background:rgba(177,79,255,0.15);color:var(--accent-purple);">👥</div>
-              <h4>Multiplayer</h4>
-              <p>Two or more kids climb at the same time, each following their own colour. Friendly competition built in.</p>
+              <div class="game-icon-box" style="color:var(--accent-purple);">👥</div>
+              <h4>Multi-Climber Modes</h4>
+              <p>Simultaneous dual-climber tracks or synchronized routes designed for side-by-side climbing, partner drills, and fast queue management in busy facilities.</p>
             </div>
           </div>
         </div>
