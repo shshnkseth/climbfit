@@ -695,6 +695,10 @@
       grid-column: span 2;
     }
 
+    .gallery-dots {
+      display: none;
+    }
+
     /* Metric badge */
     .metric-badge {
       position: absolute;
@@ -776,47 +780,203 @@
     }
 
     @media (max-width: 860px) {
+      /* Hero background image in mobile viewport */
+      .page-hero {
+        position: relative;
+        padding-top: calc(var(--nav-h) + 2.5rem);
+        padding-bottom: var(--space-xl);
+        min-height: 82svh;
+        display: flex;
+        align-items: center;
+      }
       .page-hero-inner {
-        grid-template-columns: 1fr;
+        display: block;
+        position: static;
+        width: 100%;
+      }
+      .page-hero-text {
+        position: relative;
+        z-index: 2;
+        padding: var(--space-m) 0;
       }
       .page-hero-text h1 {
-        font-size: clamp(1.85rem, 6.5vw, 2.75rem);
+        font-size: clamp(2rem, 7vw, 2.9rem);
+        line-height: 1.12;
+      }
+      .page-hero-text p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.88);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      }
+      [data-theme="light"] .page-hero-text p,
+      body.light-theme .page-hero-text p {
+        color: #334155;
+        text-shadow: none;
+      }
+      .page-hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .page-hero-image.reveal {
+        opacity: 1 !important;
+        transform: none !important;
       }
       .page-hero-image img {
-        height: 300px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 25%;
+        filter: brightness(0.38);
       }
-      .how-it-works-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-l);
+      .page-hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0;
+        border: none;
+        background: linear-gradient(180deg, rgba(8, 8, 16, 0.84) 0%, rgba(8, 8, 16, 0.65) 45%, rgba(8, 8, 16, 0.96) 100%);
+      }
+      [data-theme="light"] .page-hero-image img,
+      body.light-theme .page-hero-image img {
+        filter: brightness(0.92);
+      }
+      [data-theme="light"] .page-hero-image::after,
+      body.light-theme .page-hero-image::after {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.82) 45%, rgba(255, 255, 255, 0.97) 100%);
+      }
+      .page-hero-image .render-info-pill {
+        top: auto;
+        bottom: 16px;
+        right: 16px;
+        z-index: 5;
+      }
+
+      /* Tech Specs Section Mobile Padding Fix */
+      #specs-details {
+        margin-top: var(--space-l) !important;
+        margin-bottom: var(--space-s) !important;
+      }
+      .specs-section {
+        padding: 1.25rem 0.85rem !important;
+        border-radius: var(--r-m);
       }
       .specs-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1px;
+        border-radius: calc(var(--r-m) - 2px);
+      }
+      .spec-item {
+        padding: 0.95rem 0.75rem;
       }
       .spec-item:nth-child(9),
       .spec-item:last-child {
         grid-column: span 2;
         text-align: center;
       }
-      .gallery-grid {
+
+      /* How it Works */
+      .how-it-works-grid {
         grid-template-columns: 1fr;
-        height: auto;
+        gap: var(--space-l);
       }
-      .gallery-item.span-2 {
-        grid-column: span 1;
+
+      /* Gallery Mobile Auto-Carousel & Horizontal Drag */
+      .gallery-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        gap: 14px;
+        padding: 6px 4px 16px 4px;
+        margin-left: calc(-1 * var(--space-m));
+        margin-right: calc(-1 * var(--space-m));
+        padding-left: var(--space-m);
+        padding-right: var(--space-m);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        cursor: grab;
+      }
+      .gallery-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .gallery-grid.is-dragging {
+        cursor: grabbing;
+        user-select: none;
+        scroll-snap-type: none;
       }
       .gallery-item {
-        height: 240px;
+        flex: 0 0 85vw;
+        max-width: 340px;
+        min-width: 270px;
+        height: 250px;
+        scroll-snap-align: center;
+        border-radius: var(--r-m);
+        position: relative;
+        overflow: hidden;
+      }
+      .gallery-item.span-2 {
+        grid-column: auto;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        -webkit-user-drag: none;
+      }
+      .gallery-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .gallery-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.22);
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.28s ease;
+      }
+      .gallery-dot.active {
+        width: 24px;
+        border-radius: 5px;
+        background: var(--accent-cyan);
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+      }
+      [data-theme="light"] .gallery-dot,
+      body.light-theme .gallery-dot {
+        background: rgba(0, 0, 0, 0.18);
+      }
+      [data-theme="light"] .gallery-dot.active,
+      body.light-theme .gallery-dot.active {
+        background: #0098b3;
       }
     }
 
     @media (max-width: 640px) {
+      .specs-section {
+        padding: 0.95rem 0.65rem !important;
+      }
       .specs-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1px;
       }
       .spec-item {
-        padding: 0.95rem 0.75rem;
+        padding: 0.85rem 0.65rem;
       }
       .spec-label {
         font-size: 0.62rem;
@@ -853,6 +1013,25 @@
       .bento-set-route-img {
         max-width: 190px;
         margin: 14px auto -18px auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .specs-section {
+        padding: 0.75rem 0.45rem !important;
+      }
+      .spec-item {
+        padding: 0.75rem 0.5rem;
+      }
+      .spec-value {
+        font-size: 0.88rem;
+      }
+      .spec-unit {
+        font-size: 0.68rem;
+      }
+      .gallery-item {
+        flex: 0 0 88vw;
+        height: 230px;
       }
     }
   </style>
@@ -949,7 +1128,7 @@
       <div class="container page-hero-inner">
         <div class="page-hero-text reveal">
           <div style="margin-bottom:var(--space-m)">
-            <span class="tag tag-cyan">Modular LED Climbing System · Sizes S, M, L</span>
+            <span class="tag tag-cyan">Modular LED Climbing System</span>
           </div>
           <h1 id="wall-heading">
             ClimbFit Training Board<br><span class="gradient-text">Light Up Your Climb.</span>
@@ -960,7 +1139,7 @@
             <a href="#specs" class="btn btn-outline">View Configurations</a>
           </div>
         </div>
-        <div class="page-hero-image reveal reveal-delay-2" style="position:relative;">
+        <div class="page-hero-image reveal reveal-delay-2">
           <button type="button" class="render-info-pill" aria-label="Conceptual 3D Renderings">
             <span aria-hidden="true">ⓘ</span>
             <span class="render-info-tip" role="tooltip">Conceptual 3D Renderings</span>
@@ -1392,6 +1571,14 @@
               alt="Athletic climber on ClimbFit tall LED training board" loading="lazy">
           </div>
         </div>
+        <div class="gallery-dots" aria-label="Gallery slide navigation">
+          <button type="button" class="gallery-dot active" data-idx="0" aria-label="Slide 1"></button>
+          <button type="button" class="gallery-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button type="button" class="gallery-dot" data-idx="2" aria-label="Slide 3"></button>
+          <button type="button" class="gallery-dot" data-idx="3" aria-label="Slide 4"></button>
+          <button type="button" class="gallery-dot" data-idx="4" aria-label="Slide 5"></button>
+          <button type="button" class="gallery-dot" data-idx="5" aria-label="Slide 6"></button>
+        </div>
         <p class="gallery-render-note"><span aria-hidden="true">ⓘ</span> Conceptual 3D Renderings</p>
       </div>
     </section>
@@ -1451,6 +1638,117 @@
 
   <script src="js/main.js"></script>
   <script src="js/cookie-consent.js" defer></script>
+  <script>
+    // ── Mobile Gallery Auto-Carousel & Horizontal Drag ─────────────
+    document.addEventListener('DOMContentLoaded', function() {
+      const gallery = document.querySelector('.gallery-grid');
+      if (!gallery) return;
+
+      const items = gallery.querySelectorAll('.gallery-item');
+      const dots = document.querySelectorAll('.gallery-dot');
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let hasMoved = false;
+      let autoInterval = null;
+      let pauseTimer = null;
+      let isInteracting = false;
+
+      function getCardStep() {
+        if (!items.length) return 300;
+        return items[0].getBoundingClientRect().width + 14;
+      }
+
+      function updateActiveDot() {
+        if (!dots.length || !items.length) return;
+        const step = getCardStep();
+        const currentScroll = gallery.scrollLeft;
+        const activeIdx = Math.round(currentScroll / step);
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === Math.min(Math.max(0, activeIdx), dots.length - 1));
+        });
+      }
+
+      gallery.addEventListener('scroll', updateActiveDot, { passive: true });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          if (!items[i]) return;
+          isInteracting = true;
+          const step = getCardStep();
+          gallery.scrollTo({ left: i * step, behavior: 'smooth' });
+          resetAutoTimer();
+        });
+      });
+
+      // Mouse drag listeners (supports desktop testing of mobile viewport)
+      gallery.addEventListener('mousedown', (e) => {
+        if (window.innerWidth > 860) return;
+        isDown = true;
+        hasMoved = false;
+        isInteracting = true;
+        gallery.classList.add('is-dragging');
+        startX = e.pageX - gallery.offsetLeft;
+        scrollLeft = gallery.scrollLeft;
+        clearInterval(autoInterval);
+      });
+
+      const stopDrag = () => {
+        if (!isDown) return;
+        isDown = false;
+        gallery.classList.remove('is-dragging');
+        resetAutoTimer();
+      };
+
+      gallery.addEventListener('mouseleave', stopDrag);
+      gallery.addEventListener('mouseup', stopDrag);
+
+      gallery.addEventListener('mousemove', (e) => {
+        if (!isDown || window.innerWidth > 860) return;
+        e.preventDefault();
+        const x = e.pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 1.35;
+        if (Math.abs(walk) > 4) hasMoved = true;
+        gallery.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch listeners for mobile swipe
+      gallery.addEventListener('touchstart', () => {
+        isInteracting = true;
+        clearInterval(autoInterval);
+      }, { passive: true });
+
+      gallery.addEventListener('touchend', () => {
+        resetAutoTimer();
+      }, { passive: true });
+
+      function resetAutoTimer() {
+        clearTimeout(pauseTimer);
+        clearInterval(autoInterval);
+        pauseTimer = setTimeout(() => {
+          isInteracting = false;
+          startAutoCarousel();
+        }, 3500);
+      }
+
+      function startAutoCarousel() {
+        clearInterval(autoInterval);
+        autoInterval = setInterval(() => {
+          if (window.innerWidth > 860 || isInteracting || isDown) return;
+          if (!items.length) return;
+          const step = getCardStep();
+          const maxScroll = gallery.scrollWidth - gallery.clientWidth - 15;
+          if (gallery.scrollLeft >= maxScroll) {
+            gallery.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            gallery.scrollBy({ left: step, behavior: 'smooth' });
+          }
+        }, 3500);
+      }
+
+      startAutoCarousel();
+    });
+  </script>
 </body>
 
 </html>
