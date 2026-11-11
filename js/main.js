@@ -692,5 +692,45 @@
       });
     }
 
+    // Shared Board Configurator (Reference Redesign on index.html and training-board.html)
+    document.querySelectorAll('.board-config-layout').forEach(layout => {
+      const pillBtns = layout.querySelectorAll('.board-config-pill-btn');
+      const visualItems = layout.querySelectorAll('.board-config-visual-item');
+      const contentPanels = layout.querySelectorAll('.board-config-content-panel');
+
+      pillBtns.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          const targetSize = btn.getAttribute('data-size');
+          pillBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          visualItems.forEach(item => {
+            item.classList.toggle('active', item.getAttribute('data-size') === targetSize);
+          });
+          contentPanels.forEach(panel => {
+            panel.classList.toggle('active', panel.getAttribute('data-size') === targetSize);
+          });
+        });
+
+        btn.addEventListener('keydown', (e) => {
+          let targetIdx = null;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            targetIdx = (idx + 1) % pillBtns.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            targetIdx = (idx - 1 + pillBtns.length) % pillBtns.length;
+          }
+          if (targetIdx !== null) {
+            e.preventDefault();
+            pillBtns[targetIdx].focus();
+            pillBtns[targetIdx].click();
+          }
+        });
+      });
+    });
+
   }); // end DOMContentLoaded
 })();

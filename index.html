@@ -1668,212 +1668,129 @@
       </div>
     </section>
 
-    <!-- ── 4. Our Training Boards (Modular LED Grid Architecture) ───── -->
-    <section class="section" id="training-boards" aria-labelledby="boards-heading">
+    <!-- ── 4. Our Training Boards (Reference Redesign) ───── -->
+    <section class="section board-config-section" id="training-boards" aria-labelledby="boards-heading">
       <div id="why-climbfit" style="position:relative;top:calc(-1 * var(--nav-h));" aria-hidden="true"></div>
       <div class="container">
-        <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-yellow);" aria-hidden="true">Our Training Boards</span>
-          <h2 class="heading-1" id="boards-heading">Modular LED Wall Systems.<br><span class="gradient-text">Engineered for Any Space.</span></h2>
-          <p>Standardized modular hold grids with individually addressable RGB LEDs, precision CNC panels, and dynamic Bluetooth app control. Select a board size to view its footprint, hold matrix, and technical specifications.</p>
-        </header>
 
-        <!-- Size Switcher Segmented Control -->
-        <div class="board-switcher-wrap reveal">
-          <div class="board-switcher" role="tablist" aria-label="Select board size">
-            <button type="button" class="board-switch-btn active" data-size="s" id="tab-size-s" role="tab" aria-selected="true" aria-controls="board-panel-s">
-              <span class="board-switch-size">Size S</span>
-              <span class="board-switch-sub">8 × 12 ft · 209 Holds</span>
-            </button>
-            <button type="button" class="board-switch-btn" data-size="m" id="tab-size-m" role="tab" aria-selected="false" aria-controls="board-panel-m">
-              <span class="board-switch-size">Size M <span class="board-badge-popular">Popular</span></span>
-              <span class="board-switch-sub">12 × 12 ft · 323 Holds</span>
-            </button>
-            <button type="button" class="board-switch-btn" data-size="l" id="tab-size-l" role="tab" aria-selected="false" aria-controls="board-panel-l">
-              <span class="board-switch-size">Size L</span>
-              <span class="board-switch-sub">15 × 12 ft · 437 Holds</span>
-            </button>
-          </div>
-        </div>
+        <div class="board-config-layout reveal">
 
-        <!-- Board Visualizer Showcase -->
-        <div class="board-showcase-container reveal">
+          <!-- Left Column: Hold Matrix Graphic -->
+          <div class="board-config-visual-col">
+            <div class="board-config-glow" aria-hidden="true"></div>
 
-          <!-- Size S Panel -->
-          <div class="board-panel active" id="board-panel-s" data-size="s" role="tabpanel" aria-labelledby="tab-size-s">
-            <div class="board-panel-header">
-              <div class="board-panel-title-wrap">
-                <span class="tag tag-cyan">Size S · Compact Modular</span>
-                <h3 class="board-panel-title">8 ft (W) × 12 ft (H) · 209 LED Holds</h3>
-              </div>
-              <div class="board-panel-badges">
-                <span class="board-meta-pill">11 × 19 Grid</span>
-                <span class="board-meta-pill">15°–45° Incline</span>
-                <span class="board-meta-pill">&lt;30ms App Sync</span>
-              </div>
+            <!-- Size S Visual -->
+            <div class="board-config-visual-item" data-size="s">
+              <img src="assets/boards/grid-s-dark.png" alt="ClimbFit Size S LED hold matrix (209 holds, 8x12ft)" class="board-config-img board-config-img-dark" width="312" height="536" loading="lazy">
+              <img src="assets/boards/grid-s-light.png" alt="ClimbFit Size S LED hold matrix (209 holds, 8x12ft)" class="board-config-img board-config-img-light" width="312" height="536" loading="lazy">
             </div>
 
-            <div class="board-stage">
-              <div class="board-stage-glow" aria-hidden="true"></div>
-              <div class="board-dimension-tag board-dim-width"><span>↔ 8 ft (2.44 m)</span></div>
-              <div class="board-dimension-tag board-dim-height"><span>↕ 12 ft (3.65 m)</span></div>
-              <div class="board-grid-wrap">
-                <img src="assets/boards/grid-s-dark.png" alt="ClimbFit Size S LED hold matrix (209 holds, 11x19)" class="board-grid-img board-grid-dark" width="312" height="536" loading="lazy">
-                <img src="assets/boards/grid-s-light.png" alt="ClimbFit Size S LED hold matrix (209 holds, 11x19)" class="board-grid-img board-grid-light" width="312" height="536" loading="lazy">
-              </div>
+            <!-- Size M Visual (Default Active) -->
+            <div class="board-config-visual-item active" data-size="m">
+              <img src="assets/boards/grid-m-dark.png" alt="ClimbFit Size M LED hold matrix (323 holds, 12x12ft)" class="board-config-img board-config-img-dark" width="424" height="536" loading="lazy">
+              <img src="assets/boards/grid-m-light.png" alt="ClimbFit Size M LED hold matrix (323 holds, 12x12ft)" class="board-config-img board-config-img-light" width="424" height="536" loading="lazy">
             </div>
 
-            <div class="board-specs-strip">
-              <div class="board-spec-col">
-                <span class="board-spec-label">Dimensions &amp; Footprint</span>
-                <span class="board-spec-value">8 ft (W) × 12 ft (H)</span>
-                <span class="board-spec-note">Ceiling req: min 3.2 m (10.5 ft)</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Hold Density</span>
-                <span class="board-spec-value">209 Addressable LEDs</span>
-                <span class="board-spec-note">11 columns × 19 rows matrix</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Structural Chassis</span>
-                <span class="board-spec-value">Modular Steel Frame</span>
-                <span class="board-spec-note">CNC BWP marine-grade plywood</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Best Suited For</span>
-                <span class="board-spec-value">Schools &amp; Studios</span>
-                <span class="board-spec-note">Residential clubs, boutique gyms</span>
-              </div>
-            </div>
-
-            <div class="board-panel-footer">
-              <p class="board-panel-desc">
-                A space-efficient footprint engineered for high-engagement training. Fits easily under standard institutional ceiling heights with full app integration and game modes.
-              </p>
-              <div class="board-panel-actions">
-                <a href="training-board.html#specs" class="btn btn-outline">Explore Size S Specs <span aria-hidden="true">→</span></a>
-                <a href="about.html#contact" class="btn btn-primary">Request Size S Quote</a>
-              </div>
+            <!-- Size L Visual -->
+            <div class="board-config-visual-item" data-size="l">
+              <img src="assets/boards/grid-l-dark.png" alt="ClimbFit Size L LED hold matrix (437 holds, 15x12ft)" class="board-config-img board-config-img-dark" width="648" height="536" loading="lazy">
+              <img src="assets/boards/grid-l-light.png" alt="ClimbFit Size L LED hold matrix (437 holds, 15x12ft)" class="board-config-img board-config-img-light" width="648" height="536" loading="lazy">
             </div>
           </div>
 
-          <!-- Size M Panel -->
-          <div class="board-panel" id="board-panel-m" data-size="m" role="tabpanel" aria-labelledby="tab-size-m" hidden>
-            <div class="board-panel-header">
-              <div class="board-panel-title-wrap">
-                <span class="tag tag-yellow">Size M · Standard Facility · Most Popular</span>
-                <h3 class="board-panel-title">12 ft (W) × 12 ft (H) · 323 LED Holds</h3>
-              </div>
-              <div class="board-panel-badges">
-                <span class="board-meta-pill">17 × 19 Grid</span>
-                <span class="board-meta-pill">15°–45° Incline</span>
-                <span class="board-meta-pill">&lt;30ms App Sync</span>
-              </div>
+          <!-- Right Column: Details & Switcher -->
+          <div class="board-config-detail-col">
+
+            <!-- Top Pill Switcher -->
+            <div class="board-config-pills" role="tablist" aria-label="Select board configuration">
+              <button type="button" class="board-config-pill-btn" data-size="s" role="tab" aria-selected="false">Size S (8×12 ft)</button>
+              <button type="button" class="board-config-pill-btn active" data-size="m" role="tab" aria-selected="true">Size M (12×12 ft)</button>
+              <button type="button" class="board-config-pill-btn" data-size="l" role="tab" aria-selected="false">Size L (15×12 ft)</button>
             </div>
 
-            <div class="board-stage">
-              <div class="board-stage-glow" aria-hidden="true"></div>
-              <div class="board-dimension-tag board-dim-width"><span>↔ 12 ft (3.65 m)</span></div>
-              <div class="board-dimension-tag board-dim-height"><span>↕ 12 ft (3.65 m)</span></div>
-              <div class="board-grid-wrap">
-                <img src="assets/boards/grid-m-dark.png" alt="ClimbFit Size M LED hold matrix (323 holds, 17x19)" class="board-grid-img board-grid-dark" width="424" height="536" loading="lazy">
-                <img src="assets/boards/grid-m-light.png" alt="ClimbFit Size M LED hold matrix (323 holds, 17x19)" class="board-grid-img board-grid-light" width="424" height="536" loading="lazy">
+            <!-- Panel: Size S -->
+            <div class="board-config-content-panel" data-size="s">
+              <div class="board-config-eyebrow">
+                <span class="board-config-dash-label">— FOR SCHOOLS &amp; BOUTIQUE STUDIOS</span>
               </div>
-            </div>
-
-            <div class="board-specs-strip">
-              <div class="board-spec-col">
-                <span class="board-spec-label">Dimensions &amp; Footprint</span>
-                <span class="board-spec-value">12 ft (W) × 12 ft (H)</span>
-                <span class="board-spec-note">Ceiling req: min 3.2 m (10.5 ft)</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Hold Density</span>
-                <span class="board-spec-value">323 Addressable LEDs</span>
-                <span class="board-spec-note">17 columns × 19 rows matrix</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Structural Chassis</span>
-                <span class="board-spec-value">Heavy-Duty Steel</span>
-                <span class="board-spec-note">Dual-layer high-density crash matting</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Best Suited For</span>
-                <span class="board-spec-value">Commercial Gyms</span>
-                <span class="board-spec-note">Fitness clubs &amp; multi-sport centres</span>
-              </div>
-            </div>
-
-            <div class="board-panel-footer">
-              <p class="board-panel-desc">
-                Our flagship installation offering the optimal balance of route variety, traverse potential, and dynamic movement for commercial athletic facilities.
+              <h2 class="board-config-title">Size S · Compact</h2>
+              <div class="board-config-subtitle">Your LED climbing board in space-efficient format</div>
+              <p class="board-config-desc">
+                From beginner circuits to technical finger problems. 1,000+ app-controlled routes, sub-30ms Bluetooth sync, and adjustable angle from 15° to 45°: students, coaches, and home climbers both get the most out of it.
               </p>
-              <div class="board-panel-actions">
-                <a href="training-board.html#specs" class="btn btn-outline">Explore Size M Specs <span aria-hidden="true">→</span></a>
-                <a href="about.html#contact" class="btn btn-primary">Request Size M Quote</a>
+              <div class="board-config-highlight-wrap">
+                <div class="board-config-highlight-val">209 LED Holds <small>· 8 × 12 ft</small></div>
+                <div class="board-config-highlight-sub">Turnkey installation · 50% on order · 50% on commissioning · Worldwide dispatch</div>
               </div>
-            </div>
-          </div>
-
-          <!-- Size L Panel -->
-          <div class="board-panel" id="board-panel-l" data-size="l" role="tabpanel" aria-labelledby="tab-size-l" hidden>
-            <div class="board-panel-header">
-              <div class="board-panel-title-wrap">
-                <span class="tag tag-pink">Size L · Commercial Max</span>
-                <h3 class="board-panel-title">15 ft (W) × 12 ft (H) · 437 LED Holds</h3>
+              <div class="board-config-divider"></div>
+              <div class="board-config-actions">
+                <a href="about.html#contact" class="board-config-btn-primary">Get your wall <span aria-hidden="true">→</span></a>
+                <a href="training-board.html#specs" class="board-config-btn-secondary">See the tech specs <span aria-hidden="true">→</span></a>
               </div>
-              <div class="board-panel-badges">
-                <span class="board-meta-pill">23 × 19 Grid</span>
-                <span class="board-meta-pill">Dual-Climber Ready</span>
-                <span class="board-meta-pill">&lt;30ms App Sync</span>
-              </div>
+              <ul class="board-config-bullets">
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 11 × 19 precision CNC hold matrix</li>
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted 300mm dual-layer crash mats included</li>
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Turnkey installation in 4–6 weeks · 3-year warranty</li>
+              </ul>
             </div>
 
-            <div class="board-stage">
-              <div class="board-stage-glow" aria-hidden="true"></div>
-              <div class="board-dimension-tag board-dim-width"><span>↔ 15 ft (4.57 m)</span></div>
-              <div class="board-dimension-tag board-dim-height"><span>↕ 12 ft (3.65 m)</span></div>
-              <div class="board-grid-wrap">
-                <img src="assets/boards/grid-l-dark.png" alt="ClimbFit Size L LED hold matrix (437 holds, 23x19)" class="board-grid-img board-grid-dark" width="648" height="536" loading="lazy">
-                <img src="assets/boards/grid-l-light.png" alt="ClimbFit Size L LED hold matrix (437 holds, 23x19)" class="board-grid-img board-grid-light" width="648" height="536" loading="lazy">
+            <!-- Panel: Size M (Default Active) -->
+            <div class="board-config-content-panel active" data-size="m">
+              <div class="board-config-eyebrow">
+                <span class="board-config-dash-label">— FOR CLIMBING GYMS &amp; CLUBS</span>
+                <span class="board-config-popular-badge">MOST POPULAR</span>
               </div>
-            </div>
-
-            <div class="board-specs-strip">
-              <div class="board-spec-col">
-                <span class="board-spec-label">Dimensions &amp; Footprint</span>
-                <span class="board-spec-value">15 ft (W) × 12 ft (H)</span>
-                <span class="board-spec-note">Ceiling req: min 3.4 m (11.2 ft)</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Hold Density</span>
-                <span class="board-spec-value">437 Addressable LEDs</span>
-                <span class="board-spec-note">23 columns × 19 rows matrix</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Structural Chassis</span>
-                <span class="board-spec-value">Reinforced Structural Steel</span>
-                <span class="board-spec-note">Expanded dual-layer impact zone</span>
-              </div>
-              <div class="board-spec-col">
-                <span class="board-spec-label">Best Suited For</span>
-                <span class="board-spec-value">Multi-Climber Facilities</span>
-                <span class="board-spec-note">Entertainment hubs &amp; elite gyms</span>
-              </div>
-            </div>
-
-            <div class="board-panel-footer">
-              <p class="board-panel-desc">
-                Maximum lateral climbing breadth built for simultaneous dual-climber tracks, team relays, speed competition modes, and high-throughput group fitness classes.
+              <h2 class="board-config-title" id="boards-heading">Size M · Standard</h2>
+              <div class="board-config-subtitle">Your benchmark LED climbing board in 12×12 ft format</div>
+              <p class="board-config-desc">
+                From warmup circuits and power endurance to elite technical problems. 1,000+ routes and an app that's quick and easy to use. Adjustable from 15° to 45°: beginners and seasoned climbers both get the most out of it.
               </p>
-              <div class="board-panel-actions">
-                <a href="training-board.html#specs" class="btn btn-outline">Explore Size L Specs <span aria-hidden="true">→</span></a>
-                <a href="about.html#contact" class="btn btn-primary">Request Size L Quote</a>
+              <div class="board-config-highlight-wrap">
+                <div class="board-config-highlight-val">323 LED Holds <small>· 12 × 12 ft</small></div>
+                <div class="board-config-highlight-sub">Turnkey installation · 50% on order · 50% on commissioning · Worldwide dispatch</div>
               </div>
+              <div class="board-config-divider"></div>
+              <div class="board-config-actions">
+                <a href="about.html#contact" class="board-config-btn-primary">Get your wall <span aria-hidden="true">→</span></a>
+                <a href="training-board.html#specs" class="board-config-btn-secondary">See the tech specs <span aria-hidden="true">→</span></a>
+              </div>
+              <ul class="board-config-bullets">
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 17 × 19 high-density CNC hold matrix</li>
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Dual-layer high-density crash padding included</li>
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Turnkey installation in 4–6 weeks · 3-year warranty</li>
+              </ul>
             </div>
+
+            <!-- Panel: Size L -->
+            <div class="board-config-content-panel" data-size="l">
+              <div class="board-config-eyebrow">
+                <span class="board-config-dash-label">— FOR LARGE HUBS &amp; MULTI-CLIMBERS</span>
+              </div>
+              <h2 class="board-config-title">Size L · Max Full</h2>
+              <div class="board-config-subtitle">Your expansive LED climbing board in XL format</div>
+              <p class="board-config-desc">
+                Broad lateral canvas built for simultaneous dual-climbers, team relays, speed competition, and high-frequency group fitness. Over 430 illuminated targets for limitless boulder combinations.
+              </p>
+              <div class="board-config-highlight-wrap">
+                <div class="board-config-highlight-val">437 LED Holds <small>· 15 × 12 ft</small></div>
+                <div class="board-config-highlight-sub">Turnkey installation · 50% on order · 50% on commissioning · Worldwide dispatch</div>
+              </div>
+              <div class="board-config-divider"></div>
+              <div class="board-config-actions">
+                <a href="about.html#contact" class="board-config-btn-primary">Get your wall <span aria-hidden="true">→</span></a>
+                <a href="training-board.html#specs" class="board-config-btn-secondary">See the tech specs <span aria-hidden="true">→</span></a>
+              </div>
+              <ul class="board-config-bullets">
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 23 × 19 expansive dual-climber CNC matrix</li>
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Seamless dual-layer safety landing zone included</li>
+                <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Turnkey installation in 4–6 weeks · 3-year warranty</li>
+              </ul>
+            </div>
+
           </div>
 
         </div>
+
       </div>
     </section>
 

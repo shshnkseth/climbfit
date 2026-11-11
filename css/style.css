@@ -2139,3 +2139,392 @@ body.light-theme .featured-story-card {
     min-height: 240px;
   }
 }
+
+/* ── Board Configurator Component (Reference Redesign) ─ */
+.board-config-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.board-config-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.05fr) minmax(360px, 1.25fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  position: relative;
+}
+
+/* Left: Hold Matrix Graphic */
+.board-config-visual-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 480px;
+}
+
+.board-config-glow {
+  position: absolute;
+  width: min(520px, 90%);
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.08) 0%, rgba(0, 229, 255, 0.06) 40%, transparent 70%);
+  filter: blur(50px);
+  z-index: 1;
+}
+
+[data-theme="light"] .board-config-glow {
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.08) 0%, rgba(14, 165, 233, 0.05) 45%, transparent 75%);
+}
+
+.board-config-visual-item {
+  display: none;
+  opacity: 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-config-visual-item.active {
+  display: flex;
+  opacity: 1;
+  animation: boardConfigFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes boardConfigFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.board-config-img {
+  height: clamp(320px, 52vh, 520px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.55));
+  transition: transform 0.3s var(--ease-out);
+}
+
+.board-config-img:hover {
+  transform: translateY(-4px) scale(1.015);
+}
+
+[data-theme="light"] .board-config-img {
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.09));
+}
+
+.board-config-img-light { display: none; }
+[data-theme="light"] .board-config-img-dark { display: none; }
+[data-theme="light"] .board-config-img-light { display: block; }
+
+/* Right: Details & Switcher */
+.board-config-detail-col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Pill Switcher */
+.board-config-pills {
+  display: inline-flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.3rem;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+[data-theme="light"] .board-config-pills {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.board-config-pill-btn {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--r-xl);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s var(--ease-out);
+  white-space: nowrap;
+}
+
+.board-config-pill-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.board-config-pill-btn.active {
+  background: #00ff88;
+  color: #060913;
+  font-weight: 700;
+  border-color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.35);
+}
+
+[data-theme="light"] .board-config-pill-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .board-config-pill-btn.active {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+/* Category Eyebrow & Badges */
+.board-config-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.board-config-dash-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.board-config-popular-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+/* Big Title & Subtitle */
+.board-config-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin: 0 0 0.65rem 0;
+}
+
+.board-config-subtitle {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 1rem 0;
+  line-height: 1.35;
+}
+
+.board-config-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 0 1.75rem 0;
+  max-width: 540px;
+}
+
+/* Price / Highlight area */
+.board-config-highlight-wrap {
+  margin-bottom: 1.75rem;
+}
+
+.board-config-highlight-val {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-weight: 800;
+  color: #00ff88;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+[data-theme="light"] .board-config-highlight-val {
+  color: #059669;
+}
+
+.board-config-highlight-val small {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+.board-config-highlight-sub {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+/* Divider rule */
+.board-config-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.75rem;
+}
+
+[data-theme="light"] .board-config-divider {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Action CTAs */
+.board-config-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.board-config-btn-primary {
+  background: #ffffff;
+  color: #080810;
+  border: 1px solid #ffffff;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--r-m);
+  transition: all 0.25s var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.board-config-btn-primary:hover {
+  background: #f0f0f5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .board-config-btn-primary {
+  background: #0e1017;
+  color: #ffffff;
+  border-color: #0e1017;
+}
+
+[data-theme="light"] .board-config-btn-primary:hover {
+  background: #1e2230;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.board-config-btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--r-m);
+  transition: all 0.25s var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.board-config-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .board-config-btn-secondary {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+[data-theme="light"] .board-config-btn-secondary:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Bullet list with cyan dashes */
+.board-config-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.board-config-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.board-config-bullet-dash {
+  color: var(--accent-cyan);
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+[data-theme="light"] .board-config-bullet-dash {
+  color: #0284c7;
+}
+
+/* Dynamic content panel */
+.board-config-content-panel {
+  display: none;
+  opacity: 0;
+}
+
+.board-config-content-panel.active {
+  display: block;
+  opacity: 1;
+  animation: boardConfigFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .board-config-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .board-config-visual-col {
+    min-height: 340px;
+  }
+  .board-config-img {
+    height: clamp(240px, 42vh, 360px);
+  }
+  .board-config-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .board-config-btn-primary,
+  .board-config-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
