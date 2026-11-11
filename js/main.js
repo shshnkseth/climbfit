@@ -697,6 +697,7 @@
       const pillBtns = layout.querySelectorAll('.board-config-pill-btn');
       const visualItems = layout.querySelectorAll('.board-config-visual-item');
       const contentPanels = layout.querySelectorAll('.board-config-content-panel');
+      const specSummaries = layout.querySelectorAll('.board-config-spec-summary');
 
       pillBtns.forEach((btn, idx) => {
         btn.addEventListener('click', () => {
@@ -715,6 +716,9 @@
           });
           contentPanels.forEach(panel => {
             panel.classList.toggle('active', panel.getAttribute('data-size') === targetSize);
+          });
+          specSummaries.forEach(spec => {
+            spec.classList.toggle('active', spec.getAttribute('data-size') === targetSize);
           });
         });
 

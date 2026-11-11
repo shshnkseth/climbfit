@@ -797,7 +797,7 @@
 
         <div class="board-config-layout reveal">
 
-          <!-- Left Column: Hold Matrix Graphic with Bottom Caption -->
+          <!-- Left Column: Square climbing board graphic with metadata text directly underneath -->
           <div class="board-config-visual-col">
             <div class="board-config-glow" aria-hidden="true"></div>
 
@@ -805,43 +805,43 @@
             <div class="board-config-visual-item" data-size="s">
               <img src="assets/boards/grid-s-dark.png" alt="ClimbFit Size S LED hold matrix (209 holds, 8x12ft)" class="board-config-img board-config-img-dark" width="312" height="536" loading="lazy">
               <img src="assets/boards/grid-s-light.png" alt="ClimbFit Size S LED hold matrix (209 holds, 8x12ft)" class="board-config-img board-config-img-light" width="312" height="536" loading="lazy">
-              <div class="board-config-bottom-caption">8 × 12 ft · 209 LED Holds</div>
+              <div class="board-config-bottom-caption">8 × 12 FT • 209 HOLDS</div>
             </div>
 
             <!-- Size M Visual (Default Active) -->
             <div class="board-config-visual-item active" data-size="m">
               <img src="assets/boards/grid-m-dark.png" alt="ClimbFit Size M LED hold matrix (323 holds, 12x12ft)" class="board-config-img board-config-img-dark" width="424" height="536" loading="lazy">
               <img src="assets/boards/grid-m-light.png" alt="ClimbFit Size M LED hold matrix (323 holds, 12x12ft)" class="board-config-img board-config-img-light" width="424" height="536" loading="lazy">
-              <div class="board-config-bottom-caption">12 × 12 ft · 323 LED Holds</div>
+              <div class="board-config-bottom-caption">12 × 12 FT • 323 HOLDS</div>
             </div>
 
             <!-- Size L Visual -->
             <div class="board-config-visual-item" data-size="l">
               <img src="assets/boards/grid-l-dark.png" alt="ClimbFit Size L LED hold matrix (437 holds, 15x12ft)" class="board-config-img board-config-img-dark" width="648" height="536" loading="lazy">
               <img src="assets/boards/grid-l-light.png" alt="ClimbFit Size L LED hold matrix (437 holds, 15x12ft)" class="board-config-img board-config-img-light" width="648" height="536" loading="lazy">
-              <div class="board-config-bottom-caption">15 × 12 ft · 437 LED Holds</div>
+              <div class="board-config-bottom-caption">15 × 12 FT • 437 HOLDS</div>
             </div>
           </div>
 
-          <!-- Right Column: Section Header, Title, Desc, Sizes, Details, and CTA -->
+          <!-- Right Column: All text content, size selection, specs, and action buttons in a vertical stack -->
           <div class="board-config-detail-col">
 
-            <!-- 1. Section Header -->
+            <!-- 1. Category Tag -->
             <div class="board-config-header-row">
-              <span class="label" style="color:var(--accent-cyan);margin:0;">Training Board</span>
+              <span class="board-config-tag">TRAINING BOARD</span>
             </div>
 
-            <!-- 2. Product Title -->
+            <!-- 2. Main Title -->
             <h2 class="board-config-title" id="training-board-heading">The ClimbFit Training Board</h2>
 
-            <!-- 3. Product Description -->
+            <!-- 3. Description -->
             <p class="board-config-desc">
               An interactive climbing wall where holds light up. Pick a route on your phone, follow the lights, and train.
             </p>
 
-            <!-- 4. Sizes -->
+            <!-- 4. Size Selector -->
             <div class="board-config-picker-wrap">
-              <span class="board-config-picker-label">Select Size</span>
+              <span class="board-config-picker-label">SELECT SIZE</span>
               <div class="board-config-pills" role="radiogroup" aria-label="Select board size">
                 <button type="button" class="board-config-pill-btn" data-size="s" role="radio" aria-checked="false">
                   <strong class="pill-size">Size S</strong>
@@ -858,64 +858,30 @@
               </div>
             </div>
 
-            <!-- 5. Details (Dynamic per size) -->
-            <div class="board-config-details-wrap">
-
-              <!-- Size S Details -->
-              <div class="board-config-content-panel" data-size="s">
-                <div class="board-config-highlight-wrap">
-                  <div class="board-config-highlight-val">209 LED Holds <small>· 8 × 12 ft</small></div>
-                  <div class="board-config-highlight-sub">— Best for Boutique Studios, Schools &amp; Home Walls</div>
-                </div>
-                <ul class="board-config-bullets">
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 11 × 19 high-density grid with 209 individually addressable RGB LEDs</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Sub-30ms Bluetooth 5.0 app synchronization and route generator</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Precision CNC-drilled birch plywood panels with modular t-nuts</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Engineered steel chassis with 0° to 65° angle adjustment</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted dual-layer impact safety crash mats included</li>
-                </ul>
+            <!-- 5. Spec Summary (Single-line metadata summary) -->
+            <div class="board-config-spec-summary-wrap">
+              <div class="board-config-spec-summary" data-size="s">
+                <span class="spec-highlight">209 LED Holds</span> • <span>11×19 Grid</span> • <span>Boutique &amp; Schools</span>
               </div>
-
-              <!-- Size M Details (Default Active) -->
-              <div class="board-config-content-panel active" data-size="m">
-                <div class="board-config-highlight-wrap">
-                  <div class="board-config-highlight-val">323 LED Holds <small>· 12 × 12 ft</small></div>
-                  <div class="board-config-highlight-sub">— Commercial Gym Standard <span class="board-config-popular-badge">Most Popular</span></div>
-                </div>
-                <ul class="board-config-bullets">
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 17 × 19 symmetric grid with 323 individually addressable RGB LEDs</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Full-width movement for endurance circuits and boulder problems</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Precision CNC-drilled birch plywood panels with modular t-nuts</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Heavy-duty commercial steel chassis with 0° to 65° angle adjustment</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted dual-layer impact safety crash mats included</li>
-                </ul>
+              <div class="board-config-spec-summary active" data-size="m">
+                <span class="spec-highlight">323 LED Holds</span> • <span>17×19 Grid</span> • <span>Commercial Gyms</span>
               </div>
-
-              <!-- Size L Details -->
-              <div class="board-config-content-panel" data-size="l">
-                <div class="board-config-highlight-wrap">
-                  <div class="board-config-highlight-val">437 LED Holds <small>· 15 × 12 ft</small></div>
-                  <div class="board-config-highlight-sub">— National Training Centers &amp; High-Volume Gyms</div>
-                </div>
-                <ul class="board-config-bullets">
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> 23 × 19 XL competition grid with 437 individually addressable RGB LEDs</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Dual simultaneous climbing lanes for side-by-side challenges and relays</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Precision CNC-drilled birch plywood panels with modular t-nuts</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Reinforced commercial frame engineered for non-stop facility utilization</li>
-                  <li class="board-config-bullet-item"><span class="board-config-bullet-dash">—</span> Custom-fitted dual-layer impact safety crash mats included</li>
-                </ul>
+              <div class="board-config-spec-summary" data-size="l">
+                <span class="spec-highlight">437 LED Holds</span> • <span>23×19 Grid</span> • <span>Competition &amp; Relays</span>
               </div>
-
             </div>
 
-            <div class="board-config-divider"></div>
+            <!-- 6. Feature Details -->
+            <p class="board-config-features">
+              Includes precision CNC panels, addressable LED holds, steel chassis, sub-30ms app sync, and custom crash mats.
+            </p>
 
-            <!-- 6. Action CTAs -->
+            <!-- 7. Action Buttons -->
             <div class="board-config-actions">
-              <a href="about.html#contact" class="btn btn-primary">
+              <a href="about.html#contact" class="board-config-btn-cyan">
                 Get Your Wall <span aria-hidden="true">→</span>
               </a>
-              <a href="training-board.html" class="btn btn-outline">
+              <a href="training-board.html" class="board-config-btn-pill-dark">
                 Know More About The Wall
               </a>
             </div>
