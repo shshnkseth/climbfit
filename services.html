@@ -281,118 +281,93 @@
       background: radial-gradient(ellipse at center, var(--border-active) 0%, transparent 75%);
     }
 
-    /* ── Training Board E-Commerce Product Detail Layout ── */
-    .ecom-product-card {
+    /* ── Training Board Minimal Layout (No Boxes) ───────── */
+    .minimal-board-detail {
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: clamp(1.5rem, 3.5vw, 3rem);
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: var(--r-xl);
-      padding: clamp(1.5rem, 3vw, 2.75rem);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      position: relative;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+      margin-top: var(--space-m);
     }
 
-    [data-theme="light"] .ecom-product-card {
-      background: #ffffff;
-      border-color: rgba(0, 0, 0, 0.08);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Left: Media & Stage */
-    .ecom-media-col {
+    .minimal-board-media {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
 
-    .ecom-stage-wrap {
+    .minimal-grid-stage {
       position: relative;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.3) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--r-l);
-      padding: 2.25rem 1.25rem;
-      min-height: 440px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      width: 100%;
+      min-height: 420px;
     }
 
-    [data-theme="light"] .ecom-stage-wrap {
-      background: radial-gradient(circle at center, #fbfcfe 0%, #f1f4f8 100%);
-      border-color: rgba(0, 0, 0, 0.06);
-    }
-
-    .ecom-stage-glow {
+    .minimal-grid-glow {
       position: absolute;
-      width: min(500px, 85%);
+      width: min(440px, 85%);
       height: 280px;
       border-radius: 50%;
       pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(177, 79, 255, 0.16) 0%, rgba(0, 229, 255, 0.09) 45%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(177, 79, 255, 0.14) 0%, rgba(0, 229, 255, 0.08) 45%, transparent 70%);
       filter: blur(40px);
-      animation: ecomGlowPulse 5s ease-in-out infinite alternate;
       z-index: 1;
     }
 
-    [data-theme="light"] .ecom-stage-glow {
-      background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.08) 0%, rgba(14, 165, 233, 0.06) 50%, transparent 75%);
-      filter: blur(45px);
+    [data-theme="light"] .minimal-grid-glow {
+      background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.07) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 75%);
     }
 
-    @keyframes ecomGlowPulse {
-      0% { opacity: 0.55; transform: scale(0.96); }
-      100% { opacity: 0.9; transform: scale(1.05); }
+    .minimal-dim-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
-    .ecom-visual-item {
+    .minimal-board-media .ecom-visual-item {
       display: none;
       opacity: 0;
-      width: 100%;
-      position: relative;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
-    .ecom-visual-item.active {
+    .minimal-board-media .ecom-visual-item.active {
       display: flex;
       opacity: 1;
-      animation: ecomFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: minimalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes ecomFadeIn {
-      0% { opacity: 0; transform: translateY(10px) scale(0.985); }
+    @keyframes minimalFadeIn {
+      0% { opacity: 0; transform: translateY(8px) scale(0.99); }
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    .ecom-grid-img-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
+    .minimal-board-media .ecom-grid-img {
+      height: clamp(280px, 46vh, 430px);
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 35px rgba(0, 0, 0, 0.35));
       transition: transform 0.3s var(--ease-out);
     }
 
-    .ecom-grid-img-wrap:hover {
+    .minimal-board-media .ecom-grid-img:hover {
       transform: translateY(-3px) scale(1.015);
     }
 
-    .ecom-grid-img {
-      height: clamp(260px, 42vh, 410px);
-      width: auto;
-      max-width: 90%;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 35px rgba(0, 0, 0, 0.4));
-      transition: opacity 0.25s ease;
-    }
-
-    [data-theme="light"] .ecom-grid-img {
+    [data-theme="light"] .minimal-board-media .ecom-grid-img {
       filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.08));
     }
 
@@ -400,354 +375,122 @@
     [data-theme="light"] .ecom-grid-dark { display: none; }
     [data-theme="light"] .ecom-grid-light { display: block; }
 
-    .ecom-dimension-tag {
-      position: absolute;
-      z-index: 3;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 100px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      pointer-events: none;
+    /* Right: Minimal Info */
+    .minimal-board-info {
+      display: flex;
+      flex-direction: column;
     }
 
-    .ecom-dim-w {
-      top: 1rem;
-      border: 1px dashed rgba(0, 229, 255, 0.35);
-      background: rgba(0, 0, 0, 0.5);
-      color: var(--accent-cyan);
+    .minimal-product-title {
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin: 0 0 0.65rem 0;
+      color: var(--text);
     }
 
-    .ecom-dim-h {
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg);
-      transform-origin: center center;
-      border: 1px dashed rgba(245, 208, 0, 0.35);
-      background: rgba(0, 0, 0, 0.5);
-      color: var(--accent-yellow);
-    }
-
-    [data-theme="light"] .ecom-dim-w {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(14, 165, 233, 0.45);
-      color: #0284c7;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    [data-theme="light"] .ecom-dim-h {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(217, 119, 6, 0.45);
-      color: #b45309;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    .ecom-stage-badge {
-      position: absolute;
-      bottom: 0.9rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.72rem;
-      font-weight: 600;
+    .minimal-product-desc {
+      font-size: 0.95rem;
       color: var(--text-muted);
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 0.25rem 0.8rem;
-      border-radius: 100px;
+      line-height: 1.6;
+      margin: 0 0 1.5rem 0;
+      max-width: 480px;
+    }
+
+    .minimal-size-picker {
+      margin-bottom: 1.25rem;
+    }
+
+    .minimal-picker-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .minimal-size-toggles {
       display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      white-space: nowrap;
-      z-index: 3;
-    }
-
-    [data-theme="light"] .ecom-stage-badge {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(0, 0, 0, 0.08);
-      color: #374151;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .ecom-live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #00ff88;
-      box-shadow: 0 0 8px #00ff88;
-    }
-
-    /* Thumbnail strip below stage */
-    .ecom-thumb-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.3rem;
+      border-radius: var(--r-xl);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      max-width: 100%;
     }
 
-    .ecom-thumb-btn {
+    [data-theme="light"] .minimal-size-toggles {
+      background: rgba(0, 0, 0, 0.03);
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .minimal-size-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 0.55rem 0.5rem;
-      border-radius: var(--r-m);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.02);
+      padding: 0.6rem 1.15rem;
+      border-radius: var(--r-l);
+      border: 1px solid transparent;
+      background: transparent;
       color: var(--text-muted);
       cursor: pointer;
       font-family: var(--font-body);
       text-align: center;
-      transition: all 0.2s ease;
+      transition: all 0.2s var(--ease-out);
     }
 
-    .ecom-thumb-btn:hover {
-      border-color: rgba(0, 229, 255, 0.25);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .ecom-thumb-btn.active {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 229, 255, 0.08);
-      color: var(--text);
-      box-shadow: 0 2px 12px rgba(0, 229, 255, 0.12);
-    }
-
-    [data-theme="light"] .ecom-thumb-btn {
-      background: rgba(0, 0, 0, 0.02);
-      border-color: rgba(0, 0, 0, 0.08);
-    }
-
-    [data-theme="light"] .ecom-thumb-btn.active {
-      border-color: #0284c7;
-      background: rgba(2, 132, 199, 0.08);
-      color: #0e1017;
-    }
-
-    .ecom-thumb-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .ecom-thumb-meta {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .ecom-badge-mini {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.1rem 0.35rem;
-      border-radius: 100px;
-      background: var(--accent-cyan);
-      color: #080810;
-      font-weight: 700;
-    }
-
-    /* Right: Product Detail */
-    .ecom-detail-col {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .ecom-header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .ecom-shipping-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 0.25rem 0.7rem;
-      border-radius: 100px;
-    }
-
-    [data-theme="light"] .ecom-shipping-badge {
-      background: rgba(0, 0, 0, 0.04);
-      border-color: rgba(0, 0, 0, 0.08);
-      color: #0e1017;
-    }
-
-    .ecom-title {
-      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.5rem 0;
-      color: var(--text);
-    }
-
-    .ecom-rating-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.9rem;
-      font-size: 0.82rem;
-      flex-wrap: wrap;
-    }
-
-    .ecom-stars {
-      color: var(--accent-yellow);
-      letter-spacing: 0.1em;
+    .minimal-size-btn strong {
       font-size: 0.9rem;
-    }
-
-    .ecom-rating-text {
       color: var(--text);
-      font-weight: 600;
-    }
-
-    .ecom-dot-sep {
-      color: var(--text-muted);
-    }
-
-    .ecom-status-instock {
-      color: #00ff88;
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-
-    .ecom-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin: 0 0 1.25rem 0;
-    }
-
-    /* Size selector section */
-    .ecom-size-selector-wrap {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 1.15rem;
-      margin-bottom: 1.15rem;
-    }
-
-    [data-theme="light"] .ecom-size-selector-wrap {
-      border-top-color: rgba(0, 0, 0, 0.06);
-    }
-
-    .ecom-selector-label-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
-    }
-
-    .ecom-selector-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text);
-    }
-
-    .ecom-selected-indicator {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--accent-cyan);
-    }
-
-    .ecom-size-options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.65rem;
-    }
-
-    .ecom-size-chip {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0.75rem 0.85rem;
-      border-radius: var(--r-m);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--text-muted);
-      cursor: pointer;
-      text-align: left;
-      transition: all 0.25s var(--ease-out);
-    }
-
-    .ecom-size-chip:hover {
-      border-color: rgba(0, 229, 255, 0.35);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .ecom-size-chip.active {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 229, 255, 0.08);
-      color: var(--text);
-      box-shadow: 0 4px 16px rgba(0, 229, 255, 0.12);
-    }
-
-    [data-theme="light"] .ecom-size-chip {
-      background: rgba(0, 0, 0, 0.02);
-      border-color: rgba(0, 0, 0, 0.08);
-    }
-
-    [data-theme="light"] .ecom-size-chip.active {
-      border-color: #0284c7;
-      background: rgba(2, 132, 199, 0.08);
-      color: #0e1017;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1);
-    }
-
-    .ecom-chip-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin-bottom: 0.25rem;
-    }
-
-    .ecom-chip-title {
-      font-size: 0.92rem;
       font-weight: 700;
     }
 
-    .ecom-chip-badge {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-weight: 800;
-      padding: 0.1rem 0.4rem;
-      border-radius: 100px;
-      background: var(--accent-cyan);
-      color: #060913;
-    }
-
-    .ecom-chip-dim {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .ecom-chip-holds {
+    .minimal-size-btn span {
       font-size: 0.72rem;
       color: var(--text-muted);
       margin-top: 1px;
     }
 
-    /* Specs Container */
-    .ecom-specs-container {
-      margin-bottom: 1rem;
+    .minimal-size-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .minimal-size-btn.active {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(0, 229, 255, 0.4);
+      box-shadow: 0 4px 16px rgba(0, 229, 255, 0.12);
+    }
+
+    [data-theme="light"] .minimal-size-btn:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    [data-theme="light"] .minimal-size-btn.active {
+      background: #ffffff;
+      border-color: rgba(14, 165, 233, 0.4);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .minimal-specs-wrap {
+      margin-bottom: 0.9rem;
+    }
+
+    .minimal-spec-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .minimal-spec-row strong {
+      color: var(--text);
+      font-weight: 700;
     }
 
     .ecom-spec-block {
@@ -758,124 +501,21 @@
     .ecom-spec-block.active {
       display: block;
       opacity: 1;
-      animation: ecomFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: minimalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .ecom-spec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.65rem 1rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--r-m);
-      padding: 0.85rem 1.1rem;
-    }
-
-    [data-theme="light"] .ecom-spec-grid {
-      background: rgba(0, 0, 0, 0.02);
-      border-color: rgba(0, 0, 0, 0.06);
-    }
-
-    .ecom-spec-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
-    .ecom-spec-lbl {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .ecom-spec-val {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .ecom-size-summary {
+    .minimal-includes {
       font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.5;
-      margin: 0.65rem 0 0 0;
+      margin: 0 0 1.5rem 0;
+      max-width: 460px;
     }
 
-    /* Inclusions Box */
-    .ecom-inclusions-box {
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: var(--r-m);
-      padding: 0.85rem 1.1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    [data-theme="light"] .ecom-inclusions-box {
-      background: rgba(0, 0, 0, 0.015);
-      border-color: rgba(0, 0, 0, 0.06);
-    }
-
-    .ecom-inclusions-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--text);
-      display: block;
-      margin-bottom: 0.45rem;
-    }
-
-    .ecom-inclusions-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .ecom-check {
-      color: #00ff88;
-      font-weight: 700;
-      margin-right: 0.4rem;
-    }
-
-    /* Action CTAs */
-    .ecom-actions-row {
+    .minimal-actions {
       display: flex;
       align-items: center;
       gap: 0.85rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .ecom-btn-primary {
-      flex: 1 1 180px;
-      justify-content: center;
-      padding: 0.85rem 1.6rem;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .ecom-btn-secondary {
-      flex: 1 1 200px;
-      justify-content: center;
-      padding: 0.85rem 1.4rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .ecom-trust-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      font-size: 0.76rem;
-      color: var(--text-muted);
       flex-wrap: wrap;
     }
 
@@ -1242,12 +882,6 @@
 
     /* ── Responsive ─────────────────────────────────────── */
     @media (max-width: 960px) {
-      .ecom-product-card { grid-template-columns: 1fr; padding: 1.5rem; gap: 2rem; }
-      .ecom-stage-wrap { min-height: 320px; padding: 1.75rem 0.75rem; }
-      .ecom-grid-img { height: clamp(220px, 36vh, 320px); }
-      .ecom-dim-h { display: none; }
-      .ecom-actions-row { flex-direction: column; }
-      .ecom-actions-row .btn { width: 100%; text-align: center; }
       .schools-strip { grid-template-columns: 1fr; }
       .schools-strip-media { height: 240px; }
       .schools-strip-media::before { background: linear-gradient(to bottom, var(--surface) 0%, transparent 25%); }
@@ -1260,8 +894,6 @@
       .games-grid { grid-template-columns: 1fr; }
       .catalog-grid { grid-template-columns: 1fr; }
       .traverse-image-card img { height: 230px; }
-      .ecom-size-options, .ecom-thumb-strip { grid-template-columns: 1fr; }
-      .ecom-spec-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1400,239 +1032,108 @@
     <section class="offering-section" id="training-board" aria-labelledby="training-board-heading">
       <div class="container">
         <header class="section-header reveal">
-          <span class="label" style="color:var(--accent-cyan);">Turnkey Product</span>
+          <span class="label" style="color:var(--accent-cyan);">Training Board</span>
           <h2 class="heading-1" id="training-board-heading">The ClimbFit Training Board</h2>
           <p>
-            An interactive climbing wall where holds illuminate on command. Select a size to inspect the hold grid and facility specifications.
+            An interactive climbing wall where holds light up. Pick a route on your phone, follow the lights, and train.
           </p>
         </header>
 
-        <!-- E-Commerce Product Detail Layout -->
-        <div class="ecom-product-card reveal">
+        <!-- Minimal 2-Column Layout (No Boxes) -->
+        <div class="minimal-board-detail reveal">
 
-          <!-- LEFT: Product Visualizer Stage -->
-          <div class="ecom-media-col">
-            <div class="ecom-stage-wrap">
-              <div class="ecom-stage-glow" aria-hidden="true"></div>
+          <!-- LEFT: Grid Image -->
+          <div class="minimal-board-media">
+            <div class="minimal-grid-stage">
+              <div class="minimal-grid-glow" aria-hidden="true"></div>
 
               <!-- Size S Visual -->
               <div class="ecom-visual-item" data-size="s">
-                <div class="ecom-dimension-tag ecom-dim-w"><span>↔ 8 ft (2.44 m)</span></div>
-                <div class="ecom-dimension-tag ecom-dim-h"><span>↕ 12 ft (3.65 m)</span></div>
-                <div class="ecom-grid-img-wrap">
-                  <img src="assets/boards/grid-s-dark.png" alt="ClimbFit Size S LED hold matrix (209 holds, 11x19)" class="ecom-grid-img ecom-grid-dark" width="312" height="536" loading="lazy">
-                  <img src="assets/boards/grid-s-light.png" alt="ClimbFit Size S LED hold matrix (209 holds, 11x19)" class="ecom-grid-img ecom-grid-light" width="312" height="536" loading="lazy">
-                </div>
+                <div class="minimal-dim-tag">8 × 12 ft · 209 Holds</div>
+                <img src="assets/boards/grid-s-dark.png" alt="Size S LED climbing grid" class="ecom-grid-img ecom-grid-dark" width="312" height="536" loading="lazy">
+                <img src="assets/boards/grid-s-light.png" alt="Size S LED climbing grid" class="ecom-grid-img ecom-grid-light" width="312" height="536" loading="lazy">
               </div>
 
-              <!-- Size M Visual (Default Active) -->
+              <!-- Size M Visual (Active) -->
               <div class="ecom-visual-item active" data-size="m">
-                <div class="ecom-dimension-tag ecom-dim-w"><span>↔ 12 ft (3.65 m)</span></div>
-                <div class="ecom-dimension-tag ecom-dim-h"><span>↕ 12 ft (3.65 m)</span></div>
-                <div class="ecom-grid-img-wrap">
-                  <img src="assets/boards/grid-m-dark.png" alt="ClimbFit Size M LED hold matrix (323 holds, 17x19)" class="ecom-grid-img ecom-grid-dark" width="424" height="536" loading="lazy">
-                  <img src="assets/boards/grid-m-light.png" alt="ClimbFit Size M LED hold matrix (323 holds, 17x19)" class="ecom-grid-img ecom-grid-light" width="424" height="536" loading="lazy">
-                </div>
+                <div class="minimal-dim-tag">12 × 12 ft · 323 Holds</div>
+                <img src="assets/boards/grid-m-dark.png" alt="Size M LED climbing grid" class="ecom-grid-img ecom-grid-dark" width="424" height="536" loading="lazy">
+                <img src="assets/boards/grid-m-light.png" alt="Size M LED climbing grid" class="ecom-grid-img ecom-grid-light" width="424" height="536" loading="lazy">
               </div>
 
               <!-- Size L Visual -->
               <div class="ecom-visual-item" data-size="l">
-                <div class="ecom-dimension-tag ecom-dim-w"><span>↔ 15 ft (4.57 m)</span></div>
-                <div class="ecom-dimension-tag ecom-dim-h"><span>↕ 12 ft (3.65 m)</span></div>
-                <div class="ecom-grid-img-wrap">
-                  <img src="assets/boards/grid-l-dark.png" alt="ClimbFit Size L LED hold matrix (437 holds, 23x19)" class="ecom-grid-img ecom-grid-dark" width="648" height="536" loading="lazy">
-                  <img src="assets/boards/grid-l-light.png" alt="ClimbFit Size L LED hold matrix (437 holds, 23x19)" class="ecom-grid-img ecom-grid-light" width="648" height="536" loading="lazy">
-                </div>
+                <div class="minimal-dim-tag">15 × 12 ft · 437 Holds</div>
+                <img src="assets/boards/grid-l-dark.png" alt="Size L LED climbing grid" class="ecom-grid-img ecom-grid-dark" width="648" height="536" loading="lazy">
+                <img src="assets/boards/grid-l-light.png" alt="Size L LED climbing grid" class="ecom-grid-img ecom-grid-light" width="648" height="536" loading="lazy">
               </div>
-
-              <div class="ecom-stage-badge">
-                <span class="ecom-live-dot" aria-hidden="true"></span>
-                <span>Addressable RGB Optical Nodes · Real Matrix</span>
-              </div>
-            </div>
-
-            <!-- Thumbnail Selector Strip -->
-            <div class="ecom-thumb-strip" role="tablist" aria-label="Select board size preview">
-              <button type="button" class="ecom-thumb-btn" data-size="s" role="tab" aria-selected="false" aria-label="Preview Size S">
-                <span class="ecom-thumb-name">Size S</span>
-                <span class="ecom-thumb-meta">8×12 ft · 209 Holds</span>
-              </button>
-              <button type="button" class="ecom-thumb-btn active" data-size="m" role="tab" aria-selected="true" aria-label="Preview Size M">
-                <span class="ecom-thumb-name">Size M <span class="ecom-badge-mini">Popular</span></span>
-                <span class="ecom-thumb-meta">12×12 ft · 323 Holds</span>
-              </button>
-              <button type="button" class="ecom-thumb-btn" data-size="l" role="tab" aria-selected="false" aria-label="Preview Size L">
-                <span class="ecom-thumb-name">Size L</span>
-                <span class="ecom-thumb-meta">15×12 ft · 437 Holds</span>
-              </button>
             </div>
           </div>
 
-          <!-- RIGHT: Product Details & Configurator -->
-          <div class="ecom-detail-col">
-
-            <div class="ecom-header-row">
-              <span class="tag tag-cyan">Turnkey Commercial System</span>
-              <span class="ecom-shipping-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                Shipping Worldwide
-              </span>
+          <!-- RIGHT: Size Selection & CTAs -->
+          <div class="minimal-board-info">
+            <div class="minimal-size-picker">
+              <span class="minimal-picker-title">Select Size</span>
+              <div class="minimal-size-toggles" role="radiogroup" aria-label="Select board size">
+                <button type="button" class="minimal-size-btn ecom-size-chip" data-size="s" role="radio" aria-checked="false">
+                  <strong>Size S</strong>
+                  <span>8 × 12 ft</span>
+                </button>
+                <button type="button" class="minimal-size-btn ecom-size-chip active" data-size="m" role="radio" aria-checked="true">
+                  <strong>Size M</strong>
+                  <span>12 × 12 ft</span>
+                </button>
+                <button type="button" class="minimal-size-btn ecom-size-chip" data-size="l" role="radio" aria-checked="false">
+                  <strong>Size L</strong>
+                  <span>15 × 12 ft</span>
+                </button>
+              </div>
             </div>
 
-            <h3 class="ecom-title">ClimbFit Interactive LED Training Board</h3>
-
-            <div class="ecom-rating-row">
-              <div class="ecom-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <span class="ecom-rating-text">4.9/5 Rating</span>
-              <span class="ecom-dot-sep">·</span>
-              <span class="ecom-status-instock">● In Production · Worldwide Delivery</span>
+            <!-- Minimal Dynamic Spec Line -->
+            <div class="minimal-specs-wrap">
+              <div class="ecom-spec-block" data-size="s">
+                <div class="minimal-spec-row">
+                  <span><strong>209</strong> LED Holds</span>
+                  <span>•</span>
+                  <span><strong>11×19</strong> Grid</span>
+                  <span>•</span>
+                  <span>Boutique &amp; Schools</span>
+                </div>
+              </div>
+              <div class="ecom-spec-block active" data-size="m">
+                <div class="minimal-spec-row">
+                  <span><strong>323</strong> LED Holds</span>
+                  <span>•</span>
+                  <span><strong>17×19</strong> Grid</span>
+                  <span>•</span>
+                  <span>Commercial Gyms</span>
+                </div>
+              </div>
+              <div class="ecom-spec-block" data-size="l">
+                <div class="minimal-spec-row">
+                  <span><strong>437</strong> LED Holds</span>
+                  <span>•</span>
+                  <span><strong>23×19</strong> Grid</span>
+                  <span>•</span>
+                  <span>Competition &amp; Relays</span>
+                </div>
+              </div>
             </div>
 
-            <p class="ecom-desc">
-              Engineered bouldering board system with individually addressable RGB LEDs behind every hold. Syncs instantly with the ClimbFit mobile app for unlimited boulder problems, illuminated circuits, game modes, and performance analytics.
+            <p class="minimal-includes">
+              Includes precision CNC panels, addressable LED holds, steel chassis, sub-30ms app sync, and custom crash mats.
             </p>
 
-            <!-- Size Selector Switch -->
-            <div class="ecom-size-selector-wrap">
-              <div class="ecom-selector-label-row">
-                <span class="ecom-selector-label">Select Board Size:</span>
-                <span class="ecom-selected-indicator" id="ecom-size-label">Size M (12 × 12 ft)</span>
-              </div>
-
-              <div class="ecom-size-options" role="radiogroup" aria-label="Board size options">
-                <!-- Option S -->
-                <button type="button" class="ecom-size-chip" data-size="s" role="radio" aria-checked="false">
-                  <div class="ecom-chip-top">
-                    <span class="ecom-chip-title">Size S</span>
-                  </div>
-                  <div class="ecom-chip-dim">8 × 12 ft</div>
-                  <div class="ecom-chip-holds">209 Holds</div>
-                </button>
-
-                <!-- Option M -->
-                <button type="button" class="ecom-size-chip active" data-size="m" role="radio" aria-checked="true">
-                  <div class="ecom-chip-top">
-                    <span class="ecom-chip-title">Size M</span>
-                    <span class="ecom-chip-badge">Popular</span>
-                  </div>
-                  <div class="ecom-chip-dim">12 × 12 ft</div>
-                  <div class="ecom-chip-holds">323 Holds</div>
-                </button>
-
-                <!-- Option L -->
-                <button type="button" class="ecom-size-chip" data-size="l" role="radio" aria-checked="false">
-                  <div class="ecom-chip-top">
-                    <span class="ecom-chip-title">Size L</span>
-                  </div>
-                  <div class="ecom-chip-dim">15 × 12 ft</div>
-                  <div class="ecom-chip-holds">437 Holds</div>
-                </button>
-              </div>
-            </div>
-
-            <!-- Dynamic Specs Panels -->
-            <div class="ecom-specs-container">
-              <!-- Specs S -->
-              <div class="ecom-spec-block" data-size="s">
-                <div class="ecom-spec-grid">
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Dimensions</span>
-                    <strong class="ecom-spec-val">8 ft (W) × 12 ft (H)</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">LED Holds</span>
-                    <strong class="ecom-spec-val">209 Holds (11×19)</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Chassis</span>
-                    <strong class="ecom-spec-val">Modular Steel Frame</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Ideal For</span>
-                    <strong class="ecom-spec-val">Studios &amp; Schools</strong>
-                  </div>
-                </div>
-                <p class="ecom-size-summary">Compact modular footprint engineered for boutique fitness studios, residential clubhouses, and school sports rooms with minimum 3.2m ceiling clearance.</p>
-              </div>
-
-              <!-- Specs M (Default) -->
-              <div class="ecom-spec-block active" data-size="m">
-                <div class="ecom-spec-grid">
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Dimensions</span>
-                    <strong class="ecom-spec-val">12 ft (W) × 12 ft (H)</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">LED Holds</span>
-                    <strong class="ecom-spec-val">323 Holds (17×19)</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Chassis</span>
-                    <strong class="ecom-spec-val">Heavy-Duty Steel</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Ideal For</span>
-                    <strong class="ecom-spec-val">Commercial Gyms</strong>
-                  </div>
-                </div>
-                <p class="ecom-size-summary">The benchmark standard for commercial climbing gyms, sports academies, and high-frequency fitness spaces. Optimal lateral width for dynamic boulder problems.</p>
-              </div>
-
-              <!-- Specs L -->
-              <div class="ecom-spec-block" data-size="l">
-                <div class="ecom-spec-grid">
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Dimensions</span>
-                    <strong class="ecom-spec-val">15 ft (W) × 12 ft (H)</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">LED Holds</span>
-                    <strong class="ecom-spec-val">437 Holds (23×19)</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Chassis</span>
-                    <strong class="ecom-spec-val">Reinforced Structural Steel</strong>
-                  </div>
-                  <div class="ecom-spec-item">
-                    <span class="ecom-spec-lbl">Ideal For</span>
-                    <strong class="ecom-spec-val">Multi-Climber Centers</strong>
-                  </div>
-                </div>
-                <p class="ecom-size-summary">Commercial max footprint built for large entertainment hubs and competition centers. Broad lateral canvas supports dual simultaneous climbers and team relays.</p>
-              </div>
-            </div>
-
-            <!-- Inclusions Checklist -->
-            <div class="ecom-inclusions-box">
-              <span class="ecom-inclusions-title">Every Wall Package Includes:</span>
-              <ul class="ecom-inclusions-list">
-                <li><span class="ecom-check" aria-hidden="true">✓</span> Precision CNC BWP Marine-Grade Plywood Panels</li>
-                <li><span class="ecom-check" aria-hidden="true">✓</span> Full Set of Addressable Optical RGB LED Holds</li>
-                <li><span class="ecom-check" aria-hidden="true">✓</span> Custom-Fitted Dual-Layer 300mm Crash Safety Mats</li>
-                <li><span class="ecom-check" aria-hidden="true">✓</span> Controller Hardware + Sub-30ms Bluetooth/Wi-Fi Sync</li>
-                <li><span class="ecom-check" aria-hidden="true">✓</span> Free Companion Mobile App Access for All Members</li>
-              </ul>
-            </div>
-
-            <!-- Action CTAs (Exactly as requested) -->
-            <div class="ecom-actions-row">
-              <a href="about.html#contact" class="btn btn-primary ecom-btn-primary">
+            <!-- Action CTAs -->
+            <div class="minimal-actions">
+              <a href="about.html#contact" class="btn btn-primary">
                 Get Your Wall <span aria-hidden="true">→</span>
               </a>
-              <a href="training-board.html" class="btn btn-outline ecom-btn-secondary">
+              <a href="training-board.html" class="btn btn-outline">
                 Know More About The Wall
               </a>
             </div>
-
-            <!-- Assurance Micro-copy -->
-            <div class="ecom-trust-bar">
-              <span>🛡️ 3-Year Warranty</span>
-              <span>•</span>
-              <span>🏗️ Turnkey Installation</span>
-              <span>•</span>
-              <span>📦 Worldwide Dispatch</span>
-            </div>
-
           </div>
 
         </div>
