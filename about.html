@@ -119,6 +119,7 @@
       padding-top: calc(var(--nav-h) + 4.5rem);
       padding-bottom: var(--space-xl);
       position: relative; overflow: hidden;
+      text-align: center;
     }
     .about-hero-orb-1 {
       width: 550px; height: 550px;
@@ -130,7 +131,13 @@
       background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
       bottom: 0; left: -40px;
     }
-    .about-hero-inner { max-width: 780px; position: relative; z-index: 1; }
+    .about-hero-inner {
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      text-align: center;
+    }
     .about-hero-inner h1 {
       font-family: var(--font-display);
       font-weight: 800;
@@ -142,6 +149,7 @@
     .about-hero-inner p {
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
       color: rgba(228,228,240,0.85); line-height: 1.75; max-width: 650px;
+      margin: 0 auto;
     }
 
     /* ── Mission split ────────────────────────────── */
@@ -216,6 +224,7 @@
       color: var(--text-muted);
       font-size: 1.02rem;
       line-height: 1.75;
+      font-style: italic;
     }
     .story-block p + p { margin-top: 1rem; }
     .story-sig {
@@ -564,7 +573,7 @@
           <div class="story-sig">
             <span class="story-sig-name">Anind Shrivastava</span>
             <span style="color:var(--text-muted);font-size:0.8rem;">·</span>
-            <span class="story-sig-role">ClimbFit</span>
+            <span class="story-sig-role">Climber &amp; Founder</span>
           </div>
         </article>
       </div>
